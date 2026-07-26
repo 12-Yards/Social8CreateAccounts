@@ -80,12 +80,18 @@ export async function registerRoutes(
       { loc: "/contact", priority: "0.8", changefreq: "monthly" },
       { loc: "/terms", priority: "0.5", changefreq: "yearly" },
       { loc: "/privacy", priority: "0.5", changefreq: "yearly" },
-      { loc: "/features/member-communication", priority: "0.8", changefreq: "monthly" },
-      { loc: "/features/groups-communities", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/multi-tenancy", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/zero-friction-signup", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/self-management", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/community-content", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/events-competitions", priority: "0.8", changefreq: "monthly" },
-      { loc: "/features/ai-feature-create", priority: "0.8", changefreq: "monthly" },
-      { loc: "/features/content-publishing", priority: "0.8", changefreq: "monthly" },
-      { loc: "/features/analytics-reporting", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/live-quizzes", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/points-leaderboards", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/redeem-points", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/prize-auctions", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/members-networking", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/monetisation", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/technology-architecture", priority: "0.8", changefreq: "monthly" },
     ];
     const today = new Date().toISOString().split("T")[0];
     const xml = `<?xml version="1.0" encoding="UTF-8"?>

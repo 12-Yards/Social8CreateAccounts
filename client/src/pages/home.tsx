@@ -8,20 +8,23 @@ import { Link } from "wouter";
 import { 
   Users, 
   Calendar, 
-  MessageCircle, 
   Globe, 
-  Sparkles,
   FileText, 
   TrendingUp,
   CheckCircle,
   ArrowRight,
   Star,
   Building,
-  MapPin,
   Trophy,
   Play,
   Settings,
-  Heart
+  Heart,
+  Zap,
+  HelpCircle,
+  Gift,
+  Gavel,
+  CreditCard,
+  ShieldCheck
 } from "lucide-react";
 
 function Header() {
@@ -167,46 +170,88 @@ function HeroSection() {
 function FeaturesSection() {
   const features = [
     {
-      icon: MessageCircle,
-      title: "Member Communication & Social Networking",
-      description: "Enable members to connect, message, comment, post, and compete inside a private community network.",
+      icon: Globe,
+      title: "Multi-Tenancy",
+      description: "One platform, unlimited communities. Every community runs as its own fully branded, isolated environment with its own domain, members, content and data.",
       colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
-      slug: "member-communication"
+      slug: "multi-tenancy"
     },
     {
-      icon: Users,
-      title: "Groups & Communities",
-      description: "Create regional groups, interest-based groups, trip groups, and societies so members can easily organise away days, trips, and regular meetups.",
+      icon: Zap,
+      title: "Zero-Friction Signup",
+      description: "Communities launch in minutes and members join in seconds — simple email signup with one-time-code verification or single sign-on, no approval queues required.",
       colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-      slug: "groups-communities"
+      slug: "zero-friction-signup"
+    },
+    {
+      icon: Settings,
+      title: "Fully Self-Managed",
+      description: "Run your entire community through an intuitive admin panel — branding, content, members, events and monetisation — with no technical skills needed.",
+      colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
+      slug: "self-management"
+    },
+    {
+      icon: FileText,
+      title: "Community & Content",
+      description: "Editorial articles, podcasts, member reviews, polls, newsletters and a social feed with posts, comments, replies and reactions — plus public and private groups.",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+      slug: "community-content"
     },
     {
       icon: Calendar,
-      title: "Events & Competition Management",
-      description: "Create and manage meet-ups, leagues, knockout tournaments, team competitions, and practice sessions with ease.",
+      title: "Events & Competitions",
+      description: "Event listings with attendance tracking, member-suggested events, and a competition engine with individual, team and knockout formats plus live leaderboards.",
       colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
       slug: "events-competitions"
     },
     {
-      icon: Sparkles,
-      title: "AI Fully Enabled",
-      description: "Use AI to enhance the features and user experience of your online community giving you full control over customisation to meet your exact needs.",
+      icon: HelpCircle,
+      title: "Live Quizzes",
+      description: "Scheduled live quiz events where the whole community plays the same questions at the same time, with rich question formats, speed bonuses and live leaderboards.",
       colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-      slug: "ai-feature-create"
+      slug: "live-quizzes"
     },
     {
-      icon: FileText,
-      title: "Content Publishing & Insights",
-      description: "Share news, articles, coaching tips, and community updates. Track engagement and allow members to publish articles or opinion pieces.",
+      icon: Trophy,
+      title: "Earn Points & Leaderboards",
+      description: "A platform-wide points economy rewarding participation, with owner-configurable earning rules and monthly leaderboards that keep everyone competitive.",
       colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
-      slug: "content-publishing"
+      slug: "points-leaderboards"
     },
     {
-      icon: TrendingUp,
-      title: "Analytics & Reporting",
-      description: "Monitor member activity, event participation, and community growth with detailed analytics and insights.",
+      icon: Gift,
+      title: "Redeem Points",
+      description: "Members redeem earned points for instant digital rewards from a fully customisable catalogue — driving retention and long-term member loyalty.",
       colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-      slug: "analytics-reporting"
+      slug: "redeem-points"
+    },
+    {
+      icon: Gavel,
+      title: "Prize Auctions",
+      description: "Members spend earned points bidding on real prizes in owner-run auctions with live countdowns, escrow-held bids and instant outbid notifications.",
+      colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
+      slug: "prize-auctions"
+    },
+    {
+      icon: Users,
+      title: "Members & Networking",
+      description: "Member profiles with customisable fields, advanced search, connection requests, organisation profiles with exclusive offers, and member wallets.",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+      slug: "members-networking"
+    },
+    {
+      icon: CreditCard,
+      title: "Monetisation",
+      description: "Premium subscriptions, paid events and competitions, a cross-community marketplace, advertising revenue share and paid polls — via Stripe or cryptocurrency.",
+      colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
+      slug: "monetisation"
+    },
+    {
+      icon: ShieldCheck,
+      title: "Technology & Architecture",
+      description: "API-first, cloud-based architecture with enterprise-grade security, tenant-level data isolation and SEO-optimised web and mobile experiences.",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+      slug: "technology-architecture"
     }
   ];
 
