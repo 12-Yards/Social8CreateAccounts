@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@assets/social8logo_1785094677762.png";
+import logoPath from "@assets/s82_1785094948837.png";
 import groupsCommunitiesImage from "@/assets/images/feature-groups-communities.png";
 import memberCommunicationImage from "@/assets/images/feature-member-communication.png";
 import eventsCompetitionsImage from "@/assets/images/feature-events-competitions.png";
