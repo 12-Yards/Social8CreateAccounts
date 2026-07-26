@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "wouter";
-import logoPath from "@assets/Social8PNGLogo_1774859933898.png";
+import logoPath from "@assets/social8logo_1785094677762.png";
 import { apiRequest } from "@/lib/queryClient";
 
 export default function ContactPage() {
@@ -69,7 +69,7 @@ export default function ContactPage() {
           <CardContent>
             {submitted ? (
               <div className="text-center py-8">
-                <h3 className="text-2xl font-bold text-fuchsia-600 mb-2" data-testid="text-submitted">Thank You</h3>
+                <h3 className="text-2xl font-bold text-cyan-600 mb-2" data-testid="text-submitted">Thank You</h3>
                 <p className="text-muted-foreground">We've received your message and will be in touch shortly.</p>
                 <Link href="/">
                   <Button variant="outline" className="mt-4" data-testid="button-back-home">

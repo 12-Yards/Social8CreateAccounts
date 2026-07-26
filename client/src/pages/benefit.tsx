@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@assets/Social8PNGLogo_1774859933898.png";
+import logoPath from "@assets/social8logo_1785094677762.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -19,7 +19,7 @@ const benefitsData = {
     title: "Increase Member Engagement",
     subtitle: "Build a thriving, active community",
     heroDescription: "Keep your community active and connected with social features designed specifically for members. Create meaningful interactions that bring members together.",
-    colorClass: "bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 text-white",
+    colorClass: "bg-gradient-to-br from-cyan-500 to-cyan-600 text-white",
     details: [
       {
         heading: "Social Networking for Members",
@@ -44,7 +44,7 @@ const benefitsData = {
     title: "Simplify Management",
     subtitle: "Powerful tools that save you time",
     heroDescription: "Streamline administrative tasks with powerful tools that save time and reduce complexity. Manage your entire community from one intuitive dashboard.",
-    colorClass: "bg-gradient-to-br from-violet-500 to-violet-600 text-white",
+    colorClass: "bg-gradient-to-br from-green-500 to-green-600 text-white",
     details: [
       {
         heading: "Centralized Dashboard",
@@ -69,7 +69,7 @@ const benefitsData = {
     title: "Grow Inter-Club Play",
     subtitle: "Expand your network",
     heroDescription: "Expand your network with reciprocal play arrangements and inter-club competitions. Connect your members with communities across the region and beyond.",
-    colorClass: "bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 text-white",
+    colorClass: "bg-gradient-to-br from-cyan-500 to-cyan-600 text-white",
     details: [
       {
         heading: "Reciprocal Play Arrangements",
@@ -94,7 +94,7 @@ const benefitsData = {
     title: "Create Revenue Streams",
     subtitle: "Unlock new financial opportunities",
     heroDescription: "Unlock new opportunities for sponsorships, events, and premium member experiences. Turn your engaged community into sustainable revenue.",
-    colorClass: "bg-gradient-to-br from-violet-500 to-violet-600 text-white",
+    colorClass: "bg-gradient-to-br from-green-500 to-green-600 text-white",
     details: [
       {
         heading: "Sponsorship Opportunities",
@@ -119,7 +119,7 @@ const benefitsData = {
     title: "Improve Retention",
     subtitle: "Keep members coming back",
     heroDescription: "Build lasting connections that keep members coming back season after season. Create a community experience that members don't want to leave.",
-    colorClass: "bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 text-white",
+    colorClass: "bg-gradient-to-br from-cyan-500 to-cyan-600 text-white",
     details: [
       {
         heading: "Community Belonging",
@@ -285,7 +285,7 @@ export default function BenefitPage() {
                   <div className="space-y-3">
                     {benefit.details.map((detail, i) => (
                       <div key={i} className="flex items-start gap-3" data-testid={`benefit-bullet-${i}`}>
-                        <CheckCircle className="w-5 h-5 text-fuchsia-600 dark:text-fuchsia-400 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
                         <span>{detail.heading}</span>
                       </div>
                     ))}
@@ -325,8 +325,8 @@ export default function BenefitPage() {
             <div className="max-w-4xl space-y-12">
               {benefit.details.map((detail, i) => (
                 <div key={i} className="flex gap-6" data-testid={`detail-${i}`}>
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-fuchsia-100 dark:bg-fuchsia-950/50 flex items-center justify-center">
-                    <CheckCircle className="w-5 h-5 text-fuchsia-600 dark:text-fuchsia-400" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-cyan-100 dark:bg-cyan-950/50 flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl mb-3" data-testid={`detail-heading-${i}`}>{detail.heading}</h3>
@@ -338,7 +338,7 @@ export default function BenefitPage() {
           </div>
         </section>
 
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-fuchsia-600 to-violet-600 relative overflow-hidden">
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-cyan-600 to-green-600 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
           <div className="container mx-auto px-4 relative">
             <div className="text-center max-w-3xl mx-auto">
@@ -348,7 +348,7 @@ export default function BenefitPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/create-account">
-                  <Button size="lg" className="gap-2 bg-white text-fuchsia-700" data-testid="button-start-trial-cta">
+                  <Button size="lg" className="gap-2 bg-white text-cyan-700" data-testid="button-start-trial-cta">
                     Go Live Now
                     <ArrowRight className="w-4 h-4" />
                   </Button>

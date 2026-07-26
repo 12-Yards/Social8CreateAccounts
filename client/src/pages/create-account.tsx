@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link } from "wouter";
 import { useToast } from "@/hooks/use-toast";
-import logoPath from "@assets/Social8PNGLogo_1774859933898.png";
+import logoPath from "@assets/social8logo_1785094677762.png";
 import {
   CheckCircle,
   Users,
@@ -454,9 +454,9 @@ export default function CreateAccountPage() {
           <div
             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold flex-shrink-0 ${
               currentStepIndex === i
-                ? "bg-fuchsia-600 text-white"
+                ? "bg-cyan-600 text-white"
                 : currentStepIndex > i
-                  ? "bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-600"
+                  ? "bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600"
                   : "bg-muted text-muted-foreground"
             }`}
             data-testid={`step-indicator-${i}`}
@@ -471,7 +471,7 @@ export default function CreateAccountPage() {
             <div
               className={`w-6 h-0.5 ${
                 currentStepIndex > i
-                  ? "bg-fuchsia-400"
+                  ? "bg-cyan-400"
                   : "bg-muted"
               }`}
             />
@@ -483,7 +483,7 @@ export default function CreateAccountPage() {
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-fuchsia-50 via-violet-50 to-background dark:from-fuchsia-950/20 dark:via-violet-950/20 dark:to-background flex flex-col"
+      className="min-h-screen bg-gradient-to-br from-cyan-50 via-green-50 to-background dark:from-cyan-950/20 dark:via-green-950/20 dark:to-background flex flex-col"
       data-testid="page-create-account"
     >
       <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -501,9 +501,9 @@ export default function CreateAccountPage() {
               {creatingPlatform ? (
                 <div className="text-center py-12">
                   <div className="w-20 h-20 mx-auto mb-6 relative">
-                    <Settings className="w-20 h-20 text-fuchsia-600 animate-spin" style={{ animationDuration: "3s" }} />
+                    <Settings className="w-20 h-20 text-cyan-600 animate-spin" style={{ animationDuration: "3s" }} />
                   </div>
-                  <h3 className="text-2xl font-bold text-fuchsia-600 mb-2" data-testid="text-creating-message">
+                  <h3 className="text-2xl font-bold text-cyan-600 mb-2" data-testid="text-creating-message">
                     Creating your platform
                   </h3>
                   <p className="text-muted-foreground">
@@ -513,10 +513,10 @@ export default function CreateAccountPage() {
               ) : (
                 <div>
                   <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-fuchsia-100 dark:bg-fuchsia-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="w-8 h-8 text-fuchsia-600" />
+                    <div className="w-16 h-16 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-8 h-8 text-cyan-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-fuchsia-600" data-testid="text-setup-message">
+                    <h3 className="text-2xl font-bold text-cyan-600" data-testid="text-setup-message">
                       All ready!
                     </h3>
                     <p className="text-muted-foreground mt-1">Your platform has been created successfully.</p>
@@ -530,7 +530,7 @@ export default function CreateAccountPage() {
                           href={`https://${getAdminUrl()}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-mono text-sm font-semibold text-fuchsia-600 hover:underline flex items-center gap-1 truncate"
+                          className="font-mono text-sm font-semibold text-cyan-600 hover:underline flex items-center gap-1 truncate"
                           data-testid="link-admin-url"
                         >
                           {getAdminUrl()}
@@ -552,7 +552,7 @@ export default function CreateAccountPage() {
                           href={`https://${getPlatformUrl()}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-mono text-sm font-semibold text-violet-600 hover:underline flex items-center gap-1 truncate"
+                          className="font-mono text-sm font-semibold text-green-600 hover:underline flex items-center gap-1 truncate"
                           data-testid="link-platform-url"
                         >
                           {getPlatformUrl()}
@@ -626,19 +626,19 @@ export default function CreateAccountPage() {
                   )}
 
                   {hasDomain && domainName && (
-                    <div className="bg-violet-50 dark:bg-violet-900/20 border border-violet-200 dark:border-violet-800 rounded-lg p-5 mb-6" data-testid="domain-status-section">
+                    <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-5 mb-6" data-testid="domain-status-section">
                       <div className="flex items-start gap-3">
-                        <Globe className="w-5 h-5 text-violet-600 flex-shrink-0 mt-0.5" />
+                        <Globe className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-semibold text-violet-800 dark:text-violet-300">Check Domain Status</p>
-                          <p className="text-sm text-violet-700 dark:text-violet-400 mt-1">
+                          <p className="font-semibold text-green-800 dark:text-green-300">Check Domain Status</p>
+                          <p className="text-sm text-green-700 dark:text-green-400 mt-1">
                             To check the status of your domain, visit:
                           </p>
                           <a
                             href="https://checkdomainstatus.social8.app/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 mt-2 text-sm font-semibold text-violet-600 hover:underline"
+                            className="inline-flex items-center gap-1.5 mt-2 text-sm font-semibold text-green-600 hover:underline"
                             data-testid="link-check-domain-status"
                           >
                             checkdomainstatus.social8.app
@@ -672,7 +672,7 @@ export default function CreateAccountPage() {
         ) : (
         <Card className="w-full max-w-4xl overflow-hidden">
           <div className="grid md:grid-cols-2">
-            <div className="bg-gradient-to-br from-fuchsia-600 to-violet-600 p-8 md:p-10 text-white flex flex-col justify-start">
+            <div className="bg-gradient-to-br from-cyan-600 to-green-600 p-8 md:p-10 text-white flex flex-col justify-start">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">{currentLeftPanel.heading}</h2>
               <p className="text-white/90 text-lg mb-8 leading-relaxed">{currentLeftPanel.description}</p>
               <div className="space-y-4">
@@ -838,7 +838,7 @@ export default function CreateAccountPage() {
                                   data-testid="input-no-domain-prefix"
                                 />
                               ) : (
-                                <span className="font-mono font-semibold text-fuchsia-600" data-testid="text-no-domain-prefix">
+                                <span className="font-mono font-semibold text-cyan-600" data-testid="text-no-domain-prefix">
                                   {noDomainPrefix}
                                 </span>
                               )}

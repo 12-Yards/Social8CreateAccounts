@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link, useLocation } from "wouter";
 import { apiRequest } from "@/lib/queryClient";
-import logoPath from "@assets/Social8PNGLogo_1774859933898.png";
+import logoPath from "@assets/social8logo_1785094677762.png";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");

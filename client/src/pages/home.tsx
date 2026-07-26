@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import logoPath from "@assets/Social8PNGLogo_1774859933898.png";
+import logoPath from "@assets/social8logo_1785094677762.png";
 import faviconPath from "@assets/favicon-32x32_1774860507485.png";
 import { Link } from "wouter";
 import { 
@@ -59,10 +59,10 @@ function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight" data-testid="heading-hero">
-              The <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">Ultimate</span> online platform to{" "}
-              <span className="bg-gradient-to-r from-fuchsia-600 to-fuchsia-500 bg-clip-text text-transparent">grow</span>,{" "}
-              <span className="bg-gradient-to-r from-violet-600 to-violet-500 bg-clip-text text-transparent">manage</span>, and{" "}
-              <span className="bg-gradient-to-r from-fuchsia-600 to-violet-600 bg-clip-text text-transparent">empower</span> your community
+              The <span className="bg-gradient-to-r from-green-600 to-cyan-600 bg-clip-text text-transparent">Ultimate</span> online platform to{" "}
+              <span className="bg-gradient-to-r from-cyan-600 to-cyan-500 bg-clip-text text-transparent">grow</span>,{" "}
+              <span className="bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">manage</span>, and{" "}
+              <span className="bg-gradient-to-r from-cyan-600 to-green-600 bg-clip-text text-transparent">empower</span> your community
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl leading-relaxed" data-testid="text-hero-description">
               Social 8 helps communities to connect members, manage content, events, polls, petitions, quizzes, auctions and competitions, use powerful AI to extend the platform, share content and more — all from one powerful platform.
@@ -84,7 +84,7 @@ function HeroSection() {
           </div>
           <div className="relative" data-testid="hero-dashboard-preview">
             <div className="relative rounded-xl overflow-hidden shadow-2xl border bg-card">
-              <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/5 via-transparent to-violet-500/5"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-green-500/5"></div>
               <div className="p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -96,24 +96,24 @@ function HeroSection() {
                       <div className="text-xs text-muted-foreground">Social8</div>
                     </div>
                   </div>
-                  <Badge variant="outline" className="border-fuchsia-200 dark:border-fuchsia-800 bg-fuchsia-50 dark:bg-fuchsia-950/50 text-fuchsia-700 dark:text-fuchsia-300">Live</Badge>
+                  <Badge variant="outline" className="border-cyan-200 dark:border-cyan-800 bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-300">Live</Badge>
                 </div>
                 <div className="grid grid-cols-3 gap-3">
-                  <Card className="bg-fuchsia-50 dark:bg-fuchsia-950/30 border-fuchsia-100 dark:border-fuchsia-900/50">
+                  <Card className="bg-cyan-50 dark:bg-cyan-950/30 border-cyan-100 dark:border-cyan-900/50">
                     <CardContent className="p-3">
-                      <div className="text-2xl font-bold text-fuchsia-700 dark:text-fuchsia-400" data-testid="stat-members">1,247</div>
+                      <div className="text-2xl font-bold text-cyan-700 dark:text-cyan-400" data-testid="stat-members">1,247</div>
                       <div className="text-xs text-muted-foreground">Members</div>
                     </CardContent>
                   </Card>
-                  <Card className="bg-violet-50 dark:bg-violet-950/30 border-violet-100 dark:border-violet-900/50">
+                  <Card className="bg-green-50 dark:bg-green-950/30 border-green-100 dark:border-green-900/50">
                     <CardContent className="p-3">
-                      <div className="text-2xl font-bold text-violet-700 dark:text-violet-400" data-testid="stat-events">89</div>
+                      <div className="text-2xl font-bold text-green-700 dark:text-green-400" data-testid="stat-events">89</div>
                       <div className="text-xs text-muted-foreground">Events</div>
                     </CardContent>
                   </Card>
-                  <Card className="bg-fuchsia-50 dark:bg-fuchsia-950/30 border-fuchsia-100 dark:border-fuchsia-900/50">
+                  <Card className="bg-cyan-50 dark:bg-cyan-950/30 border-cyan-100 dark:border-cyan-900/50">
                     <CardContent className="p-3">
-                      <div className="text-2xl font-bold text-fuchsia-700 dark:text-fuchsia-400" data-testid="stat-groups">156</div>
+                      <div className="text-2xl font-bold text-cyan-700 dark:text-cyan-400" data-testid="stat-groups">156</div>
                       <div className="text-xs text-muted-foreground">Groups</div>
                     </CardContent>
                   </Card>
@@ -143,8 +143,8 @@ function HeroSection() {
             </div>
             <div className="absolute -bottom-4 -right-4 w-64 rounded-lg shadow-xl border bg-card p-4 hidden lg:block" data-testid="upcoming-events-widget">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-full bg-violet-100 dark:bg-violet-950/50 flex items-center justify-center">
-                  <Calendar className="w-4 h-4 text-violet-600 dark:text-violet-400" />
+                <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-950/50 flex items-center justify-center">
+                  <Calendar className="w-4 h-4 text-green-600 dark:text-green-400" />
                 </div>
                 <div className="text-sm font-medium">Upcoming Events</div>
               </div>
@@ -170,42 +170,42 @@ function FeaturesSection() {
       icon: MessageCircle,
       title: "Member Communication & Social Networking",
       description: "Enable members to connect, message, comment, post, and compete inside a private community network.",
-      colorClass: "bg-fuchsia-100 dark:bg-fuchsia-950/50 text-fuchsia-600 dark:text-fuchsia-400",
+      colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
       slug: "member-communication"
     },
     {
       icon: Users,
       title: "Groups & Communities",
       description: "Create regional groups, interest-based groups, trip groups, and societies so members can easily organise away days, trips, and regular meetups.",
-      colorClass: "bg-violet-100 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
       slug: "groups-communities"
     },
     {
       icon: Calendar,
       title: "Events & Competition Management",
       description: "Create and manage meet-ups, leagues, knockout tournaments, team competitions, and practice sessions with ease.",
-      colorClass: "bg-fuchsia-100 dark:bg-fuchsia-950/50 text-fuchsia-600 dark:text-fuchsia-400",
+      colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
       slug: "events-competitions"
     },
     {
       icon: Sparkles,
       title: "AI Fully Enabled",
       description: "Use AI to enhance the features and user experience of your online community giving you full control over customisation to meet your exact needs.",
-      colorClass: "bg-violet-100 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
       slug: "ai-feature-create"
     },
     {
       icon: FileText,
       title: "Content Publishing & Insights",
       description: "Share news, articles, coaching tips, and community updates. Track engagement and allow members to publish articles or opinion pieces.",
-      colorClass: "bg-fuchsia-100 dark:bg-fuchsia-950/50 text-fuchsia-600 dark:text-fuchsia-400",
+      colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
       slug: "content-publishing"
     },
     {
       icon: TrendingUp,
       title: "Analytics & Reporting",
       description: "Monitor member activity, event participation, and community growth with detailed analytics and insights.",
-      colorClass: "bg-violet-100 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
       slug: "analytics-reporting"
     }
   ];
@@ -214,10 +214,10 @@ function FeaturesSection() {
     <section id="features" className="pt-10 lg:pt-14 pb-20 lg:pb-28 bg-muted/30" data-testid="section-features">
       <div className="container mx-auto px-4">
         <div className="relative max-w-4xl mx-auto mb-16">
-          <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500/10 via-violet-500/10 to-fuchsia-500/10 rounded-2xl blur-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-green-500/10 to-cyan-500/10 rounded-2xl blur-3xl"></div>
           <Card className="relative border-0 bg-gradient-to-br from-card/80 to-card shadow-lg">
             <CardContent className="p-8 md:p-12 text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-100 dark:bg-fuchsia-950/50 text-fuchsia-700 dark:text-fuchsia-400 text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-400 text-sm font-medium mb-6">
                 <Globe className="w-4 h-4" />
                 Community Platform
               </div>
@@ -232,15 +232,15 @@ function FeaturesSection() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 mt-8">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-fuchsia-600 dark:text-fuchsia-400" />
+                  <CheckCircle className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                   <span>Easy Setup</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-fuchsia-600 dark:text-fuchsia-400" />
+                  <CheckCircle className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                   <span>No Technical Skills Required</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-fuchsia-600 dark:text-fuchsia-400" />
+                  <CheckCircle className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                   <span>Free Trial Available</span>
                 </div>
               </div>
@@ -263,7 +263,7 @@ function FeaturesSection() {
                   <h3 className="font-bold text-lg mb-3" data-testid={`heading-feature-${i}`}>{feature.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed flex-1" data-testid={`text-feature-${i}`}>{feature.description}</p>
                   <div className="mt-4 pt-4 border-t border-border/50">
-                    <span className="text-sm font-medium text-fuchsia-600 dark:text-fuchsia-400 flex items-center gap-1 group-hover:gap-2 transition-all" data-testid={`link-learn-more-${i}`}>
+                    <span className="text-sm font-medium text-cyan-600 dark:text-cyan-400 flex items-center gap-1 group-hover:gap-2 transition-all" data-testid={`link-learn-more-${i}`}>
                       Learn more <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
@@ -279,7 +279,7 @@ function FeaturesSection() {
 
 function CTASection() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-fuchsia-600 to-violet-600 relative overflow-hidden" data-testid="section-cta">
+    <section className="py-16 lg:py-24 bg-gradient-to-br from-cyan-600 to-green-600 relative overflow-hidden" data-testid="section-cta">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
       <div className="container mx-auto px-4 relative">
         <div className="text-center max-w-3xl mx-auto">
@@ -289,7 +289,7 @@ function CTASection() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href="https://social8community.social8.app" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="gap-2 bg-white text-fuchsia-700" data-testid="button-view-platform-home">
+              <Button size="lg" className="gap-2 bg-white text-cyan-700" data-testid="button-view-platform-home">
                 View Platform
                 <ArrowRight className="w-4 h-4" />
               </Button>
@@ -351,7 +351,7 @@ function HowItWorksSection() {
         <div className="max-w-2xl mx-auto space-y-6">
           {steps.map((step, i) => (
             <div key={i} className="flex items-start gap-6 group" data-testid={`step-${i}`}>
-              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-fuchsia-500 to-violet-500 flex items-center justify-center text-white shadow-lg">
+              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-green-500 flex items-center justify-center text-white shadow-lg">
                 <step.icon className="w-7 h-7" />
               </div>
               <div className="flex-1 pb-6 border-b border-border/50 group-last:border-0 group-last:pb-0">
@@ -388,10 +388,10 @@ function WhoIsItForSection() {
             {audiences.map((audience, i) => (
               <div 
                 key={i} 
-                className="flex-shrink-0 w-52 lg:w-auto p-6 rounded-2xl bg-gradient-to-br from-background to-muted/50 border border-border/30 shadow-md hover:shadow-lg hover:border-fuchsia-500/30 transition-all duration-300 text-center group"
+                className="flex-shrink-0 w-52 lg:w-auto p-6 rounded-2xl bg-gradient-to-br from-background to-muted/50 border border-border/30 shadow-md hover:shadow-lg hover:border-cyan-500/30 transition-all duration-300 text-center group"
                 data-testid={`audience-${i}`}
               >
-                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-fuchsia-500 to-violet-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-cyan-500 to-green-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
                   <audience.icon className="w-7 h-7 text-white" />
                 </div>
                 <span className="font-semibold text-foreground" data-testid={`heading-audience-${i}`}>{audience.title}</span>
@@ -408,7 +408,7 @@ function LaunchCTASection() {
   return (
     <section className="py-6 lg:py-8" data-testid="section-launch-cta">
       <div className="container mx-auto px-4">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-fuchsia-600 to-violet-600 p-8 md:p-12 lg:p-16">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-600 to-green-600 p-8 md:p-12 lg:p-16">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
           <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="flex-shrink-0 bg-white/95 rounded-2xl p-6 shadow-lg">
@@ -428,7 +428,7 @@ function LaunchCTASection() {
               </p>
               <div className="w-full flex justify-center lg:justify-start">
                 <Link href="/create-account">
-                  <Button size="lg" className="bg-white text-fuchsia-700 hover:bg-white/90 shadow-lg" data-testid="button-create-account-cta">
+                  <Button size="lg" className="bg-white text-cyan-700 hover:bg-white/90 shadow-lg" data-testid="button-create-account-cta">
                     Create Account
                   </Button>
                 </Link>
@@ -515,20 +515,20 @@ function PricingSection() {
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <Card className="hover-elevate h-full border-fuchsia-300 dark:border-fuchsia-700 relative" data-testid="card-pricing-professional">
+          <Card className="hover-elevate h-full border-cyan-300 dark:border-cyan-700 relative" data-testid="card-pricing-professional">
             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-              <Badge className="bg-fuchsia-600 dark:bg-fuchsia-500" data-testid="badge-popular">Most Popular</Badge>
+              <Badge className="bg-cyan-600 dark:bg-cyan-500" data-testid="badge-popular">Most Popular</Badge>
             </div>
             <CardContent className="p-6 h-full flex flex-col">
               <div className="text-center mb-6">
                 <h3 className="font-semibold text-lg mb-2" data-testid="heading-plan-professional">Professional</h3>
                 <div className="text-4xl font-bold mb-1" data-testid="text-price-professional"><span className="line-through text-muted-foreground">£49/mo</span></div>
-                <div className="text-sm font-semibold text-fuchsia-600 dark:text-fuchsia-400">Free for limited period</div>
+                <div className="text-sm font-semibold text-cyan-600 dark:text-cyan-400">Free for limited period</div>
               </div>
               <div className="space-y-3 mb-6 flex-1">
                 {["Up to 500 members", "Publish articles, polls, petitions, and podcasts", "Private and public social media groups", "Advanced competitions", "Activity Calendars", "Content publishing", "Priority support"].map((feature, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm" data-testid={`text-pro-feature-${i}`}>
-                    <CheckCircle className="w-4 h-4 text-fuchsia-600 dark:text-fuchsia-400 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-cyan-600 dark:text-cyan-400 flex-shrink-0" />
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -548,7 +548,7 @@ function PricingSection() {
               <div className="space-y-3 mb-6 flex-1">
                 {["Unlimited members", "White-label branding", "API access", "Dedicated support", "Custom integrations"].map((feature, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm" data-testid={`text-enterprise-feature-${i}`}>
-                    <CheckCircle className="w-4 h-4 text-fuchsia-600 dark:text-fuchsia-400 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-cyan-600 dark:text-cyan-400 flex-shrink-0" />
                     <span>{feature}</span>
                   </div>
                 ))}

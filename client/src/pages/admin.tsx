@@ -183,10 +183,10 @@ export default function AdminPage() {
                     </thead>
                     <tbody>
                       {(registrations as Registration[]).map((reg) => (
-                        <tr key={reg.id} className={`border-b last:border-0 ${!reg.isRead ? "bg-violet-50 dark:bg-violet-950/20" : ""}`}>
+                        <tr key={reg.id} className={`border-b last:border-0 ${!reg.isRead ? "bg-green-50 dark:bg-green-950/20" : ""}`}>
                           <td className="py-3 pr-4">
                             <div className="flex items-center gap-2">
-                              {!reg.isRead && <Circle className="w-2.5 h-2.5 fill-violet-500 text-violet-500 flex-shrink-0" data-testid={`icon-new-reg-${reg.id}`} />}
+                              {!reg.isRead && <Circle className="w-2.5 h-2.5 fill-green-500 text-green-500 flex-shrink-0" data-testid={`icon-new-reg-${reg.id}`} />}
                               {reg.orgName}
                             </div>
                           </td>
@@ -343,10 +343,10 @@ export default function AdminPage() {
                     </thead>
                     <tbody>
                       {(contacts as ContactSubmission[]).map((contact) => (
-                        <tr key={contact.id} className={`border-b last:border-0 ${!contact.isRead ? "bg-violet-50 dark:bg-violet-950/20" : ""}`}>
+                        <tr key={contact.id} className={`border-b last:border-0 ${!contact.isRead ? "bg-green-50 dark:bg-green-950/20" : ""}`}>
                           <td className="py-3 pr-4">
                             <div className="flex items-center gap-2">
-                              {!contact.isRead && <Circle className="w-2.5 h-2.5 fill-violet-500 text-violet-500 flex-shrink-0" data-testid={`icon-new-contact-${contact.id}`} />}
+                              {!contact.isRead && <Circle className="w-2.5 h-2.5 fill-green-500 text-green-500 flex-shrink-0" data-testid={`icon-new-contact-${contact.id}`} />}
                               {contact.organisation || "-"}
                             </div>
                           </td>

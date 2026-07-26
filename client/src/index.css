@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE - Social8 Pink/Purple Theme */
+/* LIGHT MODE - Social8 Teal/Green Theme */
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);
@@ -16,51 +16,51 @@
 
   --background: 0 0% 100%;
 
-  --foreground: 270 30% 15%;
+  --foreground: 200 45% 15%;
 
-  --border: 270 15% 88%;
+  --border: 200 15% 88%;
 
   --card: 0 0% 100%;
 
-  --card-foreground: 270 30% 15%;
+  --card-foreground: 200 45% 15%;
 
-  --card-border: 270 15% 88%;
+  --card-border: 200 15% 88%;
 
-  --sidebar: 280 30% 97%;
+  --sidebar: 195 30% 97%;
 
-  --sidebar-foreground: 270 30% 15%;
+  --sidebar-foreground: 200 45% 15%;
 
-  --sidebar-border: 280 15% 88%;
+  --sidebar-border: 195 15% 88%;
 
-  --sidebar-primary: 310 75% 50%;
+  --sidebar-primary: 190 90% 38%;
 
   --sidebar-primary-foreground: 0 0% 100%;
 
-  --sidebar-accent: 280 30% 93%;
+  --sidebar-accent: 195 30% 93%;
 
-  --sidebar-accent-foreground: 270 30% 15%;
+  --sidebar-accent-foreground: 200 45% 15%;
 
-  --sidebar-ring: 275 70% 55%;
+  --sidebar-ring: 95 65% 38%;
 
   --popover: 0 0% 100%;
 
-  --popover-foreground: 270 30% 15%;
+  --popover-foreground: 200 45% 15%;
 
-  --popover-border: 270 15% 88%;
+  --popover-border: 200 15% 88%;
 
-  --primary: 310 75% 50%;
+  --primary: 190 90% 38%;
 
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 280 25% 93%;
+  --secondary: 195 25% 93%;
 
-  --secondary-foreground: 280 40% 30%;
+  --secondary-foreground: 195 40% 30%;
 
-  --muted: 270 15% 96%;
+  --muted: 200 15% 96%;
 
-  --muted-foreground: 270 10% 45%;
+  --muted-foreground: 200 10% 45%;
 
-  --accent: 275 70% 55%;
+  --accent: 95 65% 38%;
 
   --accent-foreground: 0 0% 100%;
 
@@ -68,13 +68,13 @@
 
   --destructive-foreground: 0 0% 100%;
 
-  --input: 270 15% 85%;
-  --ring: 310 75% 50%;
-  --chart-1: 310 75% 50%;
-  --chart-2: 275 70% 55%;
-  --chart-3: 330 65% 55%;
-  --chart-4: 290 60% 50%;
-  --chart-5: 260 65% 55%;
+  --input: 200 15% 85%;
+  --ring: 190 90% 38%;
+  --chart-1: 190 90% 38%;
+  --chart-2: 95 65% 38%;
+  --chart-3: 150 60% 55%;
+  --chart-4: 220 65% 50%;
+  --chart-5: 265 60% 55%;
 
   --font-sans: 'Plus Jakarta Sans', 'Inter', sans-serif;
   --font-serif: Georgia, serif;
@@ -132,53 +132,53 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 270 25% 8%;
+  --background: 205 30% 8%;
 
-  --foreground: 280 15% 95%;
+  --foreground: 195 15% 95%;
 
-  --border: 270 20% 18%;
+  --border: 205 22% 18%;
 
-  --card: 270 22% 12%;
+  --card: 205 28% 12%;
 
-  --card-foreground: 280 15% 95%;
+  --card-foreground: 195 15% 95%;
 
-  --card-border: 270 20% 20%;
+  --card-border: 205 22% 20%;
 
-  --sidebar: 270 25% 10%;
+  --sidebar: 205 30% 10%;
 
-  --sidebar-foreground: 280 15% 95%;
+  --sidebar-foreground: 195 15% 95%;
 
-  --sidebar-border: 270 20% 18%;
+  --sidebar-border: 205 22% 18%;
 
-  --sidebar-primary: 310 75% 55%;
+  --sidebar-primary: 190 85% 45%;
 
   --sidebar-primary-foreground: 0 0% 100%;
 
-  --sidebar-accent: 270 22% 18%;
+  --sidebar-accent: 205 28% 18%;
 
-  --sidebar-accent-foreground: 280 15% 95%;
+  --sidebar-accent-foreground: 195 15% 95%;
 
-  --sidebar-ring: 275 70% 58%;
+  --sidebar-ring: 95 60% 42%;
 
-  --popover: 270 22% 12%;
+  --popover: 205 28% 12%;
 
-  --popover-foreground: 280 15% 95%;
+  --popover-foreground: 195 15% 95%;
 
-  --popover-border: 270 20% 20%;
+  --popover-border: 205 22% 20%;
 
-  --primary: 310 75% 55%;
+  --primary: 190 85% 45%;
 
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 270 20% 20%;
+  --secondary: 205 22% 20%;
 
-  --secondary-foreground: 280 15% 90%;
+  --secondary-foreground: 195 15% 90%;
 
-  --muted: 270 20% 15%;
+  --muted: 205 22% 15%;
 
-  --muted-foreground: 270 10% 60%;
+  --muted-foreground: 200 10% 60%;
 
-  --accent: 275 70% 58%;
+  --accent: 95 60% 42%;
 
   --accent-foreground: 0 0% 100%;
 
@@ -187,13 +187,13 @@
   --destructive-foreground: 0 0% 100%;
 
   /* Used as the border around inputs. Dark mode: Should be a border that is light enough to have high contrast when rendered on a --card background. More contrast than standard --border */
-  --input: 270 20% 28%;
-  --ring: 310 75% 55%;
-  --chart-1: 310 75% 55%;
-  --chart-2: 275 70% 60%;
-  --chart-3: 330 65% 60%;
-  --chart-4: 290 60% 55%;
-  --chart-5: 260 65% 60%;
+  --input: 205 22% 28%;
+  --ring: 190 85% 45%;
+  --chart-1: 190 85% 45%;
+  --chart-2: 95 60% 45%;
+  --chart-3: 150 60% 60%;
+  --chart-4: 220 65% 55%;
+  --chart-5: 265 60% 60%;
 
   --shadow-2xs: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   --shadow-xs: 0px 1px 3px 0px rgba(0, 0, 0, 0.20);
