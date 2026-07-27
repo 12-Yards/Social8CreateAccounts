@@ -426,7 +426,27 @@ function PricingSection() {
             Transparent monthly or annual subscriptions. Start growing your community today.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <Card className="hover-elevate h-full" data-testid="card-pricing-free">
+            <CardContent className="p-6 h-full flex flex-col">
+              <div className="text-center mb-6">
+                <h3 className="font-semibold text-lg mb-2" data-testid="heading-plan-free">Free</h3>
+                <div className="text-4xl font-bold mb-1" data-testid="text-price-free">£0<span className="text-lg font-normal text-muted-foreground">/mo</span></div>
+                <div className="text-sm text-muted-foreground">Free forever</div>
+              </div>
+              <div className="space-y-3 mb-6 flex-1">
+                {["Up to 25 members", "Create and manage all content", "Private and public social media groups", "Email support"].map((feature, i) => (
+                  <div key={i} className="flex items-center gap-2 text-sm" data-testid={`text-free-feature-${i}`}>
+                    <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/create-account">
+                <Button variant="outline" className="w-full mt-auto" data-testid="button-start-free">Get Started Free</Button>
+              </Link>
+            </CardContent>
+          </Card>
           <Card className="hover-elevate h-full border-emerald-300 dark:border-emerald-700 relative" data-testid="card-pricing-professional">
             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
               <Badge className="bg-emerald-600 dark:bg-emerald-500" data-testid="badge-popular">Most Popular</Badge>
