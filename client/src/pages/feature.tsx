@@ -36,7 +36,7 @@ import {
 const featuresData = {
   "multi-tenancy": {
     icon: Globe,
-    title: "Multi-Tenancy",
+    title: "Your Community",
     subtitle: "One platform, unlimited communities",
     description: "Every community runs as its own fully branded, isolated environment with its own domain, members, content and data.",
     heroDescription: "Every community operates as a completely isolated, branded environment with its own members, content, data and administration — all while benefiting from a shared, secure and highly scalable infrastructure.",

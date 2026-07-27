@@ -176,7 +176,7 @@ function FeaturesSection() {
     },
     {
       icon: Globe,
-      title: "Multi-Tenancy",
+      title: "Your Community",
       description: "One platform, unlimited communities. Every community runs as its own fully branded, isolated environment with its own domain, members, content and data.",
       colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
       slug: "multi-tenancy"
