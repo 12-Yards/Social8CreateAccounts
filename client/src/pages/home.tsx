@@ -669,9 +669,9 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <GreenCredentialsSection />
         <FeaturesSection />
         <CTASection />
+        <GreenCredentialsSection />
         <HowItWorksSection />
         <WhoIsItForSection />
         <LaunchCTASection />
