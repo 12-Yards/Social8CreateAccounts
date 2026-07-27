@@ -6,6 +6,7 @@ import logoPath from "@assets/s8logov2_clean.png";
 import heroWebMobileImage from "@assets/web-mobile-feature.png";
 import heroSignupImage from "@assets/zero-friction-signup.png";
 import heroAdminPanelImage from "@assets/admin-panel-feature.png";
+import heroEventsImage from "@assets/events-competitions-feature.png";
 
 const heroImages = [
   {
@@ -19,6 +20,10 @@ const heroImages = [
   {
     src: heroAdminPanelImage,
     alt: "Social8 admin panel — powerful tools for effortless management of events, content and community"
+  },
+  {
+    src: heroEventsImage,
+    alt: "Social8 events and competitions — active events, stronger communities with live events and leaderboards"
   }
 ];
 import { Link } from "wouter";

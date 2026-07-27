@@ -9,6 +9,7 @@ import analyticsReportingImage from "@/assets/images/feature-analytics-reporting
 import mobileAppImage from "@assets/web-mobile-feature.png";
 import zeroFrictionSignupImage from "@assets/zero-friction-signup.png";
 import adminPanelImage from "@assets/admin-panel-feature.png";
+import eventsFeatureImage from "@assets/events-competitions-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -145,7 +146,7 @@ const featuresData = {
       "Paid entry events with automated payment verification"
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-    image: eventsCompetitionsImage
+    image: eventsFeatureImage
   },
   "live-quizzes": {
     icon: HelpCircle,
