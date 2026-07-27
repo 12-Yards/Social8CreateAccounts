@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "wouter";
-import logoPath from "@assets/Social8LogoFinal_1785138685260.png";
+import logoPath from "@assets/Social8LogoFinal_trimmed.png";
 import { apiRequest } from "@/lib/queryClient";
 
 export default function ContactPage() {

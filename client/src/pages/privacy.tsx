@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import logoPath from "@assets/Social8LogoFinal_1785138685260.png";
+import logoPath from "@assets/Social8LogoFinal_trimmed.png";
 import { updatePageSEO, resetPageSEO } from "@/lib/seo";
 
 export default function PrivacyPage() {
