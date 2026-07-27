@@ -46,7 +46,7 @@ const featuresData = {
       "Customise every email your platform sends to members",
       "Oversee all tenants from super-admin tooling"
     ],
-    colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: groupsCommunitiesImage
   },
   "zero-friction-signup": {
@@ -92,7 +92,7 @@ const featuresData = {
       "Enable quizzes, auctions and reward points when you're ready",
       "Delegate administration with granular permissions"
     ],
-    colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: analyticsReportingImage
   },
   "community-content": {
@@ -138,7 +138,7 @@ const featuresData = {
       "Member-suggested social events",
       "Paid entry events with automated payment verification"
     ],
-    colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: eventsCompetitionsImage
   },
   "live-quizzes": {
@@ -184,7 +184,7 @@ const featuresData = {
       "Configure which activities earn points and how many",
       "Give members a trustworthy, transparent points balance"
     ],
-    colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: analyticsReportingImage
   },
   "redeem-points": {
@@ -230,7 +230,7 @@ const featuresData = {
       "Run seasonal prize auctions to boost activity",
       "Track prize fulfilment through the claim workflow"
     ],
-    colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: eventsCompetitionsImage
   },
   "members-networking": {
@@ -276,7 +276,7 @@ const featuresData = {
       "Sell through the cross-community marketplace",
       "Share in advertising revenue"
     ],
-    colorClass: "bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400",
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: contentPublishingImage
   },
   "technology-architecture": {
@@ -489,7 +489,7 @@ export default function FeaturePage() {
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 min-w-16 min-h-16 flex-shrink-0 rounded-xl bg-gradient-to-br from-cyan-500 to-green-500 flex items-center justify-center shadow-lg">
+                  <div className="w-16 h-16 min-w-16 min-h-16 flex-shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center shadow-lg">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -510,7 +510,7 @@ export default function FeaturePage() {
                   <div className="space-y-3">
                     {feature.benefits.map((benefit, i) => (
                       <div key={i} className="flex items-start gap-3" data-testid={`benefit-${i}`}>
-                        <CheckCircle className="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
                         <span>{benefit}</span>
                       </div>
                     ))}
@@ -540,7 +540,7 @@ export default function FeaturePage() {
           </div>
         </section>
 
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-cyan-600 to-green-600 relative overflow-hidden">
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-emerald-600 to-green-600 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
           <div className="container mx-auto px-4 relative">
             <div className="text-center max-w-3xl mx-auto">
@@ -550,7 +550,7 @@ export default function FeaturePage() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/create-account">
-                  <Button size="lg" className="gap-2 bg-white text-cyan-700 hover:bg-white/90" data-testid="button-start-trial-cta">
+                  <Button size="lg" className="gap-2 bg-white text-emerald-700 hover:bg-white/90" data-testid="button-start-trial-cta">
                     Go Live Now
                     <ArrowRight className="w-4 h-4" />
                   </Button>

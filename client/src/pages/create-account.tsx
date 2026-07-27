@@ -454,9 +454,9 @@ export default function CreateAccountPage() {
           <div
             className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold flex-shrink-0 ${
               currentStepIndex === i
-                ? "bg-cyan-600 text-white"
+                ? "bg-emerald-600 text-white"
                 : currentStepIndex > i
-                  ? "bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600"
+                  ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600"
                   : "bg-muted text-muted-foreground"
             }`}
             data-testid={`step-indicator-${i}`}
@@ -471,7 +471,7 @@ export default function CreateAccountPage() {
             <div
               className={`w-6 h-0.5 ${
                 currentStepIndex > i
-                  ? "bg-cyan-400"
+                  ? "bg-emerald-400"
                   : "bg-muted"
               }`}
             />
@@ -483,7 +483,7 @@ export default function CreateAccountPage() {
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-cyan-50 via-green-50 to-background dark:from-cyan-950/20 dark:via-green-950/20 dark:to-background flex flex-col"
+      className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-background dark:from-emerald-950/20 dark:via-green-950/20 dark:to-background flex flex-col"
       data-testid="page-create-account"
     >
       <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -501,9 +501,9 @@ export default function CreateAccountPage() {
               {creatingPlatform ? (
                 <div className="text-center py-12">
                   <div className="w-20 h-20 mx-auto mb-6 relative">
-                    <Settings className="w-20 h-20 text-cyan-600 animate-spin" style={{ animationDuration: "3s" }} />
+                    <Settings className="w-20 h-20 text-emerald-600 animate-spin" style={{ animationDuration: "3s" }} />
                   </div>
-                  <h3 className="text-2xl font-bold text-cyan-600 mb-2" data-testid="text-creating-message">
+                  <h3 className="text-2xl font-bold text-emerald-600 mb-2" data-testid="text-creating-message">
                     Creating your platform
                   </h3>
                   <p className="text-muted-foreground">
@@ -513,10 +513,10 @@ export default function CreateAccountPage() {
               ) : (
                 <div>
                   <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="w-8 h-8 text-cyan-600" />
+                    <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-8 h-8 text-emerald-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-cyan-600" data-testid="text-setup-message">
+                    <h3 className="text-2xl font-bold text-emerald-600" data-testid="text-setup-message">
                       All ready!
                     </h3>
                     <p className="text-muted-foreground mt-1">Your platform has been created successfully.</p>
@@ -530,7 +530,7 @@ export default function CreateAccountPage() {
                           href={`https://${getAdminUrl()}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-mono text-sm font-semibold text-cyan-600 hover:underline flex items-center gap-1 truncate"
+                          className="font-mono text-sm font-semibold text-emerald-600 hover:underline flex items-center gap-1 truncate"
                           data-testid="link-admin-url"
                         >
                           {getAdminUrl()}
@@ -672,7 +672,7 @@ export default function CreateAccountPage() {
         ) : (
         <Card className="w-full max-w-4xl overflow-hidden">
           <div className="grid md:grid-cols-2">
-            <div className="bg-gradient-to-br from-cyan-600 to-green-600 p-8 md:p-10 text-white flex flex-col justify-start">
+            <div className="bg-gradient-to-br from-emerald-600 to-green-600 p-8 md:p-10 text-white flex flex-col justify-start">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">{currentLeftPanel.heading}</h2>
               <p className="text-white/90 text-lg mb-8 leading-relaxed">{currentLeftPanel.description}</p>
               <div className="space-y-4">
@@ -838,7 +838,7 @@ export default function CreateAccountPage() {
                                   data-testid="input-no-domain-prefix"
                                 />
                               ) : (
-                                <span className="font-mono font-semibold text-cyan-600" data-testid="text-no-domain-prefix">
+                                <span className="font-mono font-semibold text-emerald-600" data-testid="text-no-domain-prefix">
                                   {noDomainPrefix}
                                 </span>
                               )}

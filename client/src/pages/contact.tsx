@@ -69,7 +69,7 @@ export default function ContactPage() {
           <CardContent>
             {submitted ? (
               <div className="text-center py-8">
-                <h3 className="text-2xl font-bold text-cyan-600 mb-2" data-testid="text-submitted">Thank You</h3>
+                <h3 className="text-2xl font-bold text-emerald-600 mb-2" data-testid="text-submitted">Thank You</h3>
                 <p className="text-muted-foreground">We've received your message and will be in touch shortly.</p>
                 <Link href="/">
                   <Button variant="outline" className="mt-4" data-testid="button-back-home">
