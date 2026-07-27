@@ -430,7 +430,7 @@ function PricingSection() {
                 <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Free for limited period</div>
               </div>
               <div className="space-y-3 mb-6 flex-1">
-                {["Up to 500 members", "Create and manage all content", "Private and public social media groups", "Earn points and redeem", "Auctions", "Quizzes", "Marketplace (support points, currency and crypto)", "Priority support"].map((feature, i) => (
+                {["Up to 500 members", "Create and manage all content", "Private and public social media groups", "Earn points and redeem", "Real time auctions", "Real time quizzes with rewards", "Marketplace (support points, currency and crypto)", "Priority support"].map((feature, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm" data-testid={`text-pro-feature-${i}`}>
                     <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
                     <span>{feature}</span>
