@@ -13,6 +13,7 @@ import eventsFeatureImage from "@assets/events-competitions-feature.png";
 import communityContentImage from "@assets/community-content-feature.png";
 import yourCommunityImage from "@assets/your-community-feature.png";
 import marketplaceImage from "@assets/marketplace-feature.png";
+import fullySupportedImage from "@assets/fully-supported-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -310,7 +311,7 @@ const featuresData = {
       "Focus your time on members, not infrastructure"
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-    image: null
+    image: fullySupportedImage
   },
   "website-mobile-app": {
     icon: Smartphone,
