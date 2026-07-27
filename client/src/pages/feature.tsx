@@ -6,7 +6,7 @@ import memberCommunicationImage from "@/assets/images/feature-member-communicati
 import eventsCompetitionsImage from "@/assets/images/feature-events-competitions.png";
 import contentPublishingImage from "@/assets/images/feature-content-publishing.png";
 import analyticsReportingImage from "@/assets/images/feature-analytics-reporting.png";
-import mobileAppImage from "@assets/hero-mobile-app.png";
+import mobileAppImage from "@assets/web-mobile-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
