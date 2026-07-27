@@ -332,7 +332,7 @@ function CTASection() {
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white" data-testid="heading-cta">Ready to Get Started?</h2>
           <p className="text-white/90 text-lg mb-8">
-            Join thousands of communities already using Social8 to engage their members.
+            Join the growing communities already using Social8 to engage their members and part of the new rewards economy.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href="https://social8community.social8.app" target="_blank" rel="noopener noreferrer">
