@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link } from "wouter";
 import { useToast } from "@/hooks/use-toast";
-import logoPath from "@assets/Social8LogoFinal_trimmed.png";
+import logoPath from "@assets/S8Final_clean.png";
 import {
   CheckCircle,
   Users,
