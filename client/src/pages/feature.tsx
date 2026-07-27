@@ -310,7 +310,7 @@ const featuresData = {
     title: "Marketplace",
     subtitle: "Buy and sell with points, currency or crypto",
     description: "A cross-community marketplace where members buy and sell using points, traditional currency or cryptocurrency.",
-    heroDescription: "A central marketplace accessible across participating communities. Members can browse, buy and sell — paying with earned points, traditional currency or cryptocurrency — turning community engagement into real-world value.",
+    heroDescription: "A central marketplace accessible across participating communities. Members can browse and buy — paying with earned points, traditional currency or cryptocurrency — turning community engagement into real-world value.",
     benefits: [
       "Central marketplace shared across participating communities",
       "Pay with points, traditional currency or cryptocurrency",

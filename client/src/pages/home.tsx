@@ -215,7 +215,7 @@ function FeaturesSection() {
     {
       icon: Store,
       title: "Marketplace",
-      description: "A cross-community marketplace where members buy and sell using earned points, traditional currency or cryptocurrency — turning engagement into real-world value.",
+      description: "A cross-community marketplace where members browse and buy using earned points, traditional currency or cryptocurrency — turning engagement into real-world value.",
       colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
       slug: "marketplace"
     },
