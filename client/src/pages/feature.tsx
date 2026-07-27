@@ -7,6 +7,7 @@ import eventsCompetitionsImage from "@/assets/images/feature-events-competitions
 import contentPublishingImage from "@/assets/images/feature-content-publishing.png";
 import analyticsReportingImage from "@/assets/images/feature-analytics-reporting.png";
 import mobileAppImage from "@assets/web-mobile-feature.png";
+import zeroFrictionSignupImage from "@assets/zero-friction-signup.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -74,7 +75,7 @@ const featuresData = {
       "Grow rapidly without onboarding overhead"
     ],
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-    image: memberCommunicationImage
+    image: zeroFrictionSignupImage
   },
   "self-management": {
     icon: Settings,
