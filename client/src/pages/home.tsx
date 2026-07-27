@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import logoPath from "@assets/S8Final1_clean.png";
-import faviconPath from "@assets/favicon-32x32_1774860507485.png";
+import heroEcoRewardsImage from "@assets/hero-eco-rewards.png";
 import { Link } from "wouter";
 import { 
   Users, 
@@ -88,79 +88,14 @@ function HeroSection() {
             </div>
           </div>
           <div className="relative" data-testid="hero-dashboard-preview">
-            <div className="relative rounded-xl overflow-hidden shadow-2xl border bg-card">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-green-500/5"></div>
-              <div className="p-6 space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
-                      <img src={faviconPath} alt="" className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm" data-testid="text-dashboard-title">Admin Dashboard</div>
-                      <div className="text-xs text-muted-foreground">Social8</div>
-                    </div>
-                  </div>
-                  <Badge variant="outline" className="border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300">Live</Badge>
-                </div>
-                <div className="grid grid-cols-3 gap-3">
-                  <Card className="bg-emerald-50 dark:bg-emerald-950/30 border-emerald-100 dark:border-emerald-900/50">
-                    <CardContent className="p-3">
-                      <div className="text-2xl font-bold text-emerald-700 dark:text-emerald-400" data-testid="stat-members">1,247</div>
-                      <div className="text-xs text-muted-foreground">Members</div>
-                    </CardContent>
-                  </Card>
-                  <Card className="bg-green-50 dark:bg-green-950/30 border-green-100 dark:border-green-900/50">
-                    <CardContent className="p-3">
-                      <div className="text-2xl font-bold text-green-700 dark:text-green-400" data-testid="stat-events">89</div>
-                      <div className="text-xs text-muted-foreground">Events</div>
-                    </CardContent>
-                  </Card>
-                  <Card className="bg-emerald-50 dark:bg-emerald-950/30 border-emerald-100 dark:border-emerald-900/50">
-                    <CardContent className="p-3">
-                      <div className="text-2xl font-bold text-emerald-700 dark:text-emerald-400" data-testid="stat-groups">156</div>
-                      <div className="text-xs text-muted-foreground">Groups</div>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-xs font-medium text-muted-foreground">Recent Activity</div>
-                  {[
-                    { name: "John D.", action: "joined The Surrey Society", time: "2m ago" },
-                    { name: "Sarah M.", action: "created new event", time: "15m ago" },
-                    { name: "Mike R.", action: "requested access", time: "1h ago" },
-                  ].map((activity, i) => (
-                    <div key={i} className="flex items-center justify-between p-2 rounded-md bg-muted/50" data-testid={`activity-item-${i}`}>
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-muted flex items-center justify-center text-xs font-semibold text-muted-foreground">
-                          {activity.name.charAt(0)}
-                        </div>
-                        <div className="text-xs">
-                          <span className="font-medium">{activity.name}</span>
-                          <span className="text-muted-foreground"> {activity.action}</span>
-                        </div>
-                      </div>
-                      <div className="text-xs text-muted-foreground">{activity.time}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="absolute -bottom-4 -right-4 w-64 rounded-lg shadow-xl border bg-card p-4 hidden lg:block" data-testid="upcoming-events-widget">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-950/50 flex items-center justify-center">
-                  <Calendar className="w-4 h-4 text-green-600 dark:text-green-400" />
-                </div>
-                <div className="text-sm font-medium">Upcoming Events</div>
-              </div>
-              <div className="space-y-2">
-                {["Monthly Medal", "Club Championship"].map((event, i) => (
-                  <div key={i} className="flex items-center justify-between text-xs" data-testid={`upcoming-event-${i}`}>
-                    <span>{event}</span>
-                    <Badge variant="secondary" className="text-xs">Soon</Badge>
-                  </div>
-                ))}
-              </div>
+            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-green-500/10 to-emerald-500/20 rounded-3xl blur-2xl"></div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-emerald-900/20">
+              <img
+                src={heroEcoRewardsImage}
+                alt="Social8 Eco-Rewards Center — redeem eco points for tree planting, ocean plastic removal and coral reef restoration"
+                className="w-full h-auto object-cover"
+                data-testid="img-hero-eco-rewards"
+              />
             </div>
           </div>
         </div>
