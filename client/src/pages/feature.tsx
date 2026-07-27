@@ -25,6 +25,7 @@ import {
   CreditCard,
   Store,
   Smartphone,
+  HeartHandshake,
   ShieldCheck
 } from "lucide-react";
 
@@ -281,6 +282,29 @@ const featuresData = {
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: contentPublishingImage
+  },
+  "fully-supported": {
+    icon: HeartHandshake,
+    title: "Fully Supported & Maintained",
+    subtitle: "Peace of mind, with zero technical concerns",
+    description: "Social8 fully supports and maintains the platform — hosting, updates, security and backups all handled for you.",
+    heroDescription: "You focus on your community — we take care of everything else. The entire platform is fully supported and maintained by Social8, so there's nothing to install, patch, host or back up. Your community runs on always-up-to-date, secure infrastructure with expert help whenever you need it.",
+    benefits: [
+      "Hosting, maintenance and updates handled entirely by Social8",
+      "Security patches and monitoring applied automatically",
+      "Automatic backups keep your community data safe",
+      "New features and improvements delivered continuously",
+      "Expert support team on hand when you need help",
+      "No technical skills or IT resources required"
+    ],
+    useCases: [
+      "Run a community without any technical staff",
+      "Stay secure and up to date automatically",
+      "Get expert help whenever questions arise",
+      "Focus your time on members, not infrastructure"
+    ],
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
+    image: null
   },
   "website-mobile-app": {
     icon: Smartphone,

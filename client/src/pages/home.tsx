@@ -41,6 +41,7 @@ import {
   CreditCard,
   Store,
   Smartphone,
+  HeartHandshake,
   ShieldCheck
 } from "lucide-react";
 
@@ -246,6 +247,13 @@ function FeaturesSection() {
       description: "API-first, cloud-based architecture with enterprise-grade security, tenant-level data isolation and SEO-optimised web and mobile experiences.",
       colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
       slug: "technology-architecture"
+    },
+    {
+      icon: HeartHandshake,
+      title: "Fully Supported & Maintained",
+      description: "Social8 fully supports and maintains the entire platform for you — hosting, updates, security and backups all handled, so you can manage your community with complete peace of mind and no technical concerns.",
+      colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
+      slug: "fully-supported"
     }
   ];
 

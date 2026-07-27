@@ -93,6 +93,7 @@ export async function registerRoutes(
       { loc: "/features/monetisation", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/marketplace", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/website-mobile-app", priority: "0.8", changefreq: "monthly" },
+      { loc: "/features/fully-supported", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/technology-architecture", priority: "0.8", changefreq: "monthly" },
     ];
     const today = new Date().toISOString().split("T")[0];
