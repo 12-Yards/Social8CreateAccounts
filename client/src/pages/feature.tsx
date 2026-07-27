@@ -16,6 +16,7 @@ import fullySupportedImage from "@assets/fully-supported-feature.png";
 import technologyArchitectureImage from "@assets/technology-architecture-feature.png";
 import liveQuizzesImage from "@assets/live-quizzes-feature.png";
 import pointsLeaderboardsImage from "@assets/points-leaderboards-feature.png";
+import prizeAuctionsImage from "@assets/prize-auctions-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -220,7 +221,7 @@ const featuresData = {
       "Track prize fulfilment through the claim workflow"
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-    image: eventsCompetitionsImage
+    image: prizeAuctionsImage
   },
   "members-networking": {
     icon: Users,
