@@ -15,6 +15,7 @@ import marketplaceImage from "@assets/marketplace-feature.png";
 import fullySupportedImage from "@assets/fully-supported-feature.png";
 import technologyArchitectureImage from "@assets/technology-architecture-feature.png";
 import liveQuizzesImage from "@assets/live-quizzes-feature.png";
+import pointsLeaderboardsImage from "@assets/points-leaderboards-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -197,7 +198,7 @@ const featuresData = {
       "Give members a trustworthy, transparent points balance"
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-    image: analyticsReportingImage
+    image: pointsLeaderboardsImage
   },
   "redeem-points": {
     icon: Gift,
