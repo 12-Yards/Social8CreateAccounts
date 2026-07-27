@@ -12,6 +12,7 @@ import adminPanelImage from "@assets/admin-panel-feature.png";
 import eventsFeatureImage from "@assets/events-competitions-feature.png";
 import communityContentImage from "@assets/community-content-feature.png";
 import yourCommunityImage from "@assets/your-community-feature.png";
+import marketplaceImage from "@assets/marketplace-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -355,7 +356,7 @@ const featuresData = {
       "Accept currency and crypto payments"
     ],
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-    image: null
+    image: marketplaceImage
   },
   "technology-architecture": {
     icon: ShieldCheck,

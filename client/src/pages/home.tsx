@@ -8,6 +8,7 @@ import heroSignupImage from "@assets/zero-friction-signup.png";
 import heroAdminPanelImage from "@assets/admin-panel-feature.png";
 import heroEventsImage from "@assets/events-competitions-feature.png";
 import heroYourCommunityImage from "@assets/your-community-feature.png";
+import heroMarketplaceImage from "@assets/marketplace-feature.png";
 
 const heroImages = [
   {
@@ -29,6 +30,10 @@ const heroImages = [
   {
     src: heroEventsImage,
     alt: "Social8 events and competitions — active events, stronger communities with live events and leaderboards"
+  },
+  {
+    src: heroMarketplaceImage,
+    alt: "Social8 marketplace — rewards with purpose, redeem eco points for environmental actions, vouchers and perks"
   }
 ];
 import { Link } from "wouter";
