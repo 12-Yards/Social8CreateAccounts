@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoPath from "@assets/s8logov2_clean.png";
-import groupsCommunitiesImage from "@/assets/images/feature-groups-communities.png";
 import memberCommunicationImage from "@/assets/images/feature-member-communication.png";
 import eventsCompetitionsImage from "@/assets/images/feature-events-competitions.png";
 import contentPublishingImage from "@/assets/images/feature-content-publishing.png";
@@ -15,6 +14,7 @@ import yourCommunityImage from "@assets/your-community-feature.png";
 import marketplaceImage from "@assets/marketplace-feature.png";
 import fullySupportedImage from "@assets/fully-supported-feature.png";
 import technologyArchitectureImage from "@assets/technology-architecture-feature.png";
+import liveQuizzesImage from "@assets/live-quizzes-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -174,7 +174,7 @@ const featuresData = {
       "Friendly rivalry driven by speed bonuses"
     ],
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-    image: null as string | null
+    image: liveQuizzesImage as string | null
   },
   "points-leaderboards": {
     icon: Trophy,
@@ -565,7 +565,8 @@ export default function FeaturePage() {
               className="mb-6 gap-2"
               data-testid="button-back"
               onClick={() => {
-                if (window.history.length > 1) {
+                if (sessionStorage.getItem("cameFromFeatures") === "1") {
+                  sessionStorage.removeItem("cameFromFeatures");
                   window.history.back();
                 } else {
                   window.location.href = "/#features";

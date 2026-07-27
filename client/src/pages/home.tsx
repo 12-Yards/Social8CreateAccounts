@@ -321,7 +321,12 @@ function FeaturesSection() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, i) => (
-            <Link href={`/features/${feature.slug}`} key={i} data-testid={`link-feature-${i}`}>
+            <Link
+              href={`/features/${feature.slug}`}
+              key={i}
+              data-testid={`link-feature-${i}`}
+              onClick={() => sessionStorage.setItem("cameFromFeatures", "1")}
+            >
               <Card className="group hover-elevate border-border/50 transition-all duration-300 h-full cursor-pointer" data-testid={`card-feature-${i}`}>
                 <CardContent className="p-6 h-full flex flex-col">
                   <div className={`w-14 h-14 rounded-xl mb-5 flex items-center justify-center ${feature.colorClass} shadow-sm`}>
