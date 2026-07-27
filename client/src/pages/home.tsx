@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import logoPath from "@assets/s8logov2_clean.png";
 import heroWebMobileImage from "@assets/web-mobile-feature.png";
 import heroSignupImage from "@assets/zero-friction-signup.png";
+import heroAdminPanelImage from "@assets/admin-panel-feature.png";
 
 const heroImages = [
   {
@@ -14,6 +15,10 @@ const heroImages = [
   {
     src: heroSignupImage,
     alt: "Social8 zero-friction signup — join in seconds and be part of your community"
+  },
+  {
+    src: heroAdminPanelImage,
+    alt: "Social8 admin panel — powerful tools for effortless management of events, content and community"
   }
 ];
 import { Link } from "wouter";

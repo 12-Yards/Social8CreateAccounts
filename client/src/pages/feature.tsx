@@ -8,6 +8,7 @@ import contentPublishingImage from "@/assets/images/feature-content-publishing.p
 import analyticsReportingImage from "@/assets/images/feature-analytics-reporting.png";
 import mobileAppImage from "@assets/web-mobile-feature.png";
 import zeroFrictionSignupImage from "@assets/zero-friction-signup.png";
+import adminPanelImage from "@assets/admin-panel-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -98,7 +99,7 @@ const featuresData = {
       "Delegate administration with granular permissions"
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-    image: analyticsReportingImage
+    image: adminPanelImage
   },
   "community-content": {
     icon: FileText,
