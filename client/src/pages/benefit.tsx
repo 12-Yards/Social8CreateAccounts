@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@assets/S8Final_clean.png";
+import logoPath from "@assets/S8Final1_clean.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
