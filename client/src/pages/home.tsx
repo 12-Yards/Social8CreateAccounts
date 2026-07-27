@@ -414,43 +414,6 @@ function HowItWorksSection() {
   );
 }
 
-function WhoIsItForSection() {
-  const audiences = [
-    { title: "Sports", icon: Trophy },
-    { title: "Grass Roots", icon: Users },
-    { title: "Charity", icon: Heart },
-    { title: "Communities", icon: Building },
-    { title: "Content Creators", icon: Globe }
-  ];
-
-  return (
-    <section className="py-16 lg:py-20 bg-muted/30" data-testid="section-who-is-it-for">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold" data-testid="heading-who-is-it-for">
-            Who is it for?
-          </h2>
-        </div>
-        <div className="overflow-x-auto pb-4">
-          <div className="flex gap-4 min-w-max lg:min-w-0 lg:grid lg:grid-cols-5 lg:gap-6">
-            {audiences.map((audience, i) => (
-              <div 
-                key={i} 
-                className="flex-shrink-0 w-52 lg:w-auto p-6 rounded-2xl bg-gradient-to-br from-background to-muted/50 border border-border/30 shadow-md hover:shadow-lg hover:border-emerald-500/30 transition-all duration-300 text-center group"
-                data-testid={`audience-${i}`}
-              >
-                <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-                  <audience.icon className="w-7 h-7 text-white" />
-                </div>
-                <span className="font-semibold text-foreground" data-testid={`heading-audience-${i}`}>{audience.title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function LaunchCTASection() {
   return (
@@ -673,7 +636,6 @@ export default function Home() {
         <CTASection />
         <GreenCredentialsSection />
         <HowItWorksSection />
-        <WhoIsItForSection />
         <LaunchCTASection />
         <PricingSection />
       </main>
