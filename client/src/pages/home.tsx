@@ -71,7 +71,7 @@ function HeroSection() {
               <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">empower</span> your community
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl leading-relaxed" data-testid="text-hero-description">
-              Social 8 helps communities to connect members, manage content, events, polls, petitions, quizzes, auctions and competitions, use powerful AI to extend the platform, share content and more — all from one powerful platform.
+              Social8 is the complete community platform that helps organisations connect members, manage events and content, and support environmental projects such as tree planting and ocean plastic removal through everyday community engagement.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link href="/create-account">
