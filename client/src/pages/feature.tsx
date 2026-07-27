@@ -17,6 +17,7 @@ import liveQuizzesImage from "@assets/live-quizzes-feature.png";
 import pointsLeaderboardsImage from "@assets/points-leaderboards-feature.png";
 import prizeAuctionsImage from "@assets/prize-auctions-feature.png";
 import membersNetworkingImage from "@assets/members-networking-feature.png";
+import monetisationImage from "@assets/monetisation-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -267,7 +268,7 @@ const featuresData = {
       "Share in advertising revenue"
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-    image: contentPublishingImage
+    image: monetisationImage
   },
   "fully-supported": {
     icon: HeartHandshake,
