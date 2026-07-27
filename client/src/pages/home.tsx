@@ -157,18 +157,18 @@ function FeaturesSection() {
       slug: "website-mobile-app"
     },
     {
-      icon: Globe,
-      title: "Multi-Tenancy",
-      description: "One platform, unlimited communities. Every community runs as its own fully branded, isolated environment with its own domain, members, content and data.",
-      colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-      slug: "multi-tenancy"
-    },
-    {
       icon: Zap,
       title: "Zero-Friction Signup",
       description: "Communities launch in minutes and members join in seconds — simple email signup with one-time-code verification or single sign-on, no approval queues required.",
       colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
       slug: "zero-friction-signup"
+    },
+    {
+      icon: Globe,
+      title: "Multi-Tenancy",
+      description: "One platform, unlimited communities. Every community runs as its own fully branded, isolated environment with its own domain, members, content and data.",
+      colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
+      slug: "multi-tenancy"
     },
     {
       icon: Settings,
