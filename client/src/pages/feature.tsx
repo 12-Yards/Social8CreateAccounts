@@ -10,6 +10,7 @@ import mobileAppImage from "@assets/web-mobile-feature.png";
 import zeroFrictionSignupImage from "@assets/zero-friction-signup.png";
 import adminPanelImage from "@assets/admin-panel-feature.png";
 import eventsFeatureImage from "@assets/events-competitions-feature.png";
+import communityContentImage from "@assets/community-content-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -123,7 +124,7 @@ const featuresData = {
       "Build discussion around a lively social feed"
     ],
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-    image: contentPublishingImage
+    image: communityContentImage
   },
   "events-competitions": {
     icon: Calendar,
