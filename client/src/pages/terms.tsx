@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import logoPath from "@assets/S8Final1_clean.png";
+import logoPath from "@assets/s8logov2_clean.png";
 import { updatePageSEO, resetPageSEO } from "@/lib/seo";
 
 export default function TermsPage() {

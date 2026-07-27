@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import logoPath from "@assets/S8Final1_clean.png";
+import logoPath from "@assets/s8logov2_clean.png";
 import heroEcoRewardsImage from "@assets/hero-eco-rewards.png";
 import heroMobileAppImage from "@assets/hero-mobile-app.png";
 
@@ -443,7 +443,7 @@ function PricingSection() {
                 ))}
               </div>
               <Link href="/create-account">
-                <Button variant="outline" className="w-full mt-auto" data-testid="button-start-free">Go Live Now</Button>
+                <Button className="w-full mt-auto" data-testid="button-start-free">Go Live Now</Button>
               </Link>
             </CardContent>
           </Card>
