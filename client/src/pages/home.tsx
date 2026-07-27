@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import logoPath from "@assets/S8Final1_clean.png";
 import heroEcoRewardsImage from "@assets/hero-eco-rewards.png";
+import heroMobileAppImage from "@assets/hero-mobile-app.png";
+
+const heroImages = [
+  {
+    src: heroEcoRewardsImage,
+    alt: "Social8 Eco-Rewards Center — redeem eco points for tree planting, ocean plastic removal and coral reef restoration"
+  },
+  {
+    src: heroMobileAppImage,
+    alt: "Social8 mobile app — home feed, event details, play calendar and community screens"
+  }
+];
 import { Link } from "wouter";
 import { 
   Users, 
@@ -56,6 +68,45 @@ function Header() {
   );
 }
 
+function HeroImageCarousel() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative" data-testid="hero-dashboard-preview">
+      <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-green-500/10 to-emerald-500/20 rounded-3xl blur-2xl"></div>
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-emerald-900/20 aspect-[3/2] bg-[#0d0f0d]">
+        {heroImages.map((image, i) => (
+          <img
+            key={i}
+            src={image.src}
+            alt={image.alt}
+            className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
+            data-testid={`img-hero-slide-${i}`}
+          />
+        ))}
+      </div>
+      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2" data-testid="hero-carousel-dots">
+        {heroImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Show slide ${i + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-6 bg-emerald-600" : "w-2 bg-emerald-600/30"}`}
+            data-testid={`button-hero-dot-${i}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-background py-12 lg:py-20" data-testid="section-hero">
@@ -87,17 +138,7 @@ function HeroSection() {
               </a>
             </div>
           </div>
-          <div className="relative" data-testid="hero-dashboard-preview">
-            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-green-500/10 to-emerald-500/20 rounded-3xl blur-2xl"></div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-emerald-900/20">
-              <img
-                src={heroEcoRewardsImage}
-                alt="Social8 Eco-Rewards Center — redeem eco points for tree planting, ocean plastic removal and coral reef restoration"
-                className="w-full h-auto object-cover"
-                data-testid="img-hero-eco-rewards"
-              />
-            </div>
-          </div>
+          <HeroImageCarousel />
         </div>
       </div>
     </section>
