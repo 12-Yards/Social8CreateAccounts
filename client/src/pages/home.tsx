@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import logoPath from "@assets/image_1785138412166.png";
+import logoPath from "@assets/Social8LogoFinal_1785138685260.png";
 import faviconPath from "@assets/favicon-32x32_1774860507485.png";
 import { Link } from "wouter";
 import { 
@@ -37,7 +37,7 @@ function Header() {
             alt="Social8 Logo" 
             className="h-10 object-contain"
             data-testid="img-logo"
-          /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
+          />
         </div>
         <nav className="hidden md:flex items-center gap-6" data-testid="nav-main">
           <a href="/#features" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-features">Features</a>
@@ -456,14 +456,13 @@ function LaunchCTASection() {
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-600 to-green-600 p-8 md:p-12 lg:p-16">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
           <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="flex-shrink-0 bg-white/95 rounded-2xl p-6 shadow-lg flex flex-col items-center gap-3">
+            <div className="flex-shrink-0 bg-white/95 rounded-2xl p-6 shadow-lg">
               <img 
                 src={logoPath} 
                 alt="Social8" 
-                className="w-40 md:w-48 lg:w-56 object-contain"
+                className="w-48 md:w-56 lg:w-64 object-contain"
                 data-testid="img-launch-cta-logo"
               />
-              <span className="text-3xl font-bold tracking-tight text-slate-800">social<span className="text-cyan-600">8</span></span>
             </div>
             <div className="flex-1 flex flex-col items-center lg:items-start">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 text-center lg:text-left" data-testid="heading-launch-cta">
@@ -620,7 +619,7 @@ function Footer() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4" data-testid="footer-logo">
-                <img src={logoPath} alt="Social8 Logo" className="h-10 object-contain" /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
+                <img src={logoPath} alt="Social8 Logo" className="h-10 object-contain" />
               </div>
               <p className="text-sm text-muted-foreground max-w-md leading-relaxed" data-testid="text-footer-description">
                 Social8 is a leading community management software platform helping clubs and communities connect members, manage events and competitions, manage activity calendars, and grow participation.

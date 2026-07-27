@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "wouter";
-import logoPath from "@assets/image_1785138412166.png";
+import logoPath from "@assets/Social8LogoFinal_1785138685260.png";
 import { apiRequest } from "@/lib/queryClient";
 
 export default function ContactPage() {
@@ -55,7 +55,7 @@ export default function ContactPage() {
               src={logoPath} 
               alt="Social8 Logo" 
               className="h-10 object-contain"
-            /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
+            />
           </Link>
         </div>
       </header>

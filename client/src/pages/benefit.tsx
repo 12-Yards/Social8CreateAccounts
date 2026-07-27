@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@assets/image_1785138412166.png";
+import logoPath from "@assets/Social8LogoFinal_1785138685260.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -151,7 +151,7 @@ function Header() {
               src={logoPath} 
               alt="Social8 Logo" 
               className="h-10 object-contain"
-            /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
+            />
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
@@ -180,7 +180,7 @@ function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
-            <img src={logoPath} alt="Social8" className="h-8 object-contain" /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
+            <img src={logoPath} alt="Social8" className="h-8 object-contain" />
           </div>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Social8. All rights reserved.

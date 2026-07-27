@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import logoPath from "@assets/image_1785138412166.png";
+import logoPath from "@assets/Social8LogoFinal_1785138685260.png";
 import groupsCommunitiesImage from "@/assets/images/feature-groups-communities.png";
 import memberCommunicationImage from "@/assets/images/feature-member-communication.png";
 import eventsCompetitionsImage from "@/assets/images/feature-events-competitions.png";
@@ -315,7 +315,7 @@ function Header() {
               alt="Social8 Logo" 
               className="h-10 object-contain"
               data-testid="img-logo"
-            /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
+            />
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-6" data-testid="nav-main">
@@ -343,7 +343,7 @@ function Footer() {
             <div className="md:col-span-2">
               <Link href="/">
                 <div className="flex items-center gap-2 mb-4 cursor-pointer" data-testid="footer-logo">
-                  <img src={logoPath} alt="Social8 Logo" className="h-10 object-contain" /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
+                  <img src={logoPath} alt="Social8 Logo" className="h-10 object-contain" />
                 </div>
               </Link>
               <p className="text-sm text-muted-foreground max-w-md leading-relaxed" data-testid="text-footer-description">
