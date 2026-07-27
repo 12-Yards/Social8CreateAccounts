@@ -443,7 +443,7 @@ function PricingSection() {
                 ))}
               </div>
               <Link href="/create-account">
-                <Button variant="outline" className="w-full mt-auto" data-testid="button-start-free">Get Started Free</Button>
+                <Button variant="outline" className="w-full mt-auto" data-testid="button-start-free">Go Live Now</Button>
               </Link>
             </CardContent>
           </Card>
@@ -490,6 +490,14 @@ function PricingSection() {
               </Link>
             </CardContent>
           </Card>
+        </div>
+        <div className="mt-10 max-w-3xl mx-auto">
+          <div className="flex items-center justify-center gap-3 rounded-xl border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 px-6 py-4 text-center" data-testid="banner-pricing-no-card">
+            <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
+            <p className="text-sm md:text-base font-medium text-emerald-800 dark:text-emerald-300">
+              No credit card needed for sign up and nothing to pay for 30 days on paid subscriptions
+            </p>
+          </div>
         </div>
       </div>
     </section>
