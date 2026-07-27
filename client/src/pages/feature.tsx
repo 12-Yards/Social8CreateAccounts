@@ -557,12 +557,21 @@ export default function FeaturePage() {
       <main className="flex-1">
         <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-background py-16 lg:py-24">
           <div className="container mx-auto px-4">
-            <Link href="/#features" data-testid="link-back-features">
-              <Button variant="ghost" className="mb-6 gap-2" data-testid="button-back">
-                <ArrowLeft className="w-4 h-4" />
-                Back to Features
-              </Button>
-            </Link>
+            <Button
+              variant="ghost"
+              className="mb-6 gap-2"
+              data-testid="button-back"
+              onClick={() => {
+                if (window.history.length > 1) {
+                  window.history.back();
+                } else {
+                  window.location.href = "/#features";
+                }
+              }}
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Features
+            </Button>
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
