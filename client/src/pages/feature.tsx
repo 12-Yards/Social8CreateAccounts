@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoPath from "@assets/s8logov2_clean.png";
-import memberCommunicationImage from "@/assets/images/feature-member-communication.png";
 import eventsCompetitionsImage from "@/assets/images/feature-events-competitions.png";
 import contentPublishingImage from "@/assets/images/feature-content-publishing.png";
 import analyticsReportingImage from "@/assets/images/feature-analytics-reporting.png";
@@ -17,6 +16,7 @@ import technologyArchitectureImage from "@assets/technology-architecture-feature
 import liveQuizzesImage from "@assets/live-quizzes-feature.png";
 import pointsLeaderboardsImage from "@assets/points-leaderboards-feature.png";
 import prizeAuctionsImage from "@assets/prize-auctions-feature.png";
+import membersNetworkingImage from "@assets/members-networking-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -244,7 +244,7 @@ const featuresData = {
       "Manage points and payments through built-in wallets"
     ],
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-    image: memberCommunicationImage
+    image: membersNetworkingImage
   },
   "monetisation": {
     icon: CreditCard,
