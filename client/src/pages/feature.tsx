@@ -590,12 +590,13 @@ export default function FeaturePage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="bg-muted/50 rounded-xl p-4 border border-border/50">
+                <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-green-500/10 to-emerald-500/20 rounded-3xl blur-2xl"></div>
+                <div className="relative bg-muted/50 rounded-xl p-4 border border-border/50 shadow-2xl">
                   {feature.image ? (
                     <img 
                       src={feature.image} 
                       alt={feature.title}
-                      className="w-full rounded-lg"
+                      className="w-full rounded-lg shadow-md ring-1 ring-black/5"
                       data-testid="img-feature"
                     />
                   ) : (
