@@ -284,7 +284,7 @@ const featuresData = {
   },
   "website-mobile-app": {
     icon: Smartphone,
-    title: "Your Own Website & Mobile App",
+    title: "Web and Mobile App",
     subtitle: "A branded web presence and mobile app access from day one",
     description: "Every community gets its own branded website — and members automatically get access through the Social8 mobile app.",
     heroDescription: "When you sign up, your community instantly gets its own fully branded website with its own web address. And there's nothing extra to build — your community is automatically available in the Social8 mobile app, so members can engage from anywhere on iOS and Android.",
