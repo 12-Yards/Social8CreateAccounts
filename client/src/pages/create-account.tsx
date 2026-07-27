@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link } from "wouter";
 import { useToast } from "@/hooks/use-toast";
-import logoPath from "@assets/s82_1785094948837.png";
+import logoPath from "@assets/image_1785138412166.png";
 import {
   CheckCircle,
   Users,
@@ -489,7 +489,7 @@ export default function CreateAccountPage() {
       <header className="w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2" data-testid="link-home">
-            <img src={logoPath} alt="Social8 Logo" className="h-10 object-contain" />
+            <img src={logoPath} alt="Social8 Logo" className="h-10 object-contain" /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
           </Link>
         </div>
       </header>

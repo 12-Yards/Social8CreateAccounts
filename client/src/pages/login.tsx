@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link, useLocation } from "wouter";
 import { apiRequest } from "@/lib/queryClient";
-import logoPath from "@assets/s82_1785094948837.png";
+import logoPath from "@assets/image_1785138412166.png";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -37,7 +37,7 @@ export default function LoginPage() {
               src={logoPath} 
               alt="Social8 Logo" 
               className="h-10 object-contain"
-            />
+            /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
           </Link>
         </div>
       </header>

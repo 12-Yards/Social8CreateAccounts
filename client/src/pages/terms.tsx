@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import logoPath from "@assets/s82_1785094948837.png";
+import logoPath from "@assets/image_1785138412166.png";
 import { updatePageSEO, resetPageSEO } from "@/lib/seo";
 
 export default function TermsPage() {
@@ -20,7 +20,7 @@ export default function TermsPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 gap-4">
           <Link href="/">
-            <img src={logoPath} alt="Social8 Logo" className="h-10 object-contain cursor-pointer" data-testid="img-terms-logo" />
+            <img src={logoPath} alt="Social8 Logo" className="h-10 object-contain cursor-pointer" data-testid="img-terms-logo" /><span className="text-2xl font-bold tracking-tight text-slate-800 dark:text-slate-100">social<span className="text-cyan-600">8</span></span>
           </Link>
           <Link href="/">
             <Button variant="ghost" size="sm" className="gap-2" data-testid="button-terms-back">
