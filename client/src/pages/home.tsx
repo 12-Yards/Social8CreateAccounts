@@ -669,12 +669,12 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <GreenCredentialsSection />
         <FeaturesSection />
         <CTASection />
         <HowItWorksSection />
         <WhoIsItForSection />
         <LaunchCTASection />
-        <GreenCredentialsSection />
         <PricingSection />
       </main>
       <Footer />
