@@ -39,6 +39,7 @@ import {
   Gift,
   Gavel,
   CreditCard,
+  Store,
   ShieldCheck
 } from "lucide-react";
 
@@ -223,6 +224,13 @@ function FeaturesSection() {
       description: "Premium subscriptions, paid events and competitions, a cross-community marketplace, advertising revenue share and paid polls — via Stripe or cryptocurrency.",
       colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
       slug: "monetisation"
+    },
+    {
+      icon: Store,
+      title: "Marketplace",
+      description: "A cross-community marketplace where members buy and sell using earned points, traditional currency or cryptocurrency — turning engagement into real-world value.",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+      slug: "marketplace"
     },
     {
       icon: ShieldCheck,

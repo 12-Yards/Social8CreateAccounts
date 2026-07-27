@@ -22,6 +22,7 @@ import {
   Gift,
   Gavel,
   CreditCard,
+  Store,
   ShieldCheck
 } from "lucide-react";
 
@@ -278,6 +279,29 @@ const featuresData = {
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: contentPublishingImage
+  },
+  "marketplace": {
+    icon: Store,
+    title: "Marketplace",
+    subtitle: "Buy and sell with points, currency or crypto",
+    description: "A cross-community marketplace where members buy and sell using points, traditional currency or cryptocurrency.",
+    heroDescription: "A central marketplace accessible across participating communities. Members can browse, buy and sell — paying with earned points, traditional currency or cryptocurrency — turning community engagement into real-world value.",
+    benefits: [
+      "Central marketplace shared across participating communities",
+      "Pay with points, traditional currency or cryptocurrency",
+      "Members spend earned points on real products and services",
+      "Community owners open new revenue streams",
+      "Secure payments through Stripe and crypto integrations",
+      "Listings managed through the community admin panel"
+    ],
+    useCases: [
+      "Let members spend earned points on real items",
+      "Sell community merchandise and services",
+      "Reach buyers across multiple communities",
+      "Accept currency and crypto payments"
+    ],
+    colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+    image: null
   },
   "technology-architecture": {
     icon: ShieldCheck,
