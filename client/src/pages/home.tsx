@@ -56,7 +56,6 @@ import {
   Waves,
   Sprout,
   HelpCircle,
-  Gift,
   Gavel,
   CreditCard,
   Store,
@@ -225,13 +224,6 @@ function FeaturesSection() {
       description: "A platform-wide points economy rewarding participation, with owner-configurable earning rules and monthly leaderboards that keep everyone competitive.",
       colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
       slug: "points-leaderboards"
-    },
-    {
-      icon: Gift,
-      title: "Redeem Points",
-      description: "Members redeem earned points for instant digital rewards from a fully customisable catalogue — driving retention and long-term member loyalty.",
-      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-      slug: "redeem-points"
     },
     {
       icon: Store,

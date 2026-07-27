@@ -29,7 +29,6 @@ import {
   Settings,
   HelpCircle,
   Trophy,
-  Gift,
   Gavel,
   CreditCard,
   Store,
@@ -199,29 +198,6 @@ const featuresData = {
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: pointsLeaderboardsImage
-  },
-  "redeem-points": {
-    icon: Gift,
-    title: "Redeem Points",
-    subtitle: "Turn engagement into real rewards",
-    description: "Members redeem earned points for instant digital rewards from a fully customisable catalogue.",
-    heroDescription: "Members earn points through active participation and redeem them directly within the app for immediate rewards — no physical fulfilment, postage or administration costs.",
-    benefits: [
-      "Members earn points through active platform participation",
-      "Fully customisable rewards catalogue controlled by administrators",
-      "Environmental initiatives, digital vouchers, local partner offers or bespoke benefits",
-      "Instant digital redemption within the app",
-      "No physical fulfilment, postage or administration costs",
-      "Gamified rewards drive retention and long-term loyalty"
-    ],
-    useCases: [
-      "Offer digital vouchers as engagement rewards",
-      "Partner with local businesses for member offers",
-      "Support environmental initiatives through redemptions",
-      "Boost event participation with reward incentives"
-    ],
-    colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-    image: contentPublishingImage
   },
   "prize-auctions": {
     icon: Gavel,
