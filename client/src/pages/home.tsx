@@ -44,7 +44,6 @@ function Header() {
         </div>
         <nav className="hidden md:flex items-center gap-6" data-testid="nav-main">
           <a href="/#features" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-features">Features</a>
-          <a href="#how-it-works" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-how-it-works">How It Works</a>
           <a href="#pricing" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-pricing">Pricing</a>
         </nav>
         <div className="flex items-center gap-3">
@@ -354,65 +353,6 @@ function CTASection() {
   );
 }
 
-function HowItWorksSection() {
-  const steps = [
-    {
-      number: "01",
-      title: "Create Your Community Website",
-      description: "Launch a branded community website with full admin controls.",
-      icon: Building
-    },
-    {
-      number: "02",
-      title: "Engage Your Members",
-      description: "Enable members to connect, chat, comment and join interest groups.",
-      icon: Users
-    },
-    {
-      number: "03",
-      title: "Create Events and Competitions",
-      description: "Launch community events and competitions further engaging members.",
-      icon: Calendar
-    },
-    {
-      number: "04",
-      title: "Create an Active and Engaged Community",
-      description: "Foster meaningful connections and keep members coming back with interactive features, discussions, and shared experiences.",
-      icon: Globe
-    },
-    {
-      number: "05",
-      title: "Track Performance",
-      description: "Monitor member activity, event participation, and community growth.",
-      icon: TrendingUp
-    }
-  ];
-
-  return (
-    <section id="how-it-works" className="py-16 lg:py-20" data-testid="section-how-it-works">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold" data-testid="heading-how-it-works">
-            How It Works
-          </h2>
-        </div>
-        <div className="max-w-2xl mx-auto space-y-6">
-          {steps.map((step, i) => (
-            <div key={i} className="flex items-start gap-6 group" data-testid={`step-${i}`}>
-              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center text-white shadow-lg">
-                <step.icon className="w-7 h-7" />
-              </div>
-              <div className="flex-1 pb-6 border-b border-border/50 group-last:border-0 group-last:pb-0">
-                <h3 className="font-bold text-lg mb-2" data-testid={`heading-step-${i}`}>{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed" data-testid={`text-step-${i}`}>{step.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 
 function LaunchCTASection() {
@@ -635,7 +575,6 @@ export default function Home() {
         <FeaturesSection />
         <CTASection />
         <GreenCredentialsSection />
-        <HowItWorksSection />
         <LaunchCTASection />
         <PricingSection />
       </main>

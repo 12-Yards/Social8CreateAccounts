@@ -320,7 +320,6 @@ function Header() {
         </Link>
         <nav className="hidden md:flex items-center gap-6" data-testid="nav-main">
           <Link href="/#features" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-features">Features</Link>
-          <Link href="/#how-it-works" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-how-it-works">How It Works</Link>
           <Link href="/#pricing" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-pricing">Pricing</Link>
         </nav>
         <div className="flex items-center gap-3">
