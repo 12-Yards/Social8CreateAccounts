@@ -6,6 +6,7 @@ import memberCommunicationImage from "@/assets/images/feature-member-communicati
 import eventsCompetitionsImage from "@/assets/images/feature-events-competitions.png";
 import contentPublishingImage from "@/assets/images/feature-content-publishing.png";
 import analyticsReportingImage from "@/assets/images/feature-analytics-reporting.png";
+import mobileAppImage from "@assets/hero-mobile-app.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -23,6 +24,7 @@ import {
   Gavel,
   CreditCard,
   Store,
+  Smartphone,
   ShieldCheck
 } from "lucide-react";
 
@@ -279,6 +281,29 @@ const featuresData = {
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: contentPublishingImage
+  },
+  "website-mobile-app": {
+    icon: Smartphone,
+    title: "Your Own Website & Mobile App",
+    subtitle: "A branded web presence and mobile app access from day one",
+    description: "Every community gets its own branded website — and members automatically get access through the Social8 mobile app.",
+    heroDescription: "When you sign up, your community instantly gets its own fully branded website with its own web address. And there's nothing extra to build — your community is automatically available in the Social8 mobile app, so members can engage from anywhere on iOS and Android.",
+    benefits: [
+      "Your own branded community website, live from day one",
+      "Your own web address for your community",
+      "Automatic inclusion in the Social8 mobile app",
+      "Members engage on web, iOS and Android from a single platform",
+      "No app store submissions or technical setup required",
+      "Consistent branding across web and mobile"
+    ],
+    useCases: [
+      "Launch a professional web presence in minutes",
+      "Give members a mobile app experience without building one",
+      "Reach members wherever they are — web or mobile",
+      "Keep your brand front and centre on every device"
+    ],
+    colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+    image: mobileAppImage
   },
   "marketplace": {
     icon: Store,

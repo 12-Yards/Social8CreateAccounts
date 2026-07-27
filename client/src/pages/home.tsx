@@ -40,6 +40,7 @@ import {
   Gavel,
   CreditCard,
   Store,
+  Smartphone,
   ShieldCheck
 } from "lucide-react";
 
@@ -154,6 +155,13 @@ function FeaturesSection() {
       description: "One platform, unlimited communities. Every community runs as its own fully branded, isolated environment with its own domain, members, content and data.",
       colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
       slug: "multi-tenancy"
+    },
+    {
+      icon: Smartphone,
+      title: "Your Own Website & Mobile App",
+      description: "Every community gets its own branded website from day one — and members automatically get access through the Social8 mobile app on iOS and Android.",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+      slug: "website-mobile-app"
     },
     {
       icon: Zap,
