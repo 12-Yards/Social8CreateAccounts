@@ -11,6 +11,7 @@ import zeroFrictionSignupImage from "@assets/zero-friction-signup.png";
 import adminPanelImage from "@assets/admin-panel-feature.png";
 import eventsFeatureImage from "@assets/events-competitions-feature.png";
 import communityContentImage from "@assets/community-content-feature.png";
+import yourCommunityImage from "@assets/your-community-feature.png";
 import { Link, useParams } from "wouter";
 import { 
   Users, 
@@ -55,7 +56,7 @@ const featuresData = {
       "Oversee all tenants from super-admin tooling"
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-    image: groupsCommunitiesImage
+    image: yourCommunityImage
   },
   "zero-friction-signup": {
     icon: Zap,
