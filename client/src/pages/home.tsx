@@ -3,17 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import logoPath from "@assets/s8logov2_clean.png";
-import heroEcoRewardsImage from "@assets/hero-eco-rewards.png";
-import heroMobileAppImage from "@assets/hero-mobile-app.png";
+import heroWebMobileImage from "@assets/web-mobile-feature.png";
+import heroSignupImage from "@assets/zero-friction-signup.png";
 
 const heroImages = [
   {
-    src: heroEcoRewardsImage,
-    alt: "Social8 Eco-Rewards Center — redeem eco points for tree planting, ocean plastic removal and coral reef restoration"
+    src: heroWebMobileImage,
+    alt: "Social8 — the community operating system, web and mobile app screens"
   },
   {
-    src: heroMobileAppImage,
-    alt: "Social8 mobile app — home feed, event details, play calendar and community screens"
+    src: heroSignupImage,
+    alt: "Social8 zero-friction signup — join in seconds and be part of your community"
   }
 ];
 import { Link } from "wouter";
@@ -84,7 +84,7 @@ function HeroImageCarousel() {
   return (
     <div className="relative" data-testid="hero-dashboard-preview">
       <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/20 via-green-500/10 to-emerald-500/20 rounded-3xl blur-2xl"></div>
-      <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-emerald-900/20 aspect-[3/2] bg-[#0d0f0d]">
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-emerald-900/20 aspect-[3/2] bg-white">
         {heroImages.map((image, i) => (
           <img
             key={i}
