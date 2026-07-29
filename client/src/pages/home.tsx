@@ -77,7 +77,9 @@ function Header() {
           />
         </div>
         <nav className="hidden md:flex items-center gap-6" data-testid="nav-main">
+          <a href="/#vision" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-vision">Our Vision</a>
           <a href="/#features" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-features">Features</a>
+          <a href="/#climate-positive" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-climate-positive">Climate Positive</a>
           <a href="#pricing" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-pricing">Pricing</a>
         </nav>
         <div className="flex items-center gap-3">
@@ -176,7 +178,7 @@ function VisionSection() {
   ];
 
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden" data-testid="section-vision">
+    <section id="vision" className="py-16 lg:py-24 relative overflow-hidden" data-testid="section-vision">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-emerald-50/40 to-background dark:via-emerald-950/20"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-emerald-200/20 dark:bg-emerald-800/10 blur-3xl pointer-events-none"></div>
       <div className="container mx-auto px-4 relative">
@@ -469,7 +471,7 @@ function GreenCredentialsSection() {
   ];
 
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-background dark:from-emerald-950/30 dark:via-green-950/20 dark:to-background" data-testid="section-green-credentials">
+    <section id="climate-positive" className="py-16 lg:py-24 relative overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-background dark:from-emerald-950/30 dark:via-green-950/20 dark:to-background" data-testid="section-green-credentials">
       <div className="container mx-auto px-4 relative">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-6">
