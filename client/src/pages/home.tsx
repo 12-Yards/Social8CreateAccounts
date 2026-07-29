@@ -168,17 +168,50 @@ function HeroSection() {
 }
 
 function VisionSection() {
+  const pillars = [
+    { icon: Zap, label: "Instant Launch" },
+    { icon: Settings, label: "No Technical Knowledge" },
+    { icon: TrendingUp, label: "Rewards Growth" },
+    { icon: Leaf, label: "Environmental Impact" }
+  ];
+
   return (
-    <section className="py-16 lg:py-20 relative overflow-hidden" data-testid="section-vision">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-6">
-            <Sprout className="w-4 h-4" />
-            Our Vision
+    <section className="py-16 lg:py-24 relative overflow-hidden" data-testid="section-vision">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-emerald-50/40 to-background dark:via-emerald-950/20"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-emerald-200/20 dark:bg-emerald-800/10 blur-3xl pointer-events-none"></div>
+      <div className="container mx-auto px-4 relative">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative rounded-3xl border border-emerald-200/60 dark:border-emerald-800/40 bg-white/70 dark:bg-card/70 backdrop-blur-sm shadow-xl shadow-emerald-100/50 dark:shadow-none px-6 py-12 md:px-14 md:py-16 text-center overflow-hidden">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent"></div>
+            <div className="absolute -top-6 -left-6 text-[160px] leading-none font-serif text-emerald-100 dark:text-emerald-900/40 select-none pointer-events-none">&ldquo;</div>
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 text-white text-sm font-medium mb-8 shadow-md">
+                <Sprout className="w-4 h-4" />
+                Our Vision
+              </div>
+              <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-semibold leading-snug md:leading-snug lg:leading-snug tracking-tight" data-testid="text-vision">
+                To become the{" "}
+                <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">number 1 operating system for communities</span>
+                {" "}— where every community can instantly launch a professional digital platform with no technical knowledge, no upfront costs, and a built-in business model that rewards growth while creating{" "}
+                <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">measurable environmental impact</span>.
+              </h2>
+              <div className="flex items-center justify-center gap-3 mt-10 mb-8">
+                <div className="h-px w-16 bg-gradient-to-r from-transparent to-emerald-300 dark:to-emerald-700"></div>
+                <Leaf className="w-4 h-4 text-emerald-500" />
+                <div className="h-px w-16 bg-gradient-to-l from-transparent to-emerald-300 dark:to-emerald-700"></div>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {pillars.map((pillar, i) => (
+                  <div key={i} className="flex flex-col items-center gap-2" data-testid={`vision-pillar-${i}`}>
+                    <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/50 flex items-center justify-center">
+                      <pillar.icon className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <span className="text-xs font-medium text-muted-foreground">{pillar.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-relaxed md:leading-relaxed lg:leading-relaxed" data-testid="text-vision">
-            To become the <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">number 1 operating system for communities</span>, where every community can instantly launch a professional digital platform with no technical knowledge, no upfront costs, and a built-in business model that rewards growth while creating measurable environmental impact.
-          </h2>
         </div>
       </div>
     </section>
