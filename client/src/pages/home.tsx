@@ -189,7 +189,7 @@ function VisionSection() {
                 <Sprout className="w-4 h-4" />
                 Our Vision
               </div>
-              <h2 className="text-2xl md:text-3xl lg:text-[2.5rem] font-semibold leading-snug md:leading-snug lg:leading-snug tracking-tight" data-testid="text-vision">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-semibold leading-relaxed md:leading-relaxed lg:leading-relaxed tracking-tight" data-testid="text-vision">
                 To become the{" "}
                 <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">number 1 operating system for communities</span>
                 {" "}— where every community can instantly launch a professional digital platform with no technical knowledge, no upfront costs, and a built-in business model that rewards growth while creating{" "}
