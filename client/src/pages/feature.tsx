@@ -383,8 +383,9 @@ function Header() {
           <Link href="/#pricing" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-pricing">Pricing</Link>
         </nav>
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" data-testid="button-login">Log In</Button>
-          <Button size="sm" data-testid="button-demo">Request Demo</Button>
+          <Link href="/create-account">
+            <Button size="sm" data-testid="button-create-account">Create Account</Button>
+          </Link>
         </div>
       </div>
     </header>
