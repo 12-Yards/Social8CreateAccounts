@@ -167,6 +167,24 @@ function HeroSection() {
   );
 }
 
+function VisionSection() {
+  return (
+    <section className="py-16 lg:py-20 relative overflow-hidden" data-testid="section-vision">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 text-sm font-medium mb-6">
+            <Sprout className="w-4 h-4" />
+            Our Vision
+          </div>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-relaxed md:leading-relaxed lg:leading-relaxed" data-testid="text-vision">
+            To become the <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">number 1 operating system for communities</span>, where every community can instantly launch a professional digital platform with no technical knowledge, no upfront costs, and a built-in business model that rewards growth while creating measurable environmental impact.
+          </h2>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function FeaturesSection() {
   const features = [
     {
@@ -617,6 +635,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <VisionSection />
         <FeaturesSection />
         <CTASection />
         <GreenCredentialsSection />
