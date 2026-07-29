@@ -558,8 +558,8 @@ function PricingSection() {
             <CardContent className="p-6 h-full flex flex-col">
               <div className="text-center mb-6">
                 <h3 className="font-semibold text-lg mb-2" data-testid="heading-plan-enterprise">Enterprise</h3>
-                <div className="text-4xl font-bold mb-1" data-testid="text-price-enterprise">£POA<span className="text-lg font-normal text-muted-foreground">/mo</span></div>
-                <div className="text-sm text-muted-foreground">Billed annually</div>
+                <div className="text-4xl font-bold mb-1" data-testid="text-price-enterprise"><span className="line-through text-muted-foreground">£POA/mo</span></div>
+                <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Free for limited period</div>
               </div>
               <div className="space-y-3 mb-6 flex-1">
                 {["Unlimited members", "White-label branding", "API access", "Dedicated support", "Custom integrations"].map((feature, i) => (
@@ -569,8 +569,8 @@ function PricingSection() {
                   </div>
                 ))}
               </div>
-              <Link href="/contact">
-                <Button variant="outline" className="w-full mt-auto" data-testid="button-contact-us">Contact Us</Button>
+              <Link href="/create-account">
+                <Button className="w-full mt-auto" data-testid="button-start-enterprise">Go Live Now</Button>
               </Link>
             </CardContent>
           </Card>
