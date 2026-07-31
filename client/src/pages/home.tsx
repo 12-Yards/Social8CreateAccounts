@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import logoPath from "@assets/s8logov2_clean.png";
 import heroWebMobileImage from "@assets/web-mobile-feature.png";
 import heroSignupImage from "@assets/zero-friction-signup.png";
@@ -500,6 +501,84 @@ function GreenCredentialsSection() {
   );
 }
 
+const faqs = [
+  {
+    q: "What is Social8?",
+    a: "Social8 is an all-in-one platform for creating, managing and growing an online community. It brings members, content, events, competitions, polls, groups, messaging and engagement tools together in one place."
+  },
+  {
+    q: "Who is Social8 for?",
+    a: "Social8 is designed for clubs, grassroots organisations, charities, societies, content creators and other organisations that want to build and manage an engaged online community."
+  },
+  {
+    q: "How is Social8 different from Facebook or WhatsApp?",
+    a: "Facebook and WhatsApp are useful communication tools, but your community exists within someone else's platform. Social8 gives you a dedicated community environment with your own members, content, events, competitions, groups and management tools — all under your control."
+  },
+  {
+    q: "Do I need technical knowledge to set up Social8?",
+    a: "No. Social8 has been designed so community owners can create and manage their platform without technical knowledge or developers."
+  },
+  {
+    q: "How quickly can I launch a community?",
+    a: "You can create your account, configure your community and start inviting members in less than an hour."
+  },
+  {
+    q: "What can members do on Social8?",
+    a: "Members can connect with each other, join groups, message and comment, participate in events and competitions, respond to polls and petitions, read and publish content, and take part in other community activities."
+  },
+  {
+    q: "Can I customise Social8 for my community?",
+    a: "Yes. Your community can have its own identity and content. Enterprise customers can also access white-label branding, API access, custom integrations and additional support."
+  },
+  {
+    q: "Can I make money from my community?",
+    a: "Yes. Social8 is being built not just to help communities engage their members, but also to create opportunities to generate revenue through memberships, activities and other monetisation features."
+  },
+  {
+    q: "Is there a limit on how many members I can have?",
+    a: "There is no limit to the number of users a community can have. It caters for small communities of less than 20, to large communities of 1000's."
+  },
+  {
+    q: "How much does Social8 cost?",
+    a: "The professional plan is free and includes the core tools needed to build and manage your community. Enterprise pricing is tailored to larger organisations requiring white-label branding, API access or custom integrations."
+  },
+  {
+    q: "Can I try Social8 before paying?",
+    a: "Yes, the platform is free to use with no payment details requested."
+  }
+];
+
+function FAQSection() {
+  return (
+    <section id="faq" className="py-16 lg:py-24 bg-muted/30" data-testid="section-faq">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" data-testid="heading-faq">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-muted-foreground text-lg" data-testid="text-faq-description">
+            Everything you need to know about building your community with Social8.
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} data-testid={`faq-item-${i}`}>
+                <AccordionTrigger className="text-left font-semibold" data-testid={`faq-question-${i}`}>
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground" data-testid={`faq-answer-${i}`}>
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PricingSection() {
   return (
     <section id="pricing" className="pt-5 lg:pt-7 pb-20 lg:pb-28" data-testid="section-pricing">
@@ -676,6 +755,7 @@ export default function Home() {
         <GreenCredentialsSection />
         <LaunchCTASection />
         <PricingSection />
+        <FAQSection />
       </main>
       <Footer />
     </div>

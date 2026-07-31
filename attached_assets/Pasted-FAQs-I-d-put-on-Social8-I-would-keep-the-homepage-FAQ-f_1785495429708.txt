@@ -1,0 +1,66 @@
+FAQs I'd put on Social8
+
+I would keep the homepage FAQ fairly tight — 10 questions, aimed primarily at overcoming objections before someone creates a community.
+
+1. What is Social8?
+Social8 is an all-in-one platform for creating, managing and growing an online community. It brings members, content, events, competitions, polls, groups, messaging and engagement tools together in one place.
+
+2. Who is Social8 for?
+Social8 is designed for clubs, grassroots organisations, charities, societies, content creators and other organisations that want to build and manage an engaged online community.
+
+3. How is Social8 different from Facebook or WhatsApp?
+Facebook and WhatsApp are useful communication tools, but your community exists within someone else's platform. Social8 gives you a dedicated community environment with your own members, content, events, competitions, groups and management tools — all under your control.
+
+4. Do I need technical knowledge to set up Social8?
+No. Social8 has been designed so community owners can create and manage their platform without technical knowledge or developers.
+
+5. How quickly can I launch a community?
+You can create your account, configure your community and start inviting members in less than an hour.
+
+This reinforces one of the strongest claims already on the site: "your community platform can be live in less than an hour."
+
+6. What can members do on Social8?
+Members can connect with each other, join groups, message and comment, participate in events and competitions, respond to polls and petitions, read and publish content, and take part in other community activities.
+
+7. Can I customise Social8 for my community?
+Yes. Your community can have its own identity and content. Enterprise customers can also access white-label branding, API access, custom integrations and additional support.
+
+8. Can I make money from my community?
+Yes. Social8 is being built not just to help communities engage their members, but also to create opportunities to generate revenue through memberships, activities and other monetisation features.
+
+I'd be slightly careful with the wording here and only mention monetisation features that are actually live.
+
+9. Is there a limit on how many members I can have?
+The Professional plan currently supports communities of up to 500 members. For larger communities, our Enterprise plan supports unlimited members and additional functionality.
+
+10. How much does Social8 cost?
+The Professional plan is £49 per month and includes the core tools needed to build and manage your community. Enterprise pricing is tailored to larger organisations requiring unlimited members, white-label branding, API access or custom integrations.
+
+Three more I'd strongly consider
+
+Rather than making the homepage FAQ huge, these could eventually go on a dedicated FAQ page.
+
+Can I try Social8 before paying?
+This is particularly important because the current site says both "Free Trial Available" and "Free for limited period". I'd clarify exactly what the offer is and make the FAQ match it.
+
+Who owns my community and member data?
+This could become a very powerful differentiator against Facebook. If your terms/privacy architecture supports the claim, I'd make data/control a prominent selling point.
+
+Can I move my existing community to Social8?
+Potential customers will naturally wonder: "I've already got 300 members in Facebook/WhatsApp/email — what happens to them?" Explaining that migration is straightforward removes a significant adoption barrier.
+
+I'd also change the emphasis slightly
+
+The current homepage talks a lot about features.
+
+The FAQ is an opportunity to sell the reason Social8 exists.
+
+So I would make the first three questions:
+
+What is Social8?
+Why should I use Social8 instead of Facebook or WhatsApp?
+How quickly can I create my own community?
+
+Those address proposition → differentiation → barrier to entry immediately.
+
+And I'd make "Why not Facebook?" particularly strong. That's probably one of the first questions an investor and a prospective community owner will ask.
