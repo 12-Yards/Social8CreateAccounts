@@ -602,7 +602,7 @@ function PricingSection() {
                 <div className="text-4xl font-bold mb-1" data-testid="text-price-professional">Free</div>
               </div>
               <div className="space-y-3 mb-6 flex-1">
-                {["Create and manage all content", "Private and public social media groups", "Earn points and redeem", "Real time auctions", "Real time quizzes with rewards", "Marketplace (support points, currency and crypto)", "Free Hosting, Support and Maintenance"].map((feature, i) => (
+                {["Unlimited Members", "Create and manage all content", "Private and public social media groups", "Earn points and redeem", "Real time auctions", "Real time quizzes with rewards", "Marketplace (support points, currency and crypto)", "Free Hosting, Support and Maintenance"].map((feature, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm" data-testid={`text-pro-feature-${i}`}>
                     <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
                     <span>{feature}</span>
@@ -621,7 +621,7 @@ function PricingSection() {
                 <div className="text-4xl font-bold mb-1" data-testid="text-price-enterprise">POA</div>
               </div>
               <div className="space-y-3 mb-6 flex-1">
-                {["Unlimited members", "White-label branding", "API access", "Dedicated support", "Custom integrations"].map((feature, i) => (
+                {["All Professional Features", "White-label branding", "API access", "Dedicated support", "Custom integrations"].map((feature, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm" data-testid={`text-enterprise-feature-${i}`}>
                     <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
                     <span>{feature}</span>
