@@ -544,7 +544,7 @@ const faqs = [
   },
   {
     q: "Can I try Social8 before paying?",
-    a: "Yes, the platform is free to use with no payment details requested."
+    a: "Yes, the Professional version of Social8 is free to use always."
   }
 ];
 
