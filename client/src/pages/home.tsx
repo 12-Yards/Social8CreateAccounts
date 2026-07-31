@@ -618,8 +618,7 @@ function PricingSection() {
             <CardContent className="p-6 h-full flex flex-col">
               <div className="text-center mb-6">
                 <h3 className="font-semibold text-lg mb-2" data-testid="heading-plan-enterprise">Enterprise</h3>
-                <div className="text-4xl font-bold mb-1" data-testid="text-price-enterprise"><span className="line-through text-muted-foreground">£POA/mo</span></div>
-                <div className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Free for limited period</div>
+                <div className="text-4xl font-bold mb-1" data-testid="text-price-enterprise">POA</div>
               </div>
               <div className="space-y-3 mb-6 flex-1">
                 {["Unlimited members", "White-label branding", "API access", "Dedicated support", "Custom integrations"].map((feature, i) => (
@@ -629,19 +628,11 @@ function PricingSection() {
                   </div>
                 ))}
               </div>
-              <Link href="/create-account">
-                <Button className="w-full mt-auto" data-testid="button-start-enterprise">Go Live Now</Button>
+              <Link href="/contact">
+                <Button variant="outline" className="w-full mt-auto" data-testid="button-contact-us">Contact Us</Button>
               </Link>
             </CardContent>
           </Card>
-        </div>
-        <div className="mt-10 max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-3 rounded-xl border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 px-6 py-4 text-center" data-testid="banner-pricing-no-card">
-            <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
-            <p className="text-sm md:text-base font-medium text-emerald-800 dark:text-emerald-300">
-              No credit card needed for sign up and nothing to pay for 30 days on paid subscriptions
-            </p>
-          </div>
         </div>
       </div>
     </section>
