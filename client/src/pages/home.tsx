@@ -539,12 +539,8 @@ const faqs = [
     a: "There is no limit to the number of users a community can have. It caters for small communities of less than 20, to large communities of 1000's."
   },
   {
-    q: "How much does Social8 cost?",
+    q: "Is Social8 free?",
     a: "The professional plan is free and includes the core tools needed to build and manage your community. Enterprise pricing is tailored to larger organisations requiring white-label branding, API access or custom integrations."
-  },
-  {
-    q: "Can I try Social8 before paying?",
-    a: "Yes, the Professional version of Social8 is free to use always."
   }
 ];
 
