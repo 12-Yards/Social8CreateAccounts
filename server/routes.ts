@@ -87,7 +87,6 @@ export async function registerRoutes(
       { loc: "/features/events-competitions", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/live-quizzes", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/points-leaderboards", priority: "0.8", changefreq: "monthly" },
-      { loc: "/features/redeem-points", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/prize-auctions", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/members-networking", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/monetisation", priority: "0.8", changefreq: "monthly" },
