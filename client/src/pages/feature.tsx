@@ -322,10 +322,10 @@ const featuresData = {
     icon: Coins,
     title: "Convert Points to Real Value",
     subtitle: "Your engagement, rewarded for real",
-    description: "Points earned through participation can be converted into real currency or redeemed for real-value gift cards, environmental actions and more.",
-    heroDescription: "On Social8, points aren't just bragging rights. Every point earned through participation can be converted into real currency, or redeemed for real-world value — gift cards for shopping, travel and entertainment, environmental actions like tree planting, auction bids on real prizes and more.",
+    description: "Points earned through participation can be converted into real currency — withdrawable from the platform — or redeemed for real-value gift cards, environmental actions and more.",
+    heroDescription: "On Social8, points aren't just bragging rights. Every point earned through participation can be converted into real currency that you can withdraw from the platform — your money isn't tied to Social8 — or redeemed for real-world value: gift cards for shopping, travel and entertainment, environmental actions like tree planting, auction bids on real prizes and more.",
     benefits: [
-      "Convert earned points into real currency",
+      "Convert earned points into real currency and withdraw it from the platform — your money isn't locked in",
       "Redeem points for real-value gift cards — shopping, travel and entertainment",
       "Fund environmental actions like tree planting and ocean clean-up with points",
       "Bid on real prizes in community auctions",

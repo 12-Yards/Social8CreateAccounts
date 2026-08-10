@@ -292,7 +292,7 @@ function FeaturesSection() {
     {
       icon: Coins,
       title: "Convert Points to Real Value",
-      description: "Points earned aren't just for leaderboards — convert them into real currency, or redeem them for real-value gift cards, environmental actions, auction bids and more.",
+      description: "Points earned aren't just for leaderboards — convert them into real currency you can withdraw from the platform, or redeem them for real-value gift cards, environmental actions, auction bids and more.",
       colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
       slug: "convert-points"
     },
