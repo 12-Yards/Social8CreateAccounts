@@ -44,23 +44,23 @@ import {
 const featuresData = {
   "multi-tenancy": {
     icon: Globe,
-    title: "Your Community",
-    subtitle: "One platform, unlimited communities",
-    description: "Every community runs as its own fully branded, isolated environment with its own domain, members, content and data.",
-    heroDescription: "Every community operates as a completely isolated, branded environment with its own members, content, data and administration — all while benefiting from a shared, secure and highly scalable infrastructure.",
+    title: "Your Community, Fully Self-Managed",
+    subtitle: "Your own branded environment, run entirely by you",
+    description: "Every community runs as its own fully branded, isolated environment — managed entirely by you through an intuitive admin panel, with no technical skills needed.",
+    heroDescription: "Every community operates as a completely isolated, branded environment with its own members, content, data and administration — and you run it all yourself through a comprehensive admin panel. From branding to monetisation, everything is in your hands, with no technical skills and no vendor involvement needed.",
     benefits: [
       "Isolated data per community with its own domain or subdomain",
       "Per-tenant branding applied live: platform name, logo, colours, hero content and legal pages",
-      "Per-tenant customisable email templates for every automated email",
-      "Automated onboarding provisions a branded community in seconds",
-      "Per-tenant pricing with community-specific subscription plans and paid events",
-      "A single mobile app where users can join and access multiple platforms"
+      "Full content control: articles, podcasts, polls, reviews, events and homepage sections",
+      "Member administration: roles, granular permissions, subscriptions and approval workflows",
+      "Modular by design: switch engagement modules on or off when you're ready",
+      "No technical skills or vendor involvement required — ever"
     ],
     useCases: [
       "Launch a fully branded community under your own domain",
-      "Run multiple communities from one shared infrastructure",
-      "Customise every email your platform sends to members",
-      "Oversee all tenants from super-admin tooling"
+      "Rebrand your entire platform in minutes",
+      "Moderate member content with approval workflows",
+      "Delegate administration with granular permissions"
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: yourCommunityImage
@@ -87,29 +87,6 @@ const featuresData = {
     ],
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
     image: zeroFrictionSignupImage
-  },
-  "self-management": {
-    icon: Settings,
-    title: "Fully Self-Managed",
-    subtitle: "Complete control, no technical skills needed",
-    description: "Run your entire community through an intuitive admin panel — branding, content, members, events and monetisation.",
-    heroDescription: "Community owners run their entire instance through a comprehensive admin panel — no technical skills and no vendor involvement needed. Everything from branding to monetisation is in your hands.",
-    benefits: [
-      "Content control: articles, podcasts, polls, reviews, events and homepage sections",
-      "Member administration: roles, granular permissions, subscriptions and blocking",
-      "Site control: section visibility, naming, branding, legal pages and email templates",
-      "Approval workflows for member reviews, event suggestions and organisation accounts",
-      "Modular by design: switch engagement modules on or off per community",
-      "No vendor involvement required — ever"
-    ],
-    useCases: [
-      "Rebrand your entire platform in minutes",
-      "Moderate member content with approval workflows",
-      "Enable quizzes, auctions and reward points when you're ready",
-      "Delegate administration with granular permissions"
-    ],
-    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-    image: adminPanelImage
   },
   "community-content": {
     icon: FileText,

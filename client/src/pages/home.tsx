@@ -242,17 +242,10 @@ function FeaturesSection() {
     },
     {
       icon: Globe,
-      title: "Your Community",
-      description: "One platform, unlimited communities. Every community runs as its own fully branded, isolated environment with its own domain, members, content and data.",
+      title: "Your Community, Fully Self-Managed",
+      description: "Every community runs as its own fully branded, isolated environment — and you run it all yourself through an intuitive admin panel, with no technical skills needed.",
       colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
       slug: "multi-tenancy"
-    },
-    {
-      icon: Settings,
-      title: "Fully Self-Managed",
-      description: "Run your entire community through an intuitive admin panel — branding, content, members, events and monetisation — with no technical skills needed.",
-      colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
-      slug: "self-management"
     },
     {
       icon: LayoutGrid,
