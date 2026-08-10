@@ -254,6 +254,13 @@ function FeaturesSection() {
       slug: "self-management"
     },
     {
+      icon: LayoutGrid,
+      title: "Widgets",
+      description: "Customise every page of your community with a growing library of widgets — add, arrange and even create your own custom widgets for a truly unique platform.",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+      slug: "widgets"
+    },
+    {
       icon: FileText,
       title: "Community & Content",
       description: "Editorial articles, podcasts, member reviews, polls, newsletters and a social feed with posts, comments, replies and reactions — plus public and private groups.",
@@ -308,13 +315,6 @@ function FeaturesSection() {
       description: "Premium subscriptions, paid events and competitions, a cross-community marketplace, advertising revenue share and paid polls — via Stripe or cryptocurrency.",
       colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
       slug: "monetisation"
-    },
-    {
-      icon: LayoutGrid,
-      title: "Widgets",
-      description: "Customise every page of your community with a growing library of widgets — add, arrange and even create your own custom widgets for a truly unique platform.",
-      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
-      slug: "widgets"
     },
     {
       icon: ShieldCheck,
