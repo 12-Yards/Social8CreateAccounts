@@ -149,7 +149,7 @@ function HeroSection() {
               <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">positive impact</span>—all in one powerful platform.
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl leading-relaxed" data-testid="text-hero-description">
-              Social8 is the complete community platform that helps organisations connect members, manage events and content, and support environmental projects such as tree planting and ocean plastic removal through everyday community engagement.
+              Social8 is the complete community platform that helps organisations connect members, manage events, content, competitions and rewards — while making a positive environmental impact along the way.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link href="/create-account">
@@ -292,7 +292,7 @@ function FeaturesSection() {
     {
       icon: Store,
       title: "Marketplace",
-      description: "Redeem earned points for real-world value — plant trees, support environmental projects, or buy gift cards for shopping, travel and entertainment — paying with points, currency or crypto.",
+      description: "Redeem earned points for real-world value — gift cards for shopping, travel and entertainment, community merchandise, or environmental actions like tree planting — paying with points, currency or crypto.",
       colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
       slug: "marketplace"
     },

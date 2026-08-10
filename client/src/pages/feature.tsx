@@ -322,19 +322,19 @@ const featuresData = {
     icon: Store,
     title: "Marketplace",
     subtitle: "Buy and sell with points, currency or crypto",
-    description: "A cross-community marketplace where members redeem points for environmental actions like tree planting, plus gift cards for shopping, travel and entertainment — paying with points, currency or crypto.",
-    heroDescription: "A central marketplace accessible across participating communities. Members can turn their earned points into real-world value — from planting trees and supporting ocean clean-up projects, to redeeming gift cards for shopping, travel and entertainment — paying with earned points, traditional currency or cryptocurrency.",
+    description: "A cross-community marketplace where members redeem points for gift cards for shopping, travel and entertainment — plus environmental actions like tree planting — paying with points, currency or crypto.",
+    heroDescription: "A central marketplace accessible across participating communities. Members can turn their earned points into real-world value — gift cards for shopping, travel and entertainment, community merchandise and services, or environmental actions like planting trees and supporting ocean clean-up — paying with earned points, traditional currency or cryptocurrency.",
     benefits: [
-      "Environmental actions: plant trees, remove ocean plastic and support biodiversity and charitable projects",
       "Gift cards for shopping from leading retail brands",
       "Travel and entertainment gift cards — from getaways to days out, cinema and dining",
+      "Environmental actions: plant trees, remove ocean plastic and support biodiversity and charitable projects",
       "Pay with points, traditional currency or cryptocurrency",
       "Central marketplace shared across participating communities",
       "Secure payments through Stripe and crypto integrations"
     ],
     useCases: [
-      "Members plant trees and fund environmental projects with their earned points",
       "Redeem points for shopping, travel and entertainment gift cards",
+      "Members plant trees and fund environmental projects with their earned points",
       "Sell community merchandise and services",
       "Reach buyers across multiple communities"
     ],
