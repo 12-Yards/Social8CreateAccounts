@@ -63,7 +63,8 @@ import {
   Smartphone,
   HeartHandshake,
   ShieldCheck,
-  LayoutGrid
+  LayoutGrid,
+  Coins
 } from "lucide-react";
 
 function Header() {
@@ -287,6 +288,13 @@ function FeaturesSection() {
       description: "A platform-wide points economy rewarding participation, with owner-configurable earning rules and monthly leaderboards that keep everyone competitive.",
       colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
       slug: "points-leaderboards"
+    },
+    {
+      icon: Coins,
+      title: "Convert Points to Real Value",
+      description: "Points earned aren't just for leaderboards — convert them into real currency, or redeem them for real-value gift cards, environmental actions, auction bids and more.",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+      slug: "convert-points"
     },
     {
       icon: Store,

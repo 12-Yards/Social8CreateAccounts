@@ -37,7 +37,8 @@ import {
   Smartphone,
   HeartHandshake,
   ShieldCheck,
-  LayoutGrid
+  LayoutGrid,
+  Coins
 } from "lucide-react";
 
 const featuresData = {
@@ -316,6 +317,29 @@ const featuresData = {
     ],
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
     image: mobileAppImage
+  },
+  "convert-points": {
+    icon: Coins,
+    title: "Convert Points to Real Value",
+    subtitle: "Your engagement, rewarded for real",
+    description: "Points earned through participation can be converted into real currency or redeemed for real-value gift cards, environmental actions and more.",
+    heroDescription: "On Social8, points aren't just bragging rights. Every point earned through participation can be converted into real currency, or redeemed for real-world value — gift cards for shopping, travel and entertainment, environmental actions like tree planting, auction bids on real prizes and more.",
+    benefits: [
+      "Convert earned points into real currency",
+      "Redeem points for real-value gift cards — shopping, travel and entertainment",
+      "Fund environmental actions like tree planting and ocean clean-up with points",
+      "Bid on real prizes in community auctions",
+      "Points held securely in each member's wallet",
+      "Earn simply by participating — posting, attending events, competing and more"
+    ],
+    useCases: [
+      "Members turn active participation into real money",
+      "Reward your most engaged members with tangible value",
+      "Give members a wallet that grows as they engage",
+      "Drive participation with rewards that matter beyond the leaderboard"
+    ],
+    colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+    image: pointsLeaderboardsImage
   },
   "marketplace": {
     icon: Store,
