@@ -321,21 +321,21 @@ const featuresData = {
     icon: Store,
     title: "Marketplace",
     subtitle: "Buy and sell with points, currency or crypto",
-    description: "A cross-community marketplace where members buy and sell using points, traditional currency or cryptocurrency.",
-    heroDescription: "A central marketplace accessible across participating communities. Members can browse and buy — paying with earned points, traditional currency or cryptocurrency — turning community engagement into real-world value.",
+    description: "A cross-community marketplace where members redeem points for environmental actions like tree planting, plus gift cards for shopping, travel and entertainment — paying with points, currency or crypto.",
+    heroDescription: "A central marketplace accessible across participating communities. Members can turn their earned points into real-world value — from planting trees and supporting ocean clean-up projects, to redeeming gift cards for shopping, travel and entertainment — paying with earned points, traditional currency or cryptocurrency.",
     benefits: [
-      "Central marketplace shared across participating communities",
+      "Environmental actions: plant trees, remove ocean plastic and support biodiversity and charitable projects",
+      "Gift cards for shopping from leading retail brands",
+      "Travel and entertainment gift cards — from getaways to days out, cinema and dining",
       "Pay with points, traditional currency or cryptocurrency",
-      "Members spend earned points on real products and services",
-      "Community owners open new revenue streams",
-      "Secure payments through Stripe and crypto integrations",
-      "Listings managed through the community admin panel"
+      "Central marketplace shared across participating communities",
+      "Secure payments through Stripe and crypto integrations"
     ],
     useCases: [
-      "Let members spend earned points on real items",
+      "Members plant trees and fund environmental projects with their earned points",
+      "Redeem points for shopping, travel and entertainment gift cards",
       "Sell community merchandise and services",
-      "Reach buyers across multiple communities",
-      "Accept currency and crypto payments"
+      "Reach buyers across multiple communities"
     ],
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
     image: marketplaceImage

@@ -284,7 +284,7 @@ function FeaturesSection() {
     {
       icon: Store,
       title: "Marketplace",
-      description: "A cross-community marketplace where members browse and buy using earned points, traditional currency or cryptocurrency — turning engagement into real-world value.",
+      description: "Redeem earned points for real-world value — plant trees, support environmental projects, or buy gift cards for shopping, travel and entertainment — paying with points, currency or crypto.",
       colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
       slug: "marketplace"
     },
