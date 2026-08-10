@@ -36,7 +36,8 @@ import {
   Store,
   Smartphone,
   HeartHandshake,
-  ShieldCheck
+  ShieldCheck,
+  LayoutGrid
 } from "lucide-react";
 
 const featuresData = {
@@ -338,6 +339,29 @@ const featuresData = {
     ],
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
     image: marketplaceImage
+  },
+  "widgets": {
+    icon: LayoutGrid,
+    title: "Widgets",
+    subtitle: "Customise your community, your way",
+    description: "Build and arrange your community pages with a growing library of widgets — and create your own to give your platform a truly unique look and feel.",
+    heroDescription: "Widgets are the building blocks of your community's pages. Choose from a growing library of ready-made widgets, arrange them to suit your community, and even create your own custom widgets — so your platform looks and works exactly the way you want, with no technical knowledge required.",
+    benefits: [
+      "Ready-made widget library covering content, events, leaderboards, polls and more",
+      "Add, remove and rearrange widgets to build your ideal pages",
+      "Create your own custom widgets for a truly unique platform",
+      "Style widgets to match your community's branding",
+      "Changes go live instantly — no developers or downtime",
+      "New widgets added regularly as the platform grows"
+    ],
+    useCases: [
+      "Showcase upcoming events and live leaderboards on your homepage",
+      "Highlight sponsors, offers or announcements with custom widgets",
+      "Tailor different pages for different member audiences",
+      "Refresh your community's look in minutes, whenever you like"
+    ],
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
+    image: adminPanelImage
   },
   "technology-architecture": {
     icon: ShieldCheck,
