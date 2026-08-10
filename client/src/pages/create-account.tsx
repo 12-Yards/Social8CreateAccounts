@@ -3,6 +3,7 @@ import { jsPDF } from "jspdf";
 import { apiRequest } from "@/lib/queryClient";
 import { updatePageSEO, resetPageSEO } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -789,14 +790,13 @@ export default function CreateAccountPage() {
                         <div className="flex gap-3">
                           <Button
                             type="button"
-                            variant={hasDomain === true ? "default" : "outline"}
-                            className="flex-1 h-11 toggle-elevate"
-                            onClick={() => {
-                              setHasDomain(true);
-                            }}
+                            variant="outline"
+                            disabled
+                            className="flex-1 h-11 gap-2"
                             data-testid="button-has-domain-yes"
                           >
                             Yes
+                            <Badge variant="secondary" className="text-xs font-medium">Coming Soon</Badge>
                           </Button>
                           <Button
                             type="button"
