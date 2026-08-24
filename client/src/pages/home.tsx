@@ -692,6 +692,16 @@ function Footer() {
               © {new Date().getFullYear()} Social8. All rights reserved.
             </p>
             <div className="flex gap-6">
+              <a
+                href="https://x.com/social8app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-muted-foreground hover-elevate px-1 py-0.5 rounded"
+                aria-label="Follow Social8 on X"
+                data-testid="link-social-x"
+              >
+                𝕏
+              </a>
               <Link href="/privacy" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded" data-testid="link-privacy">Privacy Policy</Link>
               <Link href="/terms" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded" data-testid="link-terms">Terms of Service</Link>
             </div>
