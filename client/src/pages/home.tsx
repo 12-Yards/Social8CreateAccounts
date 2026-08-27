@@ -64,7 +64,8 @@ import {
   HeartHandshake,
   ShieldCheck,
   LayoutGrid,
-  Coins
+  Coins,
+  Instagram
 } from "lucide-react";
 
 function Header() {
@@ -702,6 +703,16 @@ function Footer() {
                 data-testid="link-social-x"
               >
                 𝕏
+              </a>
+              <a
+                href="https://www.instagram.com/social8platform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover-elevate px-1 py-0.5 rounded"
+                aria-label="Follow Social8 on Instagram"
+                data-testid="link-social-instagram"
+              >
+                <Instagram className="w-4 h-4" aria-hidden="true" />
               </a>
               <Link href="/privacy" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded" data-testid="link-privacy">Privacy Policy</Link>
               <Link href="/terms" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded" data-testid="link-terms">Terms of Service</Link>
