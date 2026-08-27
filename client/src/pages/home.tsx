@@ -10,6 +10,7 @@ import heroAdminPanelImage from "@assets/admin-panel-feature.png";
 import heroEventsImage from "@assets/events-competitions-feature.png";
 import heroYourCommunityImage from "@assets/your-community-feature.png";
 import heroMarketplaceImage from "@assets/marketplace-feature.png";
+import pointsLeaderboardsImage from "@assets/points-leaderboards-feature.png";
 
 const heroImages = [
   {
@@ -408,6 +409,76 @@ function FeaturesSection() {
   );
 }
 
+function RewardsSection() {
+  const rewards = [
+    {
+      icon: CreditCard,
+      title: "Gift Cards",
+      description: "Redeem points for real-value gift cards covering shopping, travel, dining and entertainment."
+    },
+    {
+      icon: Coins,
+      title: "Crypto & Real Value",
+      description: "Turn engagement into transferable value, including cryptocurrency and real currency that can be withdrawn from the platform."
+    },
+    {
+      icon: TreePine,
+      title: "Make a Difference",
+      description: "Use points to plant trees, remove ocean plastic and support other positive environmental actions."
+    }
+  ];
+
+  return (
+    <section id="rewards" className="py-20 lg:py-28 relative overflow-hidden" data-testid="section-rewards">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-950" />
+      <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-emerald-500/15 blur-3xl" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-green-500/10 blur-3xl" />
+      <div className="container mx-auto px-4 relative">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <Badge className="mb-5 bg-emerald-500/15 text-emerald-300 border border-emerald-400/25 hover:bg-emerald-500/15">
+              Rewards with real value
+            </Badge>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+              Reward every action.<br />
+              <span className="text-emerald-400">Turn engagement into value.</span>
+            </h2>
+            <p className="text-lg text-slate-300 leading-relaxed mb-8 max-w-xl">
+              Your members earn points simply by using and engaging with your platform — posting, commenting, attending events, entering competitions and contributing to the community.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-4 mb-8">
+              {rewards.map((reward, i) => (
+                <div key={i} className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm" data-testid={`reward-option-${i}`}>
+                  <div className="w-10 h-10 rounded-xl bg-emerald-400/15 flex items-center justify-center mb-4">
+                    <reward.icon className="w-5 h-5 text-emerald-400" />
+                  </div>
+                  <h3 className="font-semibold text-white mb-2">{reward.title}</h3>
+                  <p className="text-sm leading-relaxed text-slate-400">{reward.description}</p>
+                </div>
+              ))}
+            </div>
+            <Link href="/features/convert-points">
+              <Button size="lg" className="gap-2 bg-emerald-500 hover:bg-emerald-400 text-white" data-testid="button-explore-rewards">
+                Explore Social8 Rewards
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+          <div className="relative">
+            <div className="absolute inset-0 bg-emerald-400/20 blur-3xl rounded-full scale-75" />
+            <img
+              src={pointsLeaderboardsImage}
+              alt="Social8 points and rewards platform showing member balances and leaderboards"
+              className="relative w-full rounded-2xl border border-white/10 shadow-2xl"
+              data-testid="img-rewards"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CTASection() {
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-br from-emerald-600 to-green-600 relative overflow-hidden" data-testid="section-cta">
@@ -760,6 +831,7 @@ export default function Home() {
         <HeroSection />
         <VisionSection />
         <FeaturesSection />
+        <RewardsSection />
         <CTASection />
         <GreenCredentialsSection />
         <LaunchCTASection />
