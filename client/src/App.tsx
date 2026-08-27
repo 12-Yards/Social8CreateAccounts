@@ -12,6 +12,7 @@ import CreateAccountPage from "@/pages/create-account";
 import ContactPage from "@/pages/contact";
 import TermsPage from "@/pages/terms";
 import PrivacyPage from "@/pages/privacy";
+import BlogPage from "@/pages/blog";
 import AdminLoginPage from "@/pages/admin-login";
 import AdminPage from "@/pages/admin";
 import CookieConsent from "@/components/cookie-consent";
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/contact" component={ContactPage} />
       <Route path="/terms" component={TermsPage} />
       <Route path="/privacy" component={PrivacyPage} />
+      <Route path="/blog" component={BlogPage} />
       <Route path="/admin/login" component={AdminLoginPage} />
       <Route path="/admin" component={AdminPage} />
       <Route component={NotFound} />

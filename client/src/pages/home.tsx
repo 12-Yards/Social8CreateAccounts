@@ -85,6 +85,7 @@ function Header() {
           <a href="/#climate-positive" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-climate-positive">Climate Positive</a>
           <a href="#pricing" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-pricing">Pricing</a>
           <a href="/#faq" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-faq">FAQs</a>
+          <Link href="/blog" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-blog">Blog</Link>
         </nav>
         <div className="flex items-center gap-3">
           <Link href="/create-account">

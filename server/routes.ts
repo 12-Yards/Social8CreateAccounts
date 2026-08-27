@@ -76,6 +76,7 @@ export async function registerRoutes(
     const baseUrl = "https://social8.app";
     const pages = [
       { loc: "/", priority: "1.0", changefreq: "weekly" },
+      { loc: "/blog", priority: "0.9", changefreq: "daily" },
       { loc: "/create-account", priority: "0.9", changefreq: "monthly" },
       { loc: "/contact", priority: "0.8", changefreq: "monthly" },
       { loc: "/terms", priority: "0.5", changefreq: "yearly" },
