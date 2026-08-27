@@ -61,14 +61,6 @@ export default function BlogPage() {
       </header>
 
       <main>
-        <section className="border-b bg-gradient-to-br from-primary/5 via-accent/5 to-background py-12 lg:py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Social8 Blog</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Insights and practical ideas for building, engaging and growing thriving communities.
-            </p>
-          </div>
-        </section>
         <section className="container mx-auto px-4 py-12 lg:py-16">
           {embedUnavailable && (
             <div className="max-w-2xl mx-auto rounded-xl border bg-muted/30 p-8 text-center">
