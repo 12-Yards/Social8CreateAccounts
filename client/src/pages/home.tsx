@@ -67,10 +67,14 @@ import {
   LayoutGrid,
   Coins,
   Instagram,
-  Facebook
+  Facebook,
+  Menu,
+  X
 } from "lucide-react";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 gap-4">
@@ -94,8 +98,30 @@ function Header() {
           <Link href="/create-account">
             <Button size="sm" data-testid="button-create-account">Create Account</Button>
           </Link>
+          <Button
+            size="icon"
+            variant="outline"
+            className="md:hidden"
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            aria-controls="home-mobile-navigation"
+            data-testid="button-mobile-menu"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          </Button>
         </div>
       </div>
+      {menuOpen && (
+        <nav id="home-mobile-navigation" className="md:hidden border-t bg-background px-4 py-3 grid gap-1" data-testid="nav-mobile">
+          <a href="/#vision" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Our Vision</a>
+          <a href="/#features" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Features</a>
+          <a href="/#climate-positive" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Climate Positive</a>
+          <a href="/#pricing" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Pricing</a>
+          <a href="/#faq" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">FAQs</a>
+          <Link href="/resources" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Resources</Link>
+        </nav>
+      )}
     </header>
   );
 }

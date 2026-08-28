@@ -101,6 +101,31 @@ export function injectRouteSeo(html: string, pathname: string) {
   const canonical = `https://social8.app${pathname}`;
   const title = escapeHtml(page.title);
   const description = escapeHtml(page.description);
+  const heading = escapeHtml(page.title.replace(/\s\|\sSocial8$/, ""));
+  const staticBenefits = [
+    "Connect members in one branded community",
+    "Manage content, groups, events and competitions",
+    "Encourage participation with points and rewards",
+    "Give members a clear web and mobile experience",
+  ];
+  const staticLinks = [
+    { href: "/community-platform", label: "Community platform" },
+    { href: "/community-management-software", label: "Community management software" },
+    { href: "/resources", label: "Resources" },
+  ];
+  const crawlerContent = `
+    <main data-seo-prerendered="true">
+      <article>
+        <p>Social8</p>
+        <h1>${heading}</h1>
+        <p>${description}</p>
+        <h2>How Social8 helps</h2>
+        <ul>${staticBenefits.map((benefit) => `<li>${benefit}</li>`).join("")}</ul>
+        <nav aria-label="Related Social8 pages">
+          ${staticLinks.map((link) => `<a href="${link.href}">${link.label}</a>`).join(" ")}
+        </nav>
+      </article>
+    </main>`;
   const webPageSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -125,5 +150,6 @@ export function injectRouteSeo(html: string, pathname: string) {
     .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${description}" />`)
     .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${canonical}" />`)
     .replace(/\s*<script id="homepage-faq-schema" type="application\/ld\+json">[\s\S]*?<\/script>/, "")
-    .replace("</head>", `    <script id="route-webpage-schema" type="application/ld+json">${webPageSchema}</script>\n  </head>`);
+    .replace("</head>", `    <script id="route-webpage-schema" type="application/ld+json">${webPageSchema}</script>\n  </head>`)
+    .replace('<div id="root"></div>', `<div id="root">${crawlerContent}</div>`);
 }

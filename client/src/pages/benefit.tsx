@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoPath from "@assets/s8logov2_clean.png";
 import { Link, useParams } from "wouter";
@@ -10,7 +10,9 @@ import {
   ArrowLeft,
   ArrowRight,
   Settings,
-  Heart
+  Heart,
+  Menu,
+  X
 } from "lucide-react";
 
 const benefitsData = {
@@ -142,6 +144,8 @@ const benefitsData = {
 };
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 gap-4">
@@ -168,8 +172,27 @@ function Header() {
         <div className="flex items-center gap-3">
           <Button variant="ghost" size="sm" data-testid="button-login">Log In</Button>
           <Button size="sm" data-testid="button-get-started">Get Started</Button>
+          <Button
+            size="icon"
+            variant="outline"
+            className="md:hidden"
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            aria-controls="benefit-mobile-navigation"
+            data-testid="button-mobile-menu"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          </Button>
         </div>
       </div>
+      {menuOpen && (
+        <nav id="benefit-mobile-navigation" className="md:hidden border-t bg-background px-4 py-3 grid gap-1" data-testid="nav-mobile">
+          <Link href="/#features" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Features</Link>
+          <Link href="/#benefits" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Benefits</Link>
+          <Link href="/#pricing" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Pricing</Link>
+        </nav>
+      )}
     </header>
   );
 }
