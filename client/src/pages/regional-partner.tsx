@@ -120,7 +120,7 @@ export default function RegionalPartnerPage() {
               <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
                 Social8 is looking for ambitious partners to help grow communities across defined regions. Introduce Social8 to organisations in your area and build a portfolio that grows with your network.
               </p>
-              <Link href="/contact?type=regional-partner">
+              <Link href="/contact?type=regional-partner" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "auto" })}>
                 <Button size="lg" variant="secondary" className="gap-2 shadow-lg" data-testid="button-apply-regional-partner">
                   Apply to Become a Regional Partner
                   <ArrowRight className="w-4 h-4" />
@@ -258,7 +258,7 @@ export default function RegionalPartnerPage() {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Ready to build your region?</h2>
                 <p className="text-xl text-emerald-50 mb-3">Turn your local network into a long-term business opportunity.</p>
                 <p className="text-white/90 mb-8">We're looking for Regional Partners who want to help bring Social8 to new communities and share in the growth.</p>
-                <Link href="/contact?type=regional-partner">
+                <Link href="/contact?type=regional-partner" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "auto" })}>
                   <Button size="lg" variant="secondary" className="gap-2" data-testid="button-apply-regional-partner-final">
                     Apply to Become a Regional Partner
                     <ArrowRight className="w-4 h-4" />
