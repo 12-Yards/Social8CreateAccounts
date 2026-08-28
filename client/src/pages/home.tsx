@@ -800,7 +800,15 @@ function Footer() {
 
   return (
     <>
-      <footer className="border-t bg-muted/30 py-12" data-testid="section-footer">
+      <footer
+        className="border-t bg-muted/30 py-12"
+        data-testid="section-footer"
+        onClick={(event) => {
+          if ((event.target as HTMLElement).closest("a")) {
+            window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+          }
+        }}
+      >
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-5 gap-8 mb-8">
             <div className="md:col-span-2">
