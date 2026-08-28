@@ -912,8 +912,8 @@ export default function Home() {
         <RewardsSection />
         <GreenCredentialsSection />
         <PricingSection />
-        <RegionalPartnerCTASection />
         <FAQSection />
+        <RegionalPartnerCTASection />
       </main>
       <Footer />
     </div>
