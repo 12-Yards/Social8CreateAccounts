@@ -861,6 +861,11 @@ function Footer() {
                 <li>
                   <Link href="/climate-positive" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-climate-positive">Climate Positive</Link>
                 </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4" data-testid="heading-footer-company">Company</h4>
+              <ul className="space-y-2">
                 <li>
                   <Link href="/contact" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-contact">Contact Us</Link>
                 </li>
