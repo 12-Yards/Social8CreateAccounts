@@ -911,8 +911,8 @@ export default function Home() {
         <LaunchCTASection />
         <RewardsSection />
         <GreenCredentialsSection />
-        <RegionalPartnerCTASection />
         <PricingSection />
+        <RegionalPartnerCTASection />
         <FAQSection />
       </main>
       <Footer />
