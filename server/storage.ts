@@ -5,7 +5,7 @@ import {
   users, registrations, contactSubmissions,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, desc, or } from "drizzle-orm";
+import { eq, desc, like, or, sql } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -17,6 +17,7 @@ export interface IStorage {
   updateRegistration(id: number, data: Partial<InsertRegistration>): Promise<Registration | undefined>;
   createContact(contact: InsertContact): Promise<ContactSubmission>;
   getContacts(): Promise<ContactSubmission[]>;
+  getRegionalPartnerApplications(offset: number, limit: number): Promise<{ applications: ContactSubmission[]; total: number }>;
   getContact(id: number): Promise<ContactSubmission | undefined>;
   checkDomainExists(domainName: string): Promise<boolean>;
   checkEmailExists(email: string): Promise<boolean>;
@@ -68,6 +69,26 @@ export class DatabaseStorage implements IStorage {
 
   async getContacts(): Promise<ContactSubmission[]> {
     return db.select().from(contactSubmissions).orderBy(desc(contactSubmissions.createdAt));
+  }
+
+  async getRegionalPartnerApplications(offset: number, limit: number): Promise<{ applications: ContactSubmission[]; total: number }> {
+    const regionalPartnerFilter = like(contactSubmissions.notes, "Regional Partner Application%");
+    const [applications, countResult] = await Promise.all([
+      db.select()
+        .from(contactSubmissions)
+        .where(regionalPartnerFilter)
+        .orderBy(desc(contactSubmissions.createdAt))
+        .limit(limit)
+        .offset(offset),
+      db.select({ count: sql<number>`count(*)` })
+        .from(contactSubmissions)
+        .where(regionalPartnerFilter),
+    ]);
+
+    return {
+      applications,
+      total: Number(countResult[0]?.count ?? 0),
+    };
   }
 
   async getContact(id: number): Promise<ContactSubmission | undefined> {

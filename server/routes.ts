@@ -6,9 +6,11 @@ import session from "express-session";
 import connectPg from "connect-pg-simple";
 import pg from "pg";
 import { execSync } from "child_process";
+import { timingSafeEqual } from "node:crypto";
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const REGIONAL_PARTNER_API_KEY = process.env.REGIONAL_PARTNER_API_KEY;
 
 const PgStore = connectPg(session);
 const sessionPool = new pg.Pool({
@@ -37,6 +39,51 @@ function requireAdmin(req: Request, res: Response, next: NextFunction) {
     return next();
   }
   return res.status(401).json({ message: "Unauthorized" });
+}
+
+function requireRegionalPartnerApiKey(req: Request, res: Response, next: NextFunction) {
+  res.setHeader("Cache-Control", "no-store");
+
+  if (!REGIONAL_PARTNER_API_KEY) {
+    return res.status(503).json({ message: "Regional Partner integration API is not configured" });
+  }
+
+  const authorization = req.get("authorization") || "";
+  const tokenMatch = authorization.match(/^Bearer\s+(.+)$/i);
+  if (!tokenMatch) {
+    res.setHeader("WWW-Authenticate", "Bearer");
+    return res.status(401).json({ message: "Bearer token required" });
+  }
+
+  const providedToken = Buffer.from(tokenMatch[1].trim(), "utf8");
+  const expectedToken = Buffer.from(REGIONAL_PARTNER_API_KEY, "utf8");
+  const valid = providedToken.length === expectedToken.length
+    && timingSafeEqual(providedToken, expectedToken);
+
+  if (!valid) {
+    res.setHeader("WWW-Authenticate", "Bearer");
+    return res.status(401).json({ message: "Invalid bearer token" });
+  }
+
+  return next();
+}
+
+function parseRegionalPartnerApplication(notes: string | null) {
+  if (!notes?.startsWith("Regional Partner Application")) {
+    return null;
+  }
+
+  const sections = notes.split("\n\n");
+  const getValue = (label: string) =>
+    sections.find((section) => section.startsWith(label))?.slice(label.length).trim() || null;
+
+  return {
+    regionOrTerritory: getValue("Region or territory:"),
+    existingNetworkOrRelationships: getValue("Existing network or relationships:"),
+    communityTypesToTarget: getValue("Community types to target:"),
+    firstTenApproach: getValue("Approach to first 10 communities:"),
+    additionalNotes: getValue("Additional notes:"),
+  };
 }
 
 export async function registerRoutes(
@@ -156,6 +203,66 @@ Sitemap: https://social8.app/sitemap.xml`;
     }
     const contact = await storage.createContact(parsed.data);
     return res.status(201).json(contact);
+  });
+
+  /**
+   * Read-only integration endpoint for the Social8 tenant platform.
+   * Authentication: Authorization: Bearer <REGIONAL_PARTNER_API_KEY>
+   * Query: page (1-based, default 1), limit (1-100, default 50)
+   */
+  app.get("/api/integrations/regional-partners", requireRegionalPartnerApiKey, async (req: Request, res: Response) => {
+    const pageValue = typeof req.query.page === "string" ? req.query.page : "1";
+    const limitValue = typeof req.query.limit === "string" ? req.query.limit : "50";
+    const page = Number.parseInt(pageValue, 10);
+    const limit = Number.parseInt(limitValue, 10);
+
+    if (!Number.isSafeInteger(page) || page < 1) {
+      return res.status(400).json({ message: "page must be a positive integer" });
+    }
+    if (!Number.isSafeInteger(limit) || limit < 1 || limit > 100) {
+      return res.status(400).json({ message: "limit must be an integer between 1 and 100" });
+    }
+
+    const offset = (page - 1) * limit;
+    if (!Number.isSafeInteger(offset)) {
+      return res.status(400).json({ message: "page is too large" });
+    }
+
+    try {
+      const { applications, total } = await storage.getRegionalPartnerApplications(offset, limit);
+      const totalPages = total === 0 ? 0 : Math.ceil(total / limit);
+
+      return res.json({
+        applications: applications.flatMap((application) => {
+          const details = parseRegionalPartnerApplication(application.notes);
+          if (!details) {
+            return [];
+          }
+
+          return [{
+            id: application.id,
+            organisation: application.organisation,
+            name: application.name,
+            email: application.email,
+            mobile: application.mobile,
+            ...details,
+            isRead: application.isRead,
+            submittedAt: application.createdAt?.toISOString() || null,
+          }];
+        }),
+        pagination: {
+          page,
+          limit,
+          total,
+          totalPages,
+          hasNextPage: page < totalPages,
+          hasPreviousPage: page > 1 && total > 0,
+        },
+      });
+    } catch (error) {
+      console.error("Regional Partner integration API error:", error);
+      return res.status(500).json({ message: "Failed to retrieve Regional Partner applications" });
+    }
   });
 
   app.post("/api/admin/login", (req: Request, res: Response) => {
