@@ -608,7 +608,7 @@ function RegionalPartnerCTASection() {
                 Earn recurring revenue as your network grows.
               </p>
               <div className="w-full flex justify-center lg:justify-start">
-                <Link href="/contact">
+                <Link href="/regional-partner">
                   <Button size="lg" className="bg-white text-emerald-700 hover:bg-white/90 shadow-lg gap-2" data-testid="button-explore-regional-opportunity">
                     Explore the Opportunity
                     <ArrowRight className="w-4 h-4" />

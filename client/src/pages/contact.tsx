@@ -10,14 +10,18 @@ import logoPath from "@assets/s8logov2_clean.png";
 import { apiRequest } from "@/lib/queryClient";
 
 export default function ContactPage() {
+  const isRegionalPartner = new URLSearchParams(window.location.search).get("type") === "regional-partner";
+
   useEffect(() => {
     updatePageSEO({
-      title: "Contact Us | Social8",
-      description: "Get in touch with the Social8 team. We'd love to hear from you about our community management platform.",
+      title: isRegionalPartner ? "Apply to Become a Social8 Regional Partner" : "Contact Us | Social8",
+      description: isRegionalPartner
+        ? "Tell Social8 about the region, relationships and communities you would like to develop as a Regional Partner."
+        : "Get in touch with the Social8 team. We'd love to hear from you about our community management platform.",
       url: "/contact",
     });
     return () => resetPageSEO();
-  }, []);
+  }, [isRegionalPartner]);
 
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -26,17 +30,32 @@ export default function ContactPage() {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [notes, setNotes] = useState("");
+  const [territory, setTerritory] = useState("");
+  const [network, setNetwork] = useState("");
+  const [communityTypes, setCommunityTypes] = useState("");
+  const [firstTenApproach, setFirstTenApproach] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     try {
+      const submissionNotes = isRegionalPartner
+        ? [
+            "Regional Partner Application",
+            `Region or territory: ${territory}`,
+            `Existing network or relationships: ${network}`,
+            `Community types to target: ${communityTypes}`,
+            `Approach to first 10 communities: ${firstTenApproach}`,
+            notes ? `Additional notes: ${notes}` : "",
+          ].filter(Boolean).join("\n\n")
+        : notes;
+
       await apiRequest("POST", "/api/contacts", {
         organisation,
         name,
         email,
         mobile,
-        notes,
+        notes: submissionNotes,
       });
       setSubmitted(true);
     } catch (err) {
@@ -61,10 +80,14 @@ export default function ContactPage() {
       </header>
 
       <div className="flex-1 flex items-center justify-center p-4">
-        <Card className="w-full max-w-md">
+        <Card className={`w-full ${isRegionalPartner ? "max-w-2xl" : "max-w-md"}`}>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold" data-testid="heading-contact">Contact Us</CardTitle>
-            <CardDescription>Get in touch with our team</CardDescription>
+            <CardTitle className="text-2xl font-bold" data-testid="heading-contact">
+              {isRegionalPartner ? "Apply to Become a Regional Partner" : "Contact Us"}
+            </CardTitle>
+            <CardDescription>
+              {isRegionalPartner ? "Tell us about the region and community network you would like to develop." : "Get in touch with our team"}
+            </CardDescription>
           </CardHeader>
           <CardContent>
             {submitted ? (
@@ -125,6 +148,55 @@ export default function ContactPage() {
                     data-testid="input-mobile"
                   />
                 </div>
+                {isRegionalPartner && (
+                  <>
+                    <div className="space-y-2">
+                      <Label htmlFor="territory">Which region or territory would you like to develop?</Label>
+                      <Input
+                        id="territory"
+                        type="text"
+                        placeholder="For example: North West England"
+                        value={territory}
+                        onChange={(e) => setTerritory(e.target.value)}
+                        required
+                        data-testid="input-territory"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="network">What existing network or relationships do you have?</Label>
+                      <Textarea
+                        id="network"
+                        placeholder="Tell us about your local, professional or sector relationships"
+                        value={network}
+                        onChange={(e) => setNetwork(e.target.value)}
+                        required
+                        data-testid="input-existing-network"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="community-types">Which types of communities would you target?</Label>
+                      <Textarea
+                        id="community-types"
+                        placeholder="Sports clubs, charities, businesses, membership organisations..."
+                        value={communityTypes}
+                        onChange={(e) => setCommunityTypes(e.target.value)}
+                        required
+                        data-testid="input-community-types"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="first-ten-approach">How would you approach your first 10 potential communities?</Label>
+                      <Textarea
+                        id="first-ten-approach"
+                        placeholder="Outline how you would identify and approach your first communities"
+                        value={firstTenApproach}
+                        onChange={(e) => setFirstTenApproach(e.target.value)}
+                        required
+                        data-testid="input-first-ten-approach"
+                      />
+                    </div>
+                  </>
+                )}
                 <div className="space-y-2">
                   <Label htmlFor="notes">Notes</Label>
                   <Textarea 
@@ -137,10 +209,10 @@ export default function ContactPage() {
                   />
                 </div>
                 <Button type="submit" className="w-full" disabled={submitting} data-testid="button-contact-submit">
-                  {submitting ? "Submitting..." : "Submit"}
+                  {submitting ? "Submitting..." : isRegionalPartner ? "Submit Application" : "Submit"}
                 </Button>
                 <div className="text-center">
-                  <Link href="/">
+                  <Link href={isRegionalPartner ? "/regional-partner" : "/"}>
                     <Button variant="outline" className="w-full" data-testid="button-back">
                       Back
                     </Button>

@@ -81,6 +81,7 @@ export async function registerRoutes(
     const pages = [
       { loc: "/", priority: "1.0", changefreq: "weekly" },
       { loc: "/resources", priority: "0.9", changefreq: "daily" },
+      { loc: "/regional-partner", priority: "0.8", changefreq: "monthly" },
       { loc: "/create-account", priority: "0.9", changefreq: "monthly" },
       { loc: "/contact", priority: "0.8", changefreq: "monthly" },
       { loc: "/terms", priority: "0.5", changefreq: "yearly" },
