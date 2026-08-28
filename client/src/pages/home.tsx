@@ -907,8 +907,8 @@ export default function Home() {
         <HeroSection />
         <VisionSection />
         <FeaturesSection />
-        <RewardsSection />
         <CTASection />
+        <RewardsSection />
         <GreenCredentialsSection />
         <LaunchCTASection />
         <RegionalPartnerCTASection />
