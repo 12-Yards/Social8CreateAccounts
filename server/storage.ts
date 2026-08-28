@@ -77,7 +77,7 @@ export class DatabaseStorage implements IStorage {
       db.select()
         .from(contactSubmissions)
         .where(regionalPartnerFilter)
-        .orderBy(desc(contactSubmissions.createdAt))
+        .orderBy(desc(contactSubmissions.createdAt), desc(contactSubmissions.id))
         .limit(limit)
         .offset(offset),
       db.select({ count: sql<number>`count(*)` })

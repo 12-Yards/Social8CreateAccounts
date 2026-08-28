@@ -62,7 +62,7 @@ GET /api/integrations/regional-partners?page=1&limit=50
 }
 ```
 
-Only submissions created through the Regional Partner application form are returned. The `id` field is the stable application identifier.
+Only submissions created through the dedicated Regional Partner application flow are returned. New applications are validated and stored in a server-owned structured format, so ordinary contact submissions cannot enter this feed by changing their Notes text. Existing legacy Regional Partner applications remain readable. The `id` field is the stable application identifier.
 
 ## Errors
 

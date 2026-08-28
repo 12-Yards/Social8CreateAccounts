@@ -2,11 +2,17 @@ import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertRegistrationSchema, insertContactSchema } from "@shared/schema";
+import {
+  parseRegionalPartnerApplication,
+  REGIONAL_PARTNER_RESERVED_PREFIX,
+  regionalPartnerSubmissionSchema,
+  serializeRegionalPartnerApplication,
+} from "@shared/regional-partner";
 import session from "express-session";
 import connectPg from "connect-pg-simple";
 import pg from "pg";
 import { execSync } from "child_process";
-import { timingSafeEqual } from "node:crypto";
+import { createHash, timingSafeEqual } from "node:crypto";
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
@@ -55,10 +61,9 @@ function requireRegionalPartnerApiKey(req: Request, res: Response, next: NextFun
     return res.status(401).json({ message: "Bearer token required" });
   }
 
-  const providedToken = Buffer.from(tokenMatch[1].trim(), "utf8");
-  const expectedToken = Buffer.from(REGIONAL_PARTNER_API_KEY, "utf8");
-  const valid = providedToken.length === expectedToken.length
-    && timingSafeEqual(providedToken, expectedToken);
+  const providedTokenDigest = createHash("sha256").update(tokenMatch[1].trim(), "utf8").digest();
+  const expectedTokenDigest = createHash("sha256").update(REGIONAL_PARTNER_API_KEY, "utf8").digest();
+  const valid = timingSafeEqual(providedTokenDigest, expectedTokenDigest);
 
   if (!valid) {
     res.setHeader("WWW-Authenticate", "Bearer");
@@ -68,22 +73,16 @@ function requireRegionalPartnerApiKey(req: Request, res: Response, next: NextFun
   return next();
 }
 
-function parseRegionalPartnerApplication(notes: string | null) {
-  if (!notes?.startsWith("Regional Partner Application")) {
+function parsePositiveInteger(value: unknown, fallback: number): number | null {
+  if (value === undefined) {
+    return fallback;
+  }
+  if (typeof value !== "string" || !/^[1-9]\d*$/.test(value)) {
     return null;
   }
 
-  const sections = notes.split("\n\n");
-  const getValue = (label: string) =>
-    sections.find((section) => section.startsWith(label))?.slice(label.length).trim() || null;
-
-  return {
-    regionOrTerritory: getValue("Region or territory:"),
-    existingNetworkOrRelationships: getValue("Existing network or relationships:"),
-    communityTypesToTarget: getValue("Community types to target:"),
-    firstTenApproach: getValue("Approach to first 10 communities:"),
-    additionalNotes: getValue("Additional notes:"),
-  };
+  const parsed = Number(value);
+  return Number.isSafeInteger(parsed) ? parsed : null;
 }
 
 export async function registerRoutes(
@@ -201,8 +200,38 @@ Sitemap: https://social8.app/sitemap.xml`;
     if (!parsed.success) {
       return res.status(400).json({ message: "Invalid data", errors: parsed.error.errors });
     }
+    if (parsed.data.notes?.startsWith(REGIONAL_PARTNER_RESERVED_PREFIX)) {
+      return res.status(400).json({ message: "Regional Partner applications must use the dedicated application endpoint" });
+    }
     const contact = await storage.createContact(parsed.data);
     return res.status(201).json(contact);
+  });
+
+  app.post("/api/regional-partner-applications", async (req: Request, res: Response) => {
+    const parsed = regionalPartnerSubmissionSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ message: "Invalid application data", errors: parsed.error.errors });
+    }
+
+    const application = parsed.data;
+    const contact = await storage.createContact({
+      organisation: application.organisation || null,
+      name: application.name,
+      email: application.email,
+      mobile: application.mobile || null,
+      notes: serializeRegionalPartnerApplication({
+        territory: application.territory,
+        network: application.network,
+        communityTypes: application.communityTypes,
+        firstTenApproach: application.firstTenApproach,
+        additionalNotes: application.notes || null,
+      }),
+    });
+
+    return res.status(201).json({
+      id: contact.id,
+      submittedAt: contact.createdAt?.toISOString() || null,
+    });
   });
 
   /**
@@ -211,15 +240,13 @@ Sitemap: https://social8.app/sitemap.xml`;
    * Query: page (1-based, default 1), limit (1-100, default 50)
    */
   app.get("/api/integrations/regional-partners", requireRegionalPartnerApiKey, async (req: Request, res: Response) => {
-    const pageValue = typeof req.query.page === "string" ? req.query.page : "1";
-    const limitValue = typeof req.query.limit === "string" ? req.query.limit : "50";
-    const page = Number.parseInt(pageValue, 10);
-    const limit = Number.parseInt(limitValue, 10);
+    const page = parsePositiveInteger(req.query.page, 1);
+    const limit = parsePositiveInteger(req.query.limit, 50);
 
-    if (!Number.isSafeInteger(page) || page < 1) {
+    if (page === null) {
       return res.status(400).json({ message: "page must be a positive integer" });
     }
-    if (!Number.isSafeInteger(limit) || limit < 1 || limit > 100) {
+    if (limit === null || limit > 100) {
       return res.status(400).json({ message: "limit must be an integer between 1 and 100" });
     }
 
@@ -245,7 +272,11 @@ Sitemap: https://social8.app/sitemap.xml`;
             name: application.name,
             email: application.email,
             mobile: application.mobile,
-            ...details,
+            regionOrTerritory: details.territory,
+            existingNetworkOrRelationships: details.network,
+            communityTypesToTarget: details.communityTypes,
+            firstTenApproach: details.firstTenApproach,
+            additionalNotes: details.additionalNotes,
             isRead: application.isRead,
             submittedAt: application.createdAt?.toISOString() || null,
           }];

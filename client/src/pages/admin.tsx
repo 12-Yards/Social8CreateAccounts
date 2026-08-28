@@ -18,34 +18,9 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import type { Registration, ContactSubmission } from "@shared/schema";
+import { parseRegionalPartnerApplication } from "@shared/regional-partner";
 
 type Tab = "registrations" | "contacts";
-
-type RegionalPartnerApplication = {
-  territory: string;
-  network: string;
-  communityTypes: string;
-  firstTenApproach: string;
-  additionalNotes: string;
-};
-
-function parseRegionalPartnerApplication(notes: string | null): RegionalPartnerApplication | null {
-  if (!notes?.startsWith("Regional Partner Application")) {
-    return null;
-  }
-
-  const sections = notes.split("\n\n");
-  const getValue = (label: string) =>
-    sections.find((section) => section.startsWith(label))?.slice(label.length).trim() || "-";
-
-  return {
-    territory: getValue("Region or territory:"),
-    network: getValue("Existing network or relationships:"),
-    communityTypes: getValue("Community types to target:"),
-    firstTenApproach: getValue("Approach to first 10 communities:"),
-    additionalNotes: getValue("Additional notes:"),
-  };
-}
 
 export default function AdminPage() {
   const [, setLocation] = useLocation();
@@ -474,21 +449,21 @@ export default function AdminPage() {
                         <>
                           <div>
                             <Label className="text-muted-foreground text-xs">Region or Territory</Label>
-                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-territory">{regionalApplication.territory}</p>
+                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-territory">{regionalApplication.territory || "-"}</p>
                           </div>
                           <div>
                             <Label className="text-muted-foreground text-xs">Existing Network or Relationships</Label>
-                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-network">{regionalApplication.network}</p>
+                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-network">{regionalApplication.network || "-"}</p>
                           </div>
                           <div className="md:col-span-2">
                             <Label className="text-muted-foreground text-xs">Community Types to Target</Label>
-                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-community-types">{regionalApplication.communityTypes}</p>
+                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-community-types">{regionalApplication.communityTypes || "-"}</p>
                           </div>
                           <div className="md:col-span-2">
                             <Label className="text-muted-foreground text-xs">Approach to First 10 Communities</Label>
-                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-first-ten-approach">{regionalApplication.firstTenApproach}</p>
+                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-first-ten-approach">{regionalApplication.firstTenApproach || "-"}</p>
                           </div>
-                          {regionalApplication.additionalNotes !== "-" && (
+                          {regionalApplication.additionalNotes && (
                             <div className="md:col-span-2">
                               <Label className="text-muted-foreground text-xs">Additional Notes</Label>
                               <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-additional-notes">{regionalApplication.additionalNotes}</p>

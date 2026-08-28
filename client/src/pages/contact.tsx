@@ -40,24 +40,27 @@ export default function ContactPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      const submissionNotes = isRegionalPartner
-        ? [
-            "Regional Partner Application",
-            `Region or territory: ${territory}`,
-            `Existing network or relationships: ${network}`,
-            `Community types to target: ${communityTypes}`,
-            `Approach to first 10 communities: ${firstTenApproach}`,
-            notes ? `Additional notes: ${notes}` : "",
-          ].filter(Boolean).join("\n\n")
-        : notes;
-
-      await apiRequest("POST", "/api/contacts", {
-        organisation,
-        name,
-        email,
-        mobile,
-        notes: submissionNotes,
-      });
+      if (isRegionalPartner) {
+        await apiRequest("POST", "/api/regional-partner-applications", {
+          organisation,
+          name,
+          email,
+          mobile,
+          territory,
+          network,
+          communityTypes,
+          firstTenApproach,
+          notes,
+        });
+      } else {
+        await apiRequest("POST", "/api/contacts", {
+          organisation,
+          name,
+          email,
+          mobile,
+          notes,
+        });
+      }
       setSubmitted(true);
     } catch (err) {
       console.error("Failed to submit contact form:", err);
