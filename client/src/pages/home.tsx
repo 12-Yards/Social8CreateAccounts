@@ -802,7 +802,7 @@ function Footer() {
     <>
       <footer className="border-t bg-muted/30 py-12" data-testid="section-footer">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-5 gap-8 mb-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4" data-testid="footer-logo">
                 <img src={logoPath} alt="Social8 Logo" className="h-10 object-contain" />
@@ -812,8 +812,23 @@ function Footer() {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4" data-testid="heading-footer-product">Product</h4>
+              <h4 className="font-semibold mb-4" data-testid="heading-footer-product">Platform</h4>
               <ul className="space-y-2">
+                <li>
+                  <Link href="/community-platform" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-community-platform">Community Platform</Link>
+                </li>
+                <li>
+                  <Link href="/community-management-software" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-community-management">Community Management Software</Link>
+                </li>
+                <li>
+                  <Link href="/community-app" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-community-app">Community App</Link>
+                </li>
+                <li>
+                  <Link href="/rewards" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-rewards">Rewards</Link>
+                </li>
+                <li>
+                  <Link href="/white-label" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-white-label">White-Label</Link>
+                </li>
                 <li>
                   <a href="#features" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-features">Features</a>
                 </li>
@@ -821,10 +836,33 @@ function Footer() {
                   <a href="#pricing" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-pricing">Pricing</a>
                 </li>
                 <li>
-                  <button onClick={() => setShowApiPopup(true)} className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block text-left" data-testid="link-footer-integrations">Integrations</button>
+                  <button onClick={() => setShowApiPopup(true)} className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block text-left" data-testid="link-footer-integrations">Integrations & API</button>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4" data-testid="heading-footer-audiences">Discover</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/sports" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-sports">Sports</Link>
                 </li>
                 <li>
-                  <button onClick={() => setShowApiPopup(true)} className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block text-left" data-testid="link-footer-api">API</button>
+                  <Link href="/charities" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-charities">Charities</Link>
+                </li>
+                <li>
+                  <Link href="/membership" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-membership">Membership</Link>
+                </li>
+                <li>
+                  <Link href="/resources" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-resources">Resources</Link>
+                </li>
+                <li>
+                  <Link href="/faq" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-faq">FAQs</Link>
+                </li>
+                <li>
+                  <Link href="/climate-positive" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-climate-positive">Climate Positive</Link>
+                </li>
+                <li>
+                  <Link href="/regional-partner" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded inline-block" data-testid="link-footer-regional-partner">Regional Partner</Link>
                 </li>
               </ul>
             </div>
