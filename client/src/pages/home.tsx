@@ -573,6 +573,42 @@ function LaunchCTASection() {
   );
 }
 
+function RegionalPartnerCTASection() {
+  return (
+    <section id="regional-partner-cta" className="py-6 lg:py-8" data-testid="section-regional-partner-cta">
+      <div className="container mx-auto px-4">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-600 to-green-600 p-8 md:p-12 lg:p-16">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
+          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="flex-shrink-0 bg-white/95 rounded-2xl p-6 shadow-lg">
+              <img src={logoPath} alt="Social8" className="w-48 md:w-56 lg:w-64 object-contain" data-testid="img-regional-partner-cta-logo" />
+            </div>
+            <div className="flex-1 flex flex-col items-center lg:items-start">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 text-center lg:text-left" data-testid="heading-regional-partner-cta">
+                YOUR REGION. YOUR NETWORK. YOUR INCOME.
+              </h2>
+              <p className="text-white/90 text-lg mb-2 text-center lg:text-left" data-testid="text-regional-partner-cta">
+                Become a Social8 Regional Partner and build a portfolio of communities in your area.
+              </p>
+              <p className="text-white/90 text-lg mb-6 text-center lg:text-left" data-testid="text-regional-partner-cta-revenue">
+                Earn recurring revenue as your network grows.
+              </p>
+              <div className="w-full flex justify-center lg:justify-start">
+                <Link href="/contact">
+                  <Button size="lg" className="bg-white text-emerald-700 hover:bg-white/90 shadow-lg gap-2" data-testid="button-explore-regional-opportunity">
+                    Explore the Opportunity
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function GreenCredentialsSection() {
   const initiatives = [
     { icon: TreePine, label: "Tree Planting" },
@@ -861,6 +897,7 @@ export default function Home() {
         <CTASection />
         <GreenCredentialsSection />
         <LaunchCTASection />
+        <RegionalPartnerCTASection />
         <PricingSection />
         <FAQSection />
       </main>
