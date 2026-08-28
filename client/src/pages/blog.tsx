@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import logoPath from "@assets/s8logov2_clean.png";
+import { resetPageSEO, updatePageSEO } from "@/lib/seo";
 
 const SORO_EMBED_URL =
   "https://app.trysoro.com/api/embed/f374b416-5193-4d7a-9a7b-3665a1fcfe60";
@@ -10,15 +11,11 @@ export default function BlogPage() {
   const [embedUnavailable, setEmbedUnavailable] = useState(false);
 
   useEffect(() => {
-    const originalTitle = document.title;
-    const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    const originalDescription = description?.content;
-
-    document.title = "Community Insights & Resources | Social8 Blog";
-    if (description) {
-      description.content =
-        "Explore Social8 insights on community building, member engagement, events, rewards and growing a successful online community.";
-    }
+    updatePageSEO({
+      title: "Resources & Community Insights | Social8",
+      description: "Explore Social8 insights on community building, member engagement, events, rewards and growing a successful online community.",
+      url: "/resources",
+    });
 
     const script = document.createElement("script");
     script.src = SORO_EMBED_URL;
@@ -29,8 +26,7 @@ export default function BlogPage() {
 
     return () => {
       script.remove();
-      document.title = originalTitle;
-      if (description && originalDescription) description.content = originalDescription;
+      resetPageSEO();
     };
   }, []);
 
@@ -52,7 +48,7 @@ export default function BlogPage() {
             <a href="/#climate-positive" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md">Climate Positive</a>
             <a href="/#pricing" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md">Pricing</a>
             <a href="/#faq" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md">FAQs</a>
-            <Link href="/blog" className="text-sm font-medium text-foreground px-2 py-1 rounded-md">Blog</Link>
+            <Link href="/resources" className="text-sm font-medium text-foreground px-2 py-1 rounded-md">Resources</Link>
           </nav>
           <Link href="/create-account">
             <Button size="sm">Create Account</Button>

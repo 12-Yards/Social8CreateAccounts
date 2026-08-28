@@ -43,6 +43,10 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  app.get("/blog", (_req, res) => {
+    res.redirect(301, "/resources");
+  });
+
   await ensureSessionTable();
   const isProduction = process.env.NODE_ENV === "production";
   if (isProduction) {
@@ -76,7 +80,7 @@ export async function registerRoutes(
     const baseUrl = "https://social8.app";
     const pages = [
       { loc: "/", priority: "1.0", changefreq: "weekly" },
-      { loc: "/blog", priority: "0.9", changefreq: "daily" },
+      { loc: "/resources", priority: "0.9", changefreq: "daily" },
       { loc: "/create-account", priority: "0.9", changefreq: "monthly" },
       { loc: "/contact", priority: "0.8", changefreq: "monthly" },
       { loc: "/terms", priority: "0.5", changefreq: "yearly" },
@@ -96,6 +100,25 @@ export async function registerRoutes(
       { loc: "/features/fully-supported", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/widgets", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/technology-architecture", priority: "0.8", changefreq: "monthly" },
+      { loc: "/community-platform", priority: "0.9", changefreq: "monthly" },
+      { loc: "/community-management-software", priority: "0.9", changefreq: "monthly" },
+      { loc: "/community-app", priority: "0.9", changefreq: "monthly" },
+      { loc: "/sports", priority: "0.8", changefreq: "monthly" },
+      { loc: "/sports/sports-community-platform", priority: "0.8", changefreq: "monthly" },
+      { loc: "/sports/sports-fan-engagement", priority: "0.8", changefreq: "monthly" },
+      { loc: "/sports/football-community-platform", priority: "0.8", changefreq: "monthly" },
+      { loc: "/charities", priority: "0.8", changefreq: "monthly" },
+      { loc: "/charities/charity-community-platform", priority: "0.8", changefreq: "monthly" },
+      { loc: "/charities/charity-engagement-platform", priority: "0.8", changefreq: "monthly" },
+      { loc: "/membership", priority: "0.8", changefreq: "monthly" },
+      { loc: "/membership/membership-community-platform", priority: "0.8", changefreq: "monthly" },
+      { loc: "/membership/membership-engagement", priority: "0.8", changefreq: "monthly" },
+      { loc: "/rewards", priority: "0.8", changefreq: "monthly" },
+      { loc: "/rewards/community-rewards", priority: "0.8", changefreq: "monthly" },
+      { loc: "/rewards/community-gamification", priority: "0.8", changefreq: "monthly" },
+      { loc: "/white-label", priority: "0.8", changefreq: "monthly" },
+      { loc: "/white-label/white-label-community-platform", priority: "0.8", changefreq: "monthly" },
+      { loc: "/white-label/white-label-community-app", priority: "0.8", changefreq: "monthly" },
     ];
     const today = new Date().toISOString().split("T")[0];
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
