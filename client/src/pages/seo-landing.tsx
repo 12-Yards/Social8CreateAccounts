@@ -24,6 +24,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { resetPageSEO, updatePageSEO } from "@/lib/seo";
+import MarketingFooter from "@/components/marketing-footer";
 import {
   seoLandingPages,
   type LandingPageIcon,
@@ -200,6 +201,7 @@ export default function SeoLandingPage() {
           </div>
         </section>
       </main>
+      <MarketingFooter />
     </div>
   );
 }

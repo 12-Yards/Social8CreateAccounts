@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { updatePageSEO, resetPageSEO } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
+import MarketingFooter from "@/components/marketing-footer";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -223,6 +224,7 @@ export default function ContactPage() {
           </CardContent>
         </Card>
       </div>
+      <MarketingFooter />
     </div>
   );
 }

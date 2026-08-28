@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import MarketingFooter from "@/components/marketing-footer";
 import logoPath from "@assets/s8logov2_clean.png";
 import { Link, useParams } from "wouter";
 import { 
@@ -261,7 +262,7 @@ export default function BenefitPage() {
             </Link>
           </div>
         </main>
-        <Footer />
+        <MarketingFooter />
       </div>
     );
   }
@@ -386,7 +387,7 @@ export default function BenefitPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <MarketingFooter />
     </div>
   );
 }

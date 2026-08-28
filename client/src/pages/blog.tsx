@@ -4,9 +4,40 @@ import { Button } from "@/components/ui/button";
 import logoPath from "@assets/s8logov2_clean.png";
 import { resetPageSEO, updatePageSEO } from "@/lib/seo";
 import { Menu, X } from "lucide-react";
+import MarketingFooter from "@/components/marketing-footer";
 
 const SORO_EMBED_URL =
   "https://app.trysoro.com/api/embed/f374b416-5193-4d7a-9a7b-3665a1fcfe60";
+
+function LaunchCommunityCTA() {
+  return (
+    <section className="py-6 lg:py-8" data-testid="section-launch-cta-resources">
+      <div className="container mx-auto px-4">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-600 to-green-600 p-8 md:p-12 lg:p-16">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="flex-shrink-0 bg-white/95 rounded-2xl p-6 shadow-lg">
+              <img src={logoPath} alt="Social8" className="w-48 md:w-56 lg:w-64 object-contain" data-testid="img-resources-launch-cta-logo" />
+            </div>
+            <div className="flex-1 flex flex-col items-center lg:items-start">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 text-center lg:text-left" data-testid="heading-resources-launch-cta">
+                Launch your online community
+              </h2>
+              <p className="text-white/90 text-lg mb-6 text-center lg:text-left" data-testid="text-resources-launch-cta-subtext">
+                Create your account and your community platform can be live in less than an hour.
+              </p>
+              <Link href="/create-account">
+                <Button size="lg" className="bg-white text-emerald-700 hover:bg-white/90 shadow-lg" data-testid="button-resources-create-account-cta">
+                  Create Account
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function BlogPage() {
   const [embedUnavailable, setEmbedUnavailable] = useState(false);
@@ -92,7 +123,9 @@ export default function BlogPage() {
           )}
           <div id="soro-blog" data-testid="soro-blog" />
         </section>
+        <LaunchCommunityCTA />
       </main>
+      <MarketingFooter />
     </div>
   );
 }

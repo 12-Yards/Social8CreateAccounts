@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import logoPath from "@assets/s8logov2_clean.png";
 import { updatePageSEO, resetPageSEO } from "@/lib/seo";
+import MarketingFooter from "@/components/marketing-footer";
 
 export default function TermsPage() {
   useEffect(() => {
@@ -136,6 +137,7 @@ export default function TermsPage() {
           </section>
         </div>
       </main>
+      <MarketingFooter />
     </div>
   );
 }

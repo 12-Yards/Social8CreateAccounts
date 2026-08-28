@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import MarketingFooter from "@/components/marketing-footer";
 import logoPath from "@assets/s8logov2_clean.png";
 import eventsCompetitionsImage from "@/assets/images/feature-events-competitions.png";
 import contentPublishingImage from "@/assets/images/feature-content-publishing.png";
@@ -575,7 +576,7 @@ export default function FeaturePage() {
             </Link>
           </div>
         </main>
-        <Footer />
+        <MarketingFooter />
       </div>
     );
   }
@@ -684,7 +685,7 @@ export default function FeaturePage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <MarketingFooter />
     </div>
   );
 }

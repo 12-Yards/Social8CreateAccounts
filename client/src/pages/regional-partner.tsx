@@ -21,6 +21,7 @@ import {
   X,
 } from "lucide-react";
 import { resetPageSEO, updatePageSEO } from "@/lib/seo";
+import MarketingFooter from "@/components/marketing-footer";
 
 const partnerLinks = [
   { href: "/#vision", label: "Our Vision" },
@@ -269,6 +270,7 @@ export default function RegionalPartnerPage() {
           </div>
         </section>
       </main>
+      <MarketingFooter />
     </div>
   );
 }

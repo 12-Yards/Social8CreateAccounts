@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import logoPath from "@assets/s8logov2_clean.png";
 import { ArrowRight, Heart, Leaf, Menu, Sprout, TreePine, Waves, X } from "lucide-react";
 import { resetPageSEO, updatePageSEO } from "@/lib/seo";
+import MarketingFooter from "@/components/marketing-footer";
 
 const faqs = [
   ["What is Social8?", "Social8 is an all-in-one platform for creating, managing and growing an online community. It brings members, content, events, competitions, polls, groups, messaging and engagement tools together in one place."],
@@ -115,6 +116,7 @@ export default function SectionLandingPage() {
           </section>
         </main>
       )}
+      <MarketingFooter />
     </div>
   );
 }
