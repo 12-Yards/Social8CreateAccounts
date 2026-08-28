@@ -15,6 +15,7 @@ import PrivacyPage from "@/pages/privacy";
 import BlogPage from "@/pages/blog";
 import SeoLandingPage from "@/pages/seo-landing";
 import RegionalPartnerPage from "@/pages/regional-partner";
+import SectionLandingPage from "@/pages/section-landing";
 import AdminLoginPage from "@/pages/admin-login";
 import AdminPage from "@/pages/admin";
 import CookieConsent from "@/components/cookie-consent";
@@ -32,6 +33,8 @@ function Router() {
       <Route path="/privacy" component={PrivacyPage} />
       <Route path="/resources" component={BlogPage} />
       <Route path="/regional-partner" component={RegionalPartnerPage} />
+      <Route path="/faq" component={SectionLandingPage} />
+      <Route path="/climate-positive" component={SectionLandingPage} />
       <Route path="/community-platform" component={SeoLandingPage} />
       <Route path="/community-management-software" component={SeoLandingPage} />
       <Route path="/community-app" component={SeoLandingPage} />

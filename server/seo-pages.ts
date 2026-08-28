@@ -13,6 +13,14 @@ const regionalPartnerPage: SeoPage = {
   title: "Become a Social8 Regional Partner | Build Recurring Income",
   description: "Build a portfolio of communities in your region with Social8. Introduce organisations to their own community platform and earn recurring revenue as your network grows.",
 };
+const faqPage: SeoPage = {
+  title: "Frequently Asked Questions | Social8",
+  description: "Find answers about Social8, the all-in-one community platform for clubs, organisations, charities, creators and membership communities.",
+};
+const climatePositivePage: SeoPage = {
+  title: "Climate Positive Communities | Social8",
+  description: "See how Social8 communities can support tree planting, ocean clean-up, biodiversity projects and charitable giving through everyday engagement.",
+};
 export const seoPages: Record<string, SeoPage> = {
   ...Object.fromEntries(
     Object.entries(seoLandingPages).map(([pathname, page]) => [
@@ -22,6 +30,8 @@ export const seoPages: Record<string, SeoPage> = {
   ),
   "/resources": resourcePage,
   "/regional-partner": regionalPartnerPage,
+  "/faq": faqPage,
+  "/climate-positive": climatePositivePage,
 };
 
 function escapeHtml(value: string) {
@@ -56,11 +66,33 @@ export function injectRouteSeo(html: string, pathname: string) {
       url: "https://social8.app",
     },
   }).replaceAll("<", "\\u003c");
+  const faqSchema = pathname === "/faq"
+    ? JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          ["What is Social8?", "Social8 is an all-in-one platform for creating, managing and growing an online community."],
+          ["Who is Social8 for?", "Social8 is designed for clubs, grassroots organisations, charities, societies, content creators and other organisations."],
+          ["Do I need technical knowledge to set up Social8?", "No. Social8 has been designed so community owners can create and manage their platform without technical knowledge or developers."],
+          ["How quickly can I launch a community?", "You can create your account, configure your community and start inviting members in less than an hour."],
+          ["What can members do on Social8?", "Members can connect, join groups, message, comment, participate in events and competitions, respond to polls and take part in community activities."],
+          ["Is Social8 free?", "The Professional plan is free and includes the core tools needed to build and manage your community."],
+        ].map(([name, text]) => ({
+          "@type": "Question",
+          name,
+          acceptedAnswer: { "@type": "Answer", text },
+        })),
+      }).replaceAll("<", "\\u003c")
+    : "";
   const landingPage = seoLandingPages[pathname];
   const staticContent = landingPage
     ? renderSeoLandingContent(landingPage)
     : pathname === "/regional-partner"
       ? renderRegionalPartnerContent()
+      : pathname === "/faq"
+        ? renderFaqContent()
+        : pathname === "/climate-positive"
+          ? renderClimatePositiveContent()
       : "";
 
   return html
@@ -74,7 +106,7 @@ export function injectRouteSeo(html: string, pathname: string) {
     .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${description}" />`)
     .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${canonical}" />`)
     .replace(/\s*<script id="homepage-faq-schema" type="application\/ld\+json">[\s\S]*?<\/script>/, "")
-    .replace("</head>", `    <script id="route-webpage-schema" type="application/ld+json">${webPageSchema}</script>\n  </head>`)
+    .replace("</head>", `    <script id="route-webpage-schema" type="application/ld+json">${webPageSchema}</script>${faqSchema ? `\n    <script id="route-faq-schema" type="application/ld+json">${faqSchema}</script>` : ""}\n  </head>`)
     .replace('<div id="root"></div>', `<div id="root">${staticContent}</div>`);
 }
 
@@ -205,6 +237,33 @@ function renderRegionalPartnerContent() {
         <p><a href="/contact?type=regional-partner">Apply to Become a Regional Partner</a></p>
         <p>Already have a region or network in mind? Tell us about it.</p>
       </section>
+    </main>
+  `;
+}
+
+function renderFaqContent() {
+  const questions = [
+    ["What is Social8?", "Social8 is an all-in-one platform for creating, managing and growing an online community."],
+    ["Who is Social8 for?", "Social8 is designed for clubs, grassroots organisations, charities, societies, content creators and other organisations."],
+    ["Do I need technical knowledge to set up Social8?", "No. Social8 has been designed so community owners can create and manage their platform without technical knowledge or developers."],
+    ["How quickly can I launch a community?", "You can create your account, configure your community and start inviting members in less than an hour."],
+    ["What can members do on Social8?", "Members can connect, join groups, message, comment, participate in events and competitions, respond to polls and take part in community activities."],
+    ["Is Social8 free?", "The Professional plan is free and includes the core tools needed to build and manage your community."],
+  ];
+  return `
+    <main>
+      <section><p>Social8 FAQs</p><h1>Frequently Asked Questions</h1><p>Everything you need to know about building your community with Social8.</p></section>
+      <section><h2>Questions about Social8</h2><dl>${questions.map(([question, answer]) => `<dt><strong>${escapeHtml(question)}</strong></dt><dd>${escapeHtml(answer)}</dd>`).join("")}</dl><p><a href="/create-account">Build Your Community</a></p></section>
+    </main>
+  `;
+}
+
+function renderClimatePositiveContent() {
+  const initiatives = ["Tree planting", "Ocean clean-up", "Biodiversity projects", "Charitable giving"];
+  return `
+    <main>
+      <section><p>Climate Positive</p><h1>Community Powered. Planet Focused.</h1><p>Social8 communities don't just connect people—they can create real environmental impact through everyday engagement, while keeping community participation at the centre.</p></section>
+      <section><h2>Positive action through participation</h2><ul>${initiatives.map((initiative) => `<li>${escapeHtml(initiative)}</li>`).join("")}</ul><p>Environmental action is an optional part of the wider Social8 rewards and marketplace experience.</p><p><a href="/rewards/community-rewards">Explore Community Rewards</a></p></section>
     </main>
   `;
 }
