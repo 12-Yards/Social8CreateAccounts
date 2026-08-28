@@ -51,3 +51,7 @@ ADMIN_PASSWORD = "2026Vibe!!!"
 [agent]
 expertMode = true
 integrations = ["github:1.0.0"]
+
+[postMerge]
+path = "scripts/post-merge.sh"
+timeoutMs = 180000

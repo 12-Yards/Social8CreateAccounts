@@ -507,26 +507,40 @@ function RewardsSection() {
 
 function CTASection() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-emerald-600 to-green-600 relative overflow-hidden" data-testid="section-cta">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
-      <div className="container mx-auto px-4 relative">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white" data-testid="heading-cta">Ready to Get Started?</h2>
-          <p className="text-white/90 text-lg mb-8">
-            Join the growing communities already using Social8 to engage their members and part of the new rewards economy.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://demoplatform.social8.app/" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="gap-2 bg-white text-emerald-700" data-testid="button-view-platform-home">
-                View Platform
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </a>
-            <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-white text-white" data-testid="button-contact-us-home">
-                Contact Us
-              </Button>
-            </Link>
+    <section id="ready-to-get-started" className="py-6 lg:py-8" data-testid="section-cta">
+      <div className="container mx-auto px-4">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-600 to-green-600 p-8 md:p-12 lg:p-16">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iNCIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
+          <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="flex-shrink-0 bg-white/95 rounded-2xl p-6 shadow-lg">
+              <img
+                src={logoPath}
+                alt="Social8"
+                className="w-48 md:w-56 lg:w-64 object-contain"
+                data-testid="img-get-started-cta-logo"
+              />
+            </div>
+            <div className="flex-1 flex flex-col items-center lg:items-start">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 text-center lg:text-left" data-testid="heading-cta">
+                Ready to Get Started?
+              </h2>
+              <p className="text-white/90 text-lg mb-6 text-center lg:text-left">
+                Join the growing communities already using Social8 to engage their members and be part of the new rewards economy.
+              </p>
+              <div className="w-full flex flex-wrap justify-center lg:justify-start gap-4">
+                <a href="https://demoplatform.social8.app/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="gap-2 bg-white text-emerald-700 hover:bg-white/90 shadow-lg" data-testid="button-view-platform-home">
+                    View Platform
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </a>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="border-white text-white" data-testid="button-contact-us-home">
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
