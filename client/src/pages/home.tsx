@@ -737,7 +737,7 @@ function FAQSection() {
 
 function PricingSection() {
   return (
-    <section id="pricing" className="pt-5 lg:pt-7 pb-20 lg:pb-28" data-testid="section-pricing">
+    <section id="pricing" className="pt-5 lg:pt-7 pb-10 lg:pb-14" data-testid="section-pricing">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4" data-testid="heading-pricing">
