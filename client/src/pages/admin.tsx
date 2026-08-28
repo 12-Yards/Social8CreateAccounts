@@ -21,6 +21,32 @@ import type { Registration, ContactSubmission } from "@shared/schema";
 
 type Tab = "registrations" | "contacts";
 
+type RegionalPartnerApplication = {
+  territory: string;
+  network: string;
+  communityTypes: string;
+  firstTenApproach: string;
+  additionalNotes: string;
+};
+
+function parseRegionalPartnerApplication(notes: string | null): RegionalPartnerApplication | null {
+  if (!notes?.startsWith("Regional Partner Application")) {
+    return null;
+  }
+
+  const sections = notes.split("\n\n");
+  const getValue = (label: string) =>
+    sections.find((section) => section.startsWith(label))?.slice(label.length).trim() || "-";
+
+  return {
+    territory: getValue("Region or territory:"),
+    network: getValue("Existing network or relationships:"),
+    communityTypes: getValue("Community types to target:"),
+    firstTenApproach: getValue("Approach to first 10 communities:"),
+    additionalNotes: getValue("Additional notes:"),
+  };
+}
+
 export default function AdminPage() {
   const [, setLocation] = useLocation();
   const [tab, setTab] = useState<Tab>("registrations");
@@ -347,7 +373,10 @@ export default function AdminPage() {
                           <td className="py-3 pr-4">
                             <div className="flex items-center gap-2">
                               {!contact.isRead && <Circle className="w-2.5 h-2.5 fill-green-500 text-green-500 flex-shrink-0" data-testid={`icon-new-contact-${contact.id}`} />}
-                              {contact.organisation || "-"}
+                              <span>{contact.organisation || "-"}</span>
+                              {parseRegionalPartnerApplication(contact.notes) && (
+                                <Badge variant="secondary" className="whitespace-nowrap">Regional Partner</Badge>
+                              )}
                             </div>
                           </td>
                           <td className="py-3 pr-4">{contact.name}</td>
@@ -401,7 +430,12 @@ export default function AdminPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center justify-between">
-                  <CardTitle data-testid="heading-contact-detail">Contact from {selectedContact.name}</CardTitle>
+                  <div className="flex items-center gap-3">
+                    <CardTitle data-testid="heading-contact-detail">Contact from {selectedContact.name}</CardTitle>
+                    {parseRegionalPartnerApplication(selectedContact.notes) && (
+                      <Badge variant="secondary">Regional Partner</Badge>
+                    )}
+                  </div>
                   <Button
                     variant="outline"
                     size="sm"
@@ -415,34 +449,67 @@ export default function AdminPage() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label className="text-muted-foreground text-xs">Organisation</Label>
-                    <p className="font-medium" data-testid="text-contact-org">{selectedContact.organisation || "-"}</p>
-                  </div>
-                  <div>
-                    <Label className="text-muted-foreground text-xs">Name</Label>
-                    <p className="font-medium" data-testid="text-contact-name">{selectedContact.name}</p>
-                  </div>
-                  <div>
-                    <Label className="text-muted-foreground text-xs">Email</Label>
-                    <p className="font-medium" data-testid="text-contact-email">{selectedContact.email}</p>
-                  </div>
-                  <div>
-                    <Label className="text-muted-foreground text-xs">Mobile</Label>
-                    <p className="font-medium" data-testid="text-contact-mobile">{selectedContact.mobile || "-"}</p>
-                  </div>
-                  <div className="md:col-span-2">
-                    <Label className="text-muted-foreground text-xs">Notes</Label>
-                    <p className="font-medium whitespace-pre-wrap" data-testid="text-contact-notes">{selectedContact.notes || "-"}</p>
-                  </div>
-                  <div>
-                    <Label className="text-muted-foreground text-xs">Date Submitted</Label>
-                    <p className="font-medium">
-                      {selectedContact.createdAt ? new Date(selectedContact.createdAt).toLocaleString() : "-"}
-                    </p>
-                  </div>
-                </div>
+                {(() => {
+                  const regionalApplication = parseRegionalPartnerApplication(selectedContact.notes);
+
+                  return (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <Label className="text-muted-foreground text-xs">Organisation</Label>
+                        <p className="font-medium" data-testid="text-contact-org">{selectedContact.organisation || "-"}</p>
+                      </div>
+                      <div>
+                        <Label className="text-muted-foreground text-xs">Name</Label>
+                        <p className="font-medium" data-testid="text-contact-name">{selectedContact.name}</p>
+                      </div>
+                      <div>
+                        <Label className="text-muted-foreground text-xs">Email</Label>
+                        <p className="font-medium" data-testid="text-contact-email">{selectedContact.email}</p>
+                      </div>
+                      <div>
+                        <Label className="text-muted-foreground text-xs">Mobile</Label>
+                        <p className="font-medium" data-testid="text-contact-mobile">{selectedContact.mobile || "-"}</p>
+                      </div>
+                      {regionalApplication ? (
+                        <>
+                          <div>
+                            <Label className="text-muted-foreground text-xs">Region or Territory</Label>
+                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-territory">{regionalApplication.territory}</p>
+                          </div>
+                          <div>
+                            <Label className="text-muted-foreground text-xs">Existing Network or Relationships</Label>
+                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-network">{regionalApplication.network}</p>
+                          </div>
+                          <div className="md:col-span-2">
+                            <Label className="text-muted-foreground text-xs">Community Types to Target</Label>
+                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-community-types">{regionalApplication.communityTypes}</p>
+                          </div>
+                          <div className="md:col-span-2">
+                            <Label className="text-muted-foreground text-xs">Approach to First 10 Communities</Label>
+                            <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-first-ten-approach">{regionalApplication.firstTenApproach}</p>
+                          </div>
+                          {regionalApplication.additionalNotes !== "-" && (
+                            <div className="md:col-span-2">
+                              <Label className="text-muted-foreground text-xs">Additional Notes</Label>
+                              <p className="font-medium whitespace-pre-wrap" data-testid="text-regional-additional-notes">{regionalApplication.additionalNotes}</p>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="md:col-span-2">
+                          <Label className="text-muted-foreground text-xs">Notes</Label>
+                          <p className="font-medium whitespace-pre-wrap" data-testid="text-contact-notes">{selectedContact.notes || "-"}</p>
+                        </div>
+                      )}
+                      <div>
+                        <Label className="text-muted-foreground text-xs">Date Submitted</Label>
+                        <p className="font-medium">
+                          {selectedContact.createdAt ? new Date(selectedContact.createdAt).toLocaleString() : "-"}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
               </CardContent>
             </Card>
           </div>
