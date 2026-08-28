@@ -1,0 +1,1 @@
+- [Express wildcard pathname](express-wildcard-pathname.md) — wildcard `app.use` handlers can see a stripped `req.path`; use `req.originalUrl` for route-specific fallback rendering.

@@ -17,7 +17,8 @@ export function serveStatic(app: Express) {
   app.use("/{*path}", async (req, res, next) => {
     try {
       const html = await fs.promises.readFile(path.resolve(distPath, "index.html"), "utf-8");
-      res.type("html").send(injectRouteSeo(html, req.path));
+      const pathname = new URL(req.originalUrl, "http://localhost").pathname;
+      res.type("html").send(injectRouteSeo(html, pathname));
     } catch (error) {
       next(error);
     }
