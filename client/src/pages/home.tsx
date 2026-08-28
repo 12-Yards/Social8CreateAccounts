@@ -906,8 +906,8 @@ export default function Home() {
       <main>
         <HeroSection />
         <VisionSection />
-        <FeaturesSection />
         <CTASection />
+        <FeaturesSection />
         <RewardsSection />
         <GreenCredentialsSection />
         <LaunchCTASection />
