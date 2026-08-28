@@ -908,9 +908,9 @@ export default function Home() {
         <VisionSection />
         <CTASection />
         <FeaturesSection />
+        <LaunchCTASection />
         <RewardsSection />
         <GreenCredentialsSection />
-        <LaunchCTASection />
         <RegionalPartnerCTASection />
         <PricingSection />
         <FAQSection />
