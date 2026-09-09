@@ -21,6 +21,10 @@ const climatePositivePage: SeoPage = {
   title: "Climate Positive Communities | Social8",
   description: "See how Social8 communities can support tree planting, ocean clean-up, biodiversity projects and charitable giving through everyday engagement.",
 };
+const deleteAccountPage: SeoPage = {
+  title: "Delete Your Social8 Account | Social8",
+  description: "Learn how to permanently delete your Social8 account from the app or request account deletion if you can no longer sign in.",
+};
 export const seoPages: Record<string, SeoPage> = {
   ...Object.fromEntries(
     Object.entries(seoLandingPages).map(([pathname, page]) => [
@@ -32,6 +36,7 @@ export const seoPages: Record<string, SeoPage> = {
   "/regional-partner": regionalPartnerPage,
   "/faq": faqPage,
   "/climate-positive": climatePositivePage,
+  "/delete-account": deleteAccountPage,
 };
 
 function escapeHtml(value: string) {

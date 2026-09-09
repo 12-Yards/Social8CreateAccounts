@@ -134,6 +134,7 @@ export async function registerRoutes(
       { loc: "/contact", priority: "0.8", changefreq: "monthly" },
       { loc: "/terms", priority: "0.5", changefreq: "yearly" },
       { loc: "/privacy", priority: "0.5", changefreq: "yearly" },
+      { loc: "/delete-account", priority: "0.5", changefreq: "yearly" },
       { loc: "/features/multi-tenancy", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/zero-friction-signup", priority: "0.8", changefreq: "monthly" },
       { loc: "/features/community-content", priority: "0.8", changefreq: "monthly" },

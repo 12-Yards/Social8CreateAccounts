@@ -82,6 +82,7 @@ export default function MarketingFooter() {
             <a href="https://www.facebook.com/profile.php?id=61593719527932" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover-elevate px-1 py-0.5 rounded" aria-label="Follow Social8 on Facebook"><Facebook className="w-4 h-4" aria-hidden="true" /></a>
             <Link href="/privacy" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded">Privacy Policy</Link>
             <Link href="/terms" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded">Terms of Service</Link>
+            <Link href="/delete-account" className="text-sm text-muted-foreground hover-elevate px-1 py-0.5 rounded">Delete Account</Link>
           </div>
         </div>
       </div>
