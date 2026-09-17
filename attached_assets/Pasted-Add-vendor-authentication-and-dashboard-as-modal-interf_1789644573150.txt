@@ -1,0 +1,156 @@
+Add vendor authentication and dashboard as modal interfaces on the Social8 website.
+
+Do not navigate vendors to the normal platform login, signup, or vendor page. The vendor experience must appear inside a modal without the normal Social8 header, footer, navigation, or community layout.
+
+Create one reusable modal state:
+
+vendorModalView:
+- null
+- "signin"
+- "signup"
+- "dashboard"
+
+Add vendor buttons wherever appropriate:
+
+- “Vendor Sign In”
+- “Register as a Vendor”
+- “Vendor Dashboard”
+
+Vendor sign-in modal:
+
+POST https://social8.app/api/auth/login
+
+Request body:
+
+{
+  "email": "vendor@example.com",
+  "password": "password",
+  "accountType": "vendor"
+}
+
+Use credentials: "include" for browser cookies. Also store/use the returned token as:
+
+Authorization: Bearer <token>
+
+After successful login:
+- If the vendor is approved, show the dashboard modal.
+- If the vendor status is pending, show the dashboard with a clear “Pending approval” message and limited-access state.
+- If the account is declined, show the API error and do not open the dashboard.
+
+Vendor registration modal:
+
+This must be a two-step form.
+
+Step 1: request the verification code.
+
+POST https://social8.app/api/auth/signup/request-otp
+
+Request body:
+
+{
+  "email": "vendor@example.com",
+  "accountType": "vendor"
+}
+
+Step 2: create the account after the user enters the emailed OTP.
+
+POST https://social8.app/api/auth/signup
+
+Request body:
+
+{
+  "email": "vendor@example.com",
+  "password": "password",
+  "otp": "123456",
+  "accountType": "vendor",
+  "vendorName": "Example Business",
+  "vendorDescription": "Business description",
+  "vendorWebsite": "https://example.com",
+  "contactName": "Jane Smith",
+  "contactPhone": "+44 7000 000000"
+}
+
+Required registration fields:
+- Email
+- Password
+- OTP
+- Business name
+- Contact name
+- Contact telephone
+
+Optional fields:
+- Business description
+- Website
+
+The OTP expires after 10 minutes. Include a resend-code button with a 60-second cooldown.
+
+After successful registration:
+- Store/use the returned authentication token.
+- Open the dashboard modal.
+- Display the vendor’s pending approval state.
+- Do not treat a newly registered vendor as fully approved.
+
+Current vendor session:
+
+GET https://social8.app/api/auth/user
+
+Send:
+
+Authorization: Bearer <token>
+
+Use the returned account status:
+- pending
+- active
+- declined
+
+Dashboard modal:
+
+Use the authenticated vendor APIs and display the existing vendor workspace inside the same modal:
+
+- Dashboard
+- Profile
+- Listings
+- Redemptions
+- Statement
+
+The dashboard modal must always remain the same size regardless of the selected tab:
+
+- Width: 80vw
+- Height: 80vh
+- max-width: none
+- max-height: 80vh
+- overflow-y: auto
+
+Do not allow the modal to resize when switching tabs.
+
+Dashboard API endpoints:
+
+GET https://social8.app/api/vendor/profile
+PUT https://social8.app/api/vendor/profile
+
+GET https://social8.app/api/vendor/listings
+POST https://social8.app/api/vendor/listings
+PUT https://social8.app/api/vendor/listings/:id
+DELETE https://social8.app/api/vendor/listings/:id
+
+GET https://social8.app/api/vendor/redemptions
+GET https://social8.app/api/vendor/statement
+
+All dashboard requests must include:
+
+Authorization: Bearer <token>
+
+Only approved vendors should be allowed to use redemption and financial features. Pending vendors should see those features disabled with an explanation.
+
+Modal requirements:
+
+- Use the existing modal/dialog component used by the Social8 website.
+- Keep the modal centered with a darkened backdrop.
+- Do not show the normal platform header, footer, or navigation behind the vendor form.
+- Allow switching between Sign In and Register inside the modal.
+- Keep the vendor form scrollable on mobile.
+- Do not expose JWT secrets, database credentials, or server environment variables.
+- Do not recreate the platform’s public pages inside the modal.
+- Use clear inline validation and API error messages.
+- Add loading states to all submit buttons.
+- Add a close button that returns to the previous page or closes the parent modal.
