@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import {
-  ArrowLeft,
   ArrowRight,
   CheckCircle2,
   Coins,
   Handshake,
   LayoutDashboard,
   LogIn,
+  Menu,
   PackageCheck,
   Sparkles,
   Store,
   Users,
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -97,6 +98,7 @@ function VendorPlatformModal({
 
 export default function VendorsPage() {
   const [activeModal, setActiveModal] = useState<VendorModal | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     updatePageSEO({
@@ -116,16 +118,44 @@ export default function VendorsPage() {
           <Link href="/">
             <img src={logoPath} alt="Social8 Logo" className="h-10 cursor-pointer object-contain" data-testid="img-vendors-logo" />
           </Link>
+          <nav className="hidden items-center gap-6 md:flex" data-testid="nav-main">
+            <a href="/#vision" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate" data-testid="link-vision">Our Vision</a>
+            <a href="/#features" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate" data-testid="link-features">Features</a>
+            <a href="/#climate-positive" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate" data-testid="link-climate-positive">Climate Positive</a>
+            <a href="/#pricing" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate" data-testid="link-pricing">Pricing</a>
+            <a href="/#faq" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate" data-testid="link-faq">FAQs</a>
+            <Link href="/resources" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate" data-testid="link-resources">Resources</Link>
+            <Link href="/vendors" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate" data-testid="link-vendors">Vendors</Link>
+          </nav>
           <div className="flex items-center gap-3">
-            <span className="hidden text-sm text-muted-foreground sm:inline">For vendors</span>
-            <Link href="/">
-              <Button variant="ghost" size="sm" className="gap-2" data-testid="button-vendors-back">
-                <ArrowLeft className="h-4 w-4" />
-                Back to Home
-              </Button>
+            <Link href="/create-account">
+              <Button size="sm" data-testid="button-create-account">Create Account</Button>
             </Link>
+            <Button
+              size="icon"
+              variant="outline"
+              className="md:hidden"
+              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={menuOpen}
+              aria-controls="vendors-mobile-navigation"
+              data-testid="button-mobile-menu"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </Button>
           </div>
         </div>
+        {menuOpen && (
+          <nav id="vendors-mobile-navigation" className="grid gap-1 border-t bg-background px-4 py-3 md:hidden" data-testid="nav-mobile">
+            <a href="/#vision" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Our Vision</a>
+            <a href="/#features" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Features</a>
+            <a href="/#climate-positive" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Climate Positive</a>
+            <a href="/#pricing" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Pricing</a>
+            <a href="/#faq" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">FAQs</a>
+            <Link href="/resources" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Resources</Link>
+            <Link href="/vendors" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Vendors</Link>
+          </nav>
+        )}
       </header>
 
       <main>
