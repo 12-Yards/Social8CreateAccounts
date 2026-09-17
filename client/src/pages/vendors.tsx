@@ -75,7 +75,7 @@ function VendorPlatformModal({
               src={`${VENDOR_PLATFORM_URL}${details.path}`}
               title={details.title}
               className="min-h-0 w-full flex-1 border-0 bg-background"
-              allow="clipboard-read; clipboard-write"
+              allow="storage-access; clipboard-read; clipboard-write"
               data-testid={`iframe-vendor-${modal}`}
             />
           </>
