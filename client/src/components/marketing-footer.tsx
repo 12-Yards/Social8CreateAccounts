@@ -19,6 +19,7 @@ const discoverLinks = [
   { href: "/resources", label: "Resources" },
   { href: "/faq", label: "FAQs" },
   { href: "/climate-positive", label: "Climate Positive" },
+  { href: "/vendors", label: "Vendors" },
 ];
 
 function FooterLink({ href, label }: { href: string; label: string }) {
@@ -71,7 +72,6 @@ export default function MarketingFooter() {
             <ul className="space-y-2">
               <FooterLink href="/contact" label="Contact Us" />
               <FooterLink href="/regional-partner" label="Regional Partner" />
-              <FooterLink href="/vendors" label="Vendors" />
             </ul>
           </div>
         </div>
