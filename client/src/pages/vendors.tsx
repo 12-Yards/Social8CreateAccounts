@@ -37,17 +37,17 @@ const modalDetails: Record<VendorModal, {
   signin: {
     title: "Vendor Sign In",
     description: "Sign in to manage your vendor account and offers.",
-    path: "/signin?returnTo=%2Fvendors",
+    path: "/vendor-portal?view=signin&embed=1",
   },
   signup: {
     title: "Become a Social8 Vendor",
     description: "Create your vendor account and start offering rewards to members.",
-    path: "/signup?accountType=vendor",
+    path: "/vendor-portal?view=signup&embed=1",
   },
   dashboard: {
     title: "Vendor Dashboard",
     description: "Manage your profile, listings and member redemptions.",
-    path: "/vendors",
+    path: "/vendor-portal?view=dashboard&embed=1",
   },
 };
 
