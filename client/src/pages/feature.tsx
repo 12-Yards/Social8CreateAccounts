@@ -114,6 +114,29 @@ const featuresData = {
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
     image: communityContentImage
   },
+  "petitions": {
+    icon: FileText,
+    title: "Petitions",
+    subtitle: "Give your community a voice",
+    description: "Create petitions that help members rally support around the causes, ideas and changes that matter to them.",
+    heroDescription: "Make it easy for members to raise issues and build support for the changes they want to see. Petitions give your community a clear, visible way to gather signatures and demonstrate collective support.",
+    benefits: [
+      "Create petitions with clear titles, descriptions and supporting detail",
+      "Give members a simple way to add their support",
+      "Show progress as a petition gathers signatures",
+      "Keep important community issues visible and easy to discover",
+      "Use member feedback to guide future decisions",
+      "Build stronger participation around causes that matter"
+    ],
+    useCases: [
+      "Campaign for improvements to a club or organisation",
+      "Gather member support for a community initiative",
+      "Give members a constructive way to raise concerns",
+      "Demonstrate collective support when engaging decision-makers"
+    ],
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
+    image: communityContentImage
+  },
   "events-competitions": {
     icon: Calendar,
     title: "Events & Competitions",
@@ -229,6 +252,29 @@ const featuresData = {
     colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
     image: membersNetworkingImage
   },
+  "donate-to-good-causes": {
+    icon: HeartHandshake,
+    title: "Donate to Good Causes",
+    subtitle: "Turn participation into positive impact",
+    description: "Let members turn their points into meaningful support for environmental projects and good causes they care about.",
+    heroDescription: "Give members a way to use the value they earn through participation to support good causes. Social8 connects points and engagement with positive environmental and community impact.",
+    benefits: [
+      "Let members donate points to causes they care about",
+      "Support environmental projects and positive community initiatives",
+      "Turn everyday participation into measurable impact",
+      "Give members meaningful choices for using their points",
+      "Make positive action part of your community experience",
+      "Show how member engagement can create wider benefits"
+    ],
+    useCases: [
+      "Support tree planting and environmental projects",
+      "Add charitable giving to your community rewards programme",
+      "Reward participation with a choice of positive outcomes",
+      "Help members make a difference together"
+    ],
+    colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
+    image: marketplaceImage
+  },
   "monetisation": {
     icon: CreditCard,
     title: "Monetisation",
@@ -251,6 +297,29 @@ const featuresData = {
     ],
     colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
     image: monetisationImage
+  },
+  "become-a-vendor": {
+    icon: Store,
+    title: "Become a Vendor",
+    subtitle: "Turn your products into points rewards",
+    description: "Offer products and services as Social8 rewards, reach engaged communities, and receive the points members spend on your offers as crypto.",
+    heroDescription: "Join the Social8 vendor network and put your products or services in front of engaged communities. Members redeem your offers using Social8 points, and the points you receive are converted into cryptocurrency that you can convert back into pounds.",
+    benefits: [
+      "Reach active Social8 communities through points-based rewards",
+      "Create and manage your own offers and listings",
+      "Receive the points members spend on your offers as cryptocurrency",
+      "Convert your crypto balance back into pounds",
+      "Manage redemptions through a dedicated vendor workspace",
+      "Build meaningful partnerships with communities and their members"
+    ],
+    useCases: [
+      "Offer products, experiences or services as member rewards",
+      "Reach new customers through community partnerships",
+      "Create incentives around your existing products",
+      "Manage offers and redemptions from one workspace"
+    ],
+    colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+    image: marketplaceImage
   },
   "fully-supported": {
     icon: HeartHandshake,

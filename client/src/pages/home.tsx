@@ -294,6 +294,13 @@ function FeaturesSection() {
       slug: "community-content"
     },
     {
+      icon: FileText,
+      title: "Petitions",
+      description: "Give members a simple way to raise support for causes, ideas and changes that matter to your community.",
+      colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
+      slug: "petitions"
+    },
+    {
       icon: Calendar,
       title: "Events & Competitions",
       description: "Event listings with attendance tracking, member-suggested events, and a competition engine with individual, team and knockout formats plus live leaderboards.",
@@ -343,11 +350,25 @@ function FeaturesSection() {
       slug: "members-networking"
     },
     {
+      icon: HeartHandshake,
+      title: "Donate to Good Causes",
+      description: "Let members turn their points into meaningful support for environmental projects and good causes they care about.",
+      colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
+      slug: "donate-to-good-causes"
+    },
+    {
       icon: CreditCard,
       title: "Monetisation",
       description: "Premium subscriptions, paid events and competitions, a cross-community marketplace, advertising revenue share and paid polls — via Stripe or cryptocurrency.",
       colorClass: "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400",
       slug: "monetisation"
+    },
+    {
+      icon: Store,
+      title: "Become a Vendor",
+      description: "Offer products and services as Social8 rewards, reach engaged communities, and receive the points members spend on your offers as crypto.",
+      colorClass: "bg-green-100 dark:bg-green-950/50 text-green-600 dark:text-green-400",
+      slug: "become-a-vendor"
     },
     {
       icon: ShieldCheck,
