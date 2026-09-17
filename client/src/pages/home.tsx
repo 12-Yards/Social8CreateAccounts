@@ -431,7 +431,7 @@ function FeaturesSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, i) => (
             <Link
-              href={`/features/${feature.slug}`}
+              href={feature.slug === "become-a-vendor" ? "/vendors" : `/features/${feature.slug}`}
               key={i}
               data-testid={`link-feature-${i}`}
               onClick={() => sessionStorage.setItem("cameFromFeatures", "1")}
