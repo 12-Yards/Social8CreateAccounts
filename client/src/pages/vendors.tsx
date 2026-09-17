@@ -20,7 +20,6 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import MarketingFooter from "@/components/marketing-footer";
@@ -65,22 +64,13 @@ function VendorPlatformModal({
   return (
     <Dialog open={Boolean(modal)} onOpenChange={(open) => !open && onClose()}>
       <DialogContent
-        className="h-[min(94vh,920px)] w-[min(96vw,1400px)] max-w-none gap-0 overflow-hidden p-0"
+        className="h-screen w-screen max-w-none gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 shadow-none [&>button]:hidden"
         data-testid="dialog-vendor-platform"
       >
         {details && (
           <>
-            <DialogHeader className="flex shrink-0 flex-row items-center gap-3 border-b bg-background px-5 py-3 pr-14 text-left">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">
-                {modal === "signin" && <LogIn className="h-4 w-4" />}
-                {modal === "signup" && <Sparkles className="h-4 w-4" />}
-                {modal === "dashboard" && <LayoutDashboard className="h-4 w-4" />}
-              </div>
-              <div>
-                <DialogTitle className="text-base">{details.title}</DialogTitle>
-                <DialogDescription className="mt-1 text-xs">{details.description}</DialogDescription>
-              </div>
-            </DialogHeader>
+            <DialogTitle className="sr-only">{details.title}</DialogTitle>
+            <DialogDescription className="sr-only">{details.description}</DialogDescription>
             <iframe
               key={details.path}
               src={`${VENDOR_PLATFORM_URL}${details.path}`}
