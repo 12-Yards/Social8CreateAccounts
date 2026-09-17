@@ -1,1 +1,2 @@
 - [Express wildcard pathname](express-wildcard-pathname.md) — wildcard `app.use` handlers can see a stripped `req.path`; use `req.originalUrl` for route-specific fallback rendering.
+- [Embedded vendor authentication](embedded-vendor-auth.md) — successful iframe login can fall back to sign-in when the vendor session cookie is not available to the dashboard.
