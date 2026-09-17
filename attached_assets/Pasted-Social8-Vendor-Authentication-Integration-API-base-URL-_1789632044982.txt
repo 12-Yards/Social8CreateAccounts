@@ -1,0 +1,329 @@
+Social8 Vendor Authentication Integration
+API base URL
+Production API:
+
+https://social8.app
+
+All endpoints below are relative to that base URL.
+
+The API accepts both:
+
+The HTTP-only session cookie automatically set during login/signup.
+A bearer token:
+Authorization: Bearer <token>
+
+For a separate frontend, bearer authentication is recommended. Never log, expose, or include the token in URLs.
+
+1. Request a vendor signup verification code
+A vendor must verify their email before the account is created.
+
+Request
+POST /api/auth/signup/request-otp
+Content-Type: application/json
+
+{
+  "email": "vendor@example.com",
+  "accountType": "vendor"
+}
+
+Success response
+200 OK
+
+{
+  "success": true,
+  "message": "Verification code sent."
+}
+
+The code:
+
+Is sent by email.
+Expires after 10 minutes.
+Can only be requested once per minute.
+Must be entered during signup.
+2. Create the vendor account
+Request
+POST /api/auth/signup
+Content-Type: application/json
+
+{
+  "email": "vendor@example.com",
+  "password": "secure-password",
+  "accountType": "vendor",
+  "otp": "123456",
+  "vendorName": "Example Coffee Shop",
+  "vendorDescription": "Independent coffee shop and café",
+  "vendorWebsite": "https://example.com",
+  "contactName": "Jane Smith",
+  "contactPhone": "+44 7000 000000"
+}
+
+Required fields
+email
+password
+accountType
+otp
+vendorName
+contactName
+contactPhone
+
+Optional fields
+vendorDescription
+vendorWebsite
+
+Success response
+201 Created
+
+{
+  "success": true,
+  "token": "<session-token>",
+  "pendingApproval": true,
+  "message": "Your vendor account has been created and is awaiting platform approval. You have limited access until it's approved.",
+  "user": {
+    "id": "vendor-user-id",
+    "email": "vendor@example.com",
+    "mumblesVibeName": "Example Coffee Shop",
+    "accountType": "vendor",
+    "status": "pending",
+    "vendorName": "Example Coffee Shop"
+  }
+}
+
+The response also sets the platform’s HTTP-only session cookie.
+
+Vendor accounts are platform-wide and are not tied to an individual community tenant.
+
+3. Sign in as a vendor
+Request
+POST /api/auth/login
+Content-Type: application/json
+
+{
+  "email": "vendor@example.com",
+  "password": "secure-password",
+  "accountType": "vendor"
+}
+
+The accountType: "vendor" field is important because vendor accounts are global platform accounts.
+
+Success response
+200 OK
+
+{
+  "success": true,
+  "token": "<session-token>",
+  "user": {
+    "id": "vendor-user-id",
+    "email": "vendor@example.com",
+    "mumblesVibeName": "Example Coffee Shop",
+    "accountType": "vendor",
+    "status": "active",
+    "vendorName": "Example Coffee Shop",
+    "vendorDescription": "Independent coffee shop and café",
+    "vendorWebsite": "https://example.com"
+  }
+}
+
+Use the token on subsequent API requests:
+
+Authorization: Bearer <session-token>
+
+The session token is valid for 7 days.
+
+4. Check the current session
+Use this after page load or after signup/sign-in to determine the vendor’s current approval state.
+
+Request
+GET /api/auth/user
+Authorization: Bearer <session-token>
+
+Success response
+{
+  "id": "vendor-user-id",
+  "email": "vendor@example.com",
+  "mumblesVibeName": "Example Coffee Shop",
+  "accountType": "vendor",
+  "status": "active",
+  "vendorName": "Example Coffee Shop",
+  "vendorDescription": "Independent coffee shop and café",
+  "vendorWebsite": "https://example.com",
+  "tenantId": null,
+  "currentTenantId": null
+}
+
+Possible vendor statuses:
+
+pending   Vendor account created but awaiting platform approval
+active    Vendor approved and can use the full vendor dashboard
+declined  Vendor application declined
+
+A pending vendor can sign in and update their profile or prepare listings, but vendor redemptions and financial statement features require approval.
+
+5. Sign out
+Request
+POST /api/auth/logout
+Authorization: Bearer <session-token>
+
+Response
+{
+  "success": true
+}
+
+The Social8 website should also remove the bearer token from its own client-side session state.
+
+6. Vendor password reset
+Request reset email
+POST /api/auth/vendor/forgot-password
+Content-Type: application/json
+
+{
+  "email": "vendor@example.com"
+}
+
+The endpoint intentionally returns the same response whether or not the email exists:
+
+{
+  "success": true,
+  "message": "If a vendor account exists for that email, a password reset link has been sent."
+}
+
+Complete password reset
+The email link provides a reset token. Submit it to:
+
+POST /api/auth/set-password
+Content-Type: application/json
+
+{
+  "mode": "reset",
+  "token": "<reset-token>",
+  "email": "vendor@example.com",
+  "password": "new-secure-password"
+}
+
+Password reset passwords must be at least 8 characters.
+
+Vendor dashboard endpoints
+After authentication, these endpoints can be used by the Social8 vendor interface.
+
+All require:
+
+Authorization: Bearer <session-token>
+
+Vendor profile
+GET /api/vendor/profile
+
+PUT /api/vendor/profile
+
+Example update:
+
+{
+  "vendorName": "Example Coffee Shop",
+  "vendorDescription": "Independent coffee shop and café",
+  "vendorWebsite": "https://example.com",
+  "vendorAddressLine1": "1 High Street",
+  "vendorCity": "York",
+  "vendorPostcode": "YO1 1AA",
+  "vendorCountry": "United Kingdom",
+  "contactName": "Jane Smith",
+  "contactPhone": "+44 7000 000000"
+}
+
+Product listings
+GET /api/vendor/listings
+
+POST /api/vendor/listings
+
+PUT /api/vendor/listings/:id
+
+DELETE /api/vendor/listings/:id
+
+DELETE archives the listing rather than permanently deleting it.
+
+Redemptions
+Approved vendors can retrieve their redemptions:
+
+GET /api/vendor/redemptions
+
+Vendor voucher redemption through QR scan or manual reference:
+
+POST /api/vendor/redemptions/scan
+
+QR scan request:
+
+{
+  "token": "<opaque-qr-token>"
+}
+
+Manual fallback reference request:
+
+{
+  "reference": "7KQ4M8ZP2R"
+}
+
+The scan endpoint:
+
+Verifies the vendor owns the listing.
+Confirms the vendor account is approved.
+Atomically marks the voucher as redeemed.
+Rejects duplicate scans.
+Returns 409 if the voucher has already been used.
+Already-used response:
+
+409 Conflict
+
+{
+  "error": "This voucher has already been used",
+  "alreadyUsed": true
+}
+
+Vendor statement
+GET /api/vendor/statement
+
+This returns points earned, withdrawals, balance, and transaction statuses.
+
+Vendor crypto withdrawal
+POST /api/vendor/withdrawals/crypto
+
+Example:
+
+{
+  "points": 500,
+  "intentKey": "unique-client-reference-123",
+  "walletAddress": "vendor-wallet-address"
+}
+
+Example frontend request
+const response = await fetch("https://social8.app/api/auth/login", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  credentials: "include",
+  body: JSON.stringify({
+    email,
+    password,
+    accountType: "vendor"
+  })
+});
+const result = await response.json();
+if (!response.ok) {
+  throw new Error(result.error || "Unable to sign in");
+}
+sessionStorage.setItem("social8_vendor_token", result.token);
+
+Authenticated request:
+
+const token = sessionStorage.getItem("social8_vendor_token");
+const response = await fetch("https://social8.app/api/vendor/profile", {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+});
+
+For production, prefer keeping the token in secure application state rather than persistent browser storage where possible.
+
+The Social8 API already allows credentialed requests from:
+
+https://social8.app
+https://www.social8.app
+
+The integration should use HTTPS only and should never send passwords or session tokens to any intermediate service.
