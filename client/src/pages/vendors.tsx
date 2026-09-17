@@ -9,7 +9,6 @@ import {
   LogIn,
   Menu,
   PackageCheck,
-  Sparkles,
   Store,
   Users,
   X,
