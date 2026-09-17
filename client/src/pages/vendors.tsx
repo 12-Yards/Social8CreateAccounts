@@ -205,7 +205,6 @@ export default function VendorsPage() {
               { icon: Users, title: "Reach active communities", text: "Connect your brand with members who already value participation, discovery and rewards." },
               { icon: Handshake, title: "Build meaningful partnerships", text: "Offer something useful to communities while creating a new channel for your business." },
               { icon: PackageCheck, title: "Manage it in one place", text: "Keep your profile and listings current, then manage member redemptions through your workspace." },
-              { icon: Coins, title: "Receive payment in crypto", text: "Members pay with Social8 points. The points you receive are converted into cryptocurrency, which you can convert back into pounds whenever you choose." },
             ].map(({ icon: Icon, title, text }) => (
               <Card key={title} className="border-border/70 shadow-sm">
                 <CardContent className="p-6">
