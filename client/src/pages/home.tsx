@@ -74,6 +74,8 @@ import {
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const vendorSignInUrl = "https://demoplatform.social8.app/signin?returnTo=%2Fvendors";
+  const vendorSignupUrl = "https://demoplatform.social8.app/signup?accountType=vendor";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -93,8 +95,15 @@ function Header() {
           <a href="#pricing" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-pricing">Pricing</a>
           <a href="/#faq" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-faq">FAQs</a>
           <Link href="/resources" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-resources">Resources</Link>
+          <Link href="/vendors" className="text-sm font-medium text-muted-foreground hover-elevate px-2 py-1 rounded-md" data-testid="link-vendors">Vendors</Link>
         </nav>
         <div className="flex items-center gap-3">
+          <a href={vendorSignInUrl} className="hidden xl:block">
+            <Button size="sm" variant="outline" data-testid="button-vendor-sign-in">Vendor Sign In</Button>
+          </a>
+          <a href={vendorSignupUrl} className="hidden xl:block">
+            <Button size="sm" variant="secondary" data-testid="button-vendor-register">Become a Vendor</Button>
+          </a>
           <Link href="/create-account">
             <Button size="sm" data-testid="button-create-account">Create Account</Button>
           </Link>
@@ -120,6 +129,15 @@ function Header() {
           <a href="/#pricing" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Pricing</a>
           <a href="/#faq" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">FAQs</a>
           <Link href="/resources" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Resources</Link>
+          <Link href="/vendors" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Vendors</Link>
+          <div className="mt-2 grid gap-2 border-t pt-3">
+            <a href={vendorSignInUrl} onClick={() => setMenuOpen(false)}>
+              <Button variant="outline" className="w-full">Vendor Sign In</Button>
+            </a>
+            <a href={vendorSignupUrl} onClick={() => setMenuOpen(false)}>
+              <Button variant="secondary" className="w-full">Become a Vendor</Button>
+            </a>
+          </div>
         </nav>
       )}
     </header>
