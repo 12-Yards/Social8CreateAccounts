@@ -550,6 +550,38 @@ function CTASection() {
   );
 }
 
+function VendorCTASection() {
+  return (
+    <section className="py-6 lg:py-10" data-testid="section-vendor-cta">
+      <div className="container mx-auto px-4">
+        <div className="relative overflow-hidden rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 via-white to-green-50 p-8 shadow-sm dark:border-emerald-900/60 dark:from-emerald-950/50 dark:via-card dark:to-green-950/40 md:p-10">
+          <div className="absolute -right-16 -top-20 h-56 w-56 rounded-full bg-emerald-300/20 blur-3xl dark:bg-emerald-500/10" />
+          <div className="relative flex flex-col items-start justify-between gap-7 lg:flex-row lg:items-center">
+            <div className="max-w-3xl">
+              <div className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300">
+                <Coins className="h-4 w-4" />
+                For businesses
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl" data-testid="heading-vendor-cta">
+                Turn your offers into crypto earnings.
+              </h2>
+              <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                Let Social8 members redeem your products and services with points. The points you receive are converted into cryptocurrency that you can convert back into pounds.
+              </p>
+            </div>
+            <Link href="/vendors" className="shrink-0">
+              <Button size="lg" className="gap-2" data-testid="button-become-vendor-home">
+                Become a Vendor
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 
 function LaunchCTASection() {
@@ -955,6 +987,7 @@ export default function Home() {
         <HeroSection />
         <VisionSection />
         <CTASection />
+        <VendorCTASection />
         <FeaturesSection />
         <LaunchCTASection />
         <RewardsSection />

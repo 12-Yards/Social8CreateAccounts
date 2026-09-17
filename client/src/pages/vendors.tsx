@@ -140,10 +140,10 @@ export default function VendorsPage() {
                 The Social8 Vendor Network
               </div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl" data-testid="heading-vendors">
-                Turn your products and services into points rewards.
+                Get paid in crypto for the products and services you offer.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-emerald-50/80">
-                Reach engaged community members, create offers they want to redeem, and grow your business through the Social8 rewards economy.
+                Members redeem your offers using Social8 points. Every point you receive is converted into cryptocurrency, which you can convert back into pounds.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button
@@ -170,13 +170,16 @@ export default function VendorsPage() {
 
             <Card className="border-white/15 bg-white/10 text-white shadow-2xl backdrop-blur-sm">
               <CardContent className="p-6 sm:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-200">Built for growth</p>
-                <h2 className="mt-3 text-2xl font-semibold">Put your offer in front of people who are ready to engage.</h2>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-300/15 text-emerald-200">
+                  <Coins className="h-6 w-6" />
+                </div>
+                <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-emerald-200">How vendor payments work</p>
+                <h2 className="mt-3 text-2xl font-semibold">Your Social8 points become crypto you can convert into pounds.</h2>
                 <ul className="mt-6 space-y-4 text-sm text-emerald-50/85">
                   {[
-                    "Create reward offers for Social8 communities",
-                    "Reach members through points-based incentives",
-                    "Manage redemptions from one vendor workspace",
+                    "Members redeem your offers with Social8 points",
+                    "The points you receive are converted into cryptocurrency",
+                    "Convert your crypto balance back into pounds",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
