@@ -63,7 +63,7 @@ function VendorPlatformModal({
   return (
     <Dialog open={Boolean(modal)} onOpenChange={(open) => !open && onClose()}>
       <DialogContent
-        className="h-screen w-screen max-w-none gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 shadow-none [&>button]:hidden"
+        className="flex h-screen min-h-0 w-screen max-w-none flex-col gap-0 overflow-hidden rounded-none border-0 bg-transparent p-0 shadow-none [&>button]:hidden"
         data-testid="dialog-vendor-platform"
       >
         {details && (
