@@ -4,6 +4,7 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
+  Coins,
   Handshake,
   LayoutDashboard,
   LogIn,
@@ -193,7 +194,7 @@ export default function VendorsPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-400">Why become a vendor?</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">A simple way to connect value with participation.</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Social8 communities reward the actions that keep people involved. Your products and services can become part of that experience.
+              Social8 communities reward the actions that keep people involved. Your products and services can become part of that experience — and you get paid for every redemption.
             </p>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -201,6 +202,7 @@ export default function VendorsPage() {
               { icon: Users, title: "Reach active communities", text: "Connect your brand with members who already value participation, discovery and rewards." },
               { icon: Handshake, title: "Build meaningful partnerships", text: "Offer something useful to communities while creating a new channel for your business." },
               { icon: PackageCheck, title: "Manage it in one place", text: "Keep your profile and listings current, then manage member redemptions through your workspace." },
+              { icon: Coins, title: "Receive payment in crypto", text: "Members pay with Social8 points. The points you receive are converted into cryptocurrency, which you can convert back into pounds whenever you choose." },
             ].map(({ icon: Icon, title, text }) => (
               <Card key={title} className="border-border/70 shadow-sm">
                 <CardContent className="p-6">
