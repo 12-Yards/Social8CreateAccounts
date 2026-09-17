@@ -14,6 +14,7 @@ import ContactPage from "@/pages/contact";
 import TermsPage from "@/pages/terms";
 import PrivacyPage from "@/pages/privacy";
 import DeleteAccountPage from "@/pages/delete-account";
+import VendorsPage from "@/pages/vendors";
 import BlogPage from "@/pages/blog";
 import SeoLandingPage from "@/pages/seo-landing";
 import RegionalPartnerPage from "@/pages/regional-partner";
@@ -48,6 +49,7 @@ function Router() {
         <Route path="/terms" component={TermsPage} />
         <Route path="/privacy" component={PrivacyPage} />
         <Route path="/delete-account" component={DeleteAccountPage} />
+        <Route path="/vendors" component={VendorsPage} />
         <Route path="/resources" component={BlogPage} />
         <Route path="/regional-partner" component={RegionalPartnerPage} />
         <Route path="/faq" component={SectionLandingPage} />

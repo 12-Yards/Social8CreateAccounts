@@ -71,6 +71,7 @@ export default function MarketingFooter() {
             <ul className="space-y-2">
               <FooterLink href="/contact" label="Contact Us" />
               <FooterLink href="/regional-partner" label="Regional Partner" />
+              <FooterLink href="/vendors" label="Vendors" />
             </ul>
           </div>
         </div>

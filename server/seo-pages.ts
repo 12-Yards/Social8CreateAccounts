@@ -25,6 +25,10 @@ const deleteAccountPage: SeoPage = {
   title: "Delete Your Social8 Account | Social8",
   description: "Learn how to permanently delete your Social8 account from the app or request account deletion if you can no longer sign in.",
 };
+const vendorsPage: SeoPage = {
+  title: "Social8 Vendors | Sign Up, Sign In & Manage Your Account",
+  description: "Become a Social8 vendor, sign in to your vendor account, or access your dashboard to manage listings and redemptions.",
+};
 export const seoPages: Record<string, SeoPage> = {
   ...Object.fromEntries(
     Object.entries(seoLandingPages).map(([pathname, page]) => [
@@ -37,6 +41,7 @@ export const seoPages: Record<string, SeoPage> = {
   "/faq": faqPage,
   "/climate-positive": climatePositivePage,
   "/delete-account": deleteAccountPage,
+  "/vendors": vendorsPage,
 };
 
 function escapeHtml(value: string) {
