@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, serial, timestamp, boolean } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, serial, timestamp, boolean, integer } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -62,3 +62,27 @@ export const insertContactSchema = createInsertSchema(contactSubmissions).omit({
 
 export type InsertContact = z.infer<typeof insertContactSchema>;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
+
+export const newsArticles = pgTable("news_articles", {
+  id: serial("id").primaryKey(),
+  sourceId: text("source_id").notNull().unique(),
+  title: text("title").notNull(),
+  slug: text("slug").notNull(),
+  excerpt: text("excerpt").notNull().default(""),
+  content: text("content").notNull().default(""),
+  imageData: text("image_data"),
+  imageMimeType: text("image_mime_type"),
+  publishedAt: timestamp("published_at", { withTimezone: true }).notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export type NewsArticle = typeof newsArticles.$inferSelect;
+export type InsertNewsArticle = typeof newsArticles.$inferInsert;
+
+export const newsSyncState = pgTable("news_sync_state", {
+  id: integer("id").primaryKey(),
+  lastCheckedDate: text("last_checked_date"),
+  lastCheckedAt: timestamp("last_checked_at", { withTimezone: true }),
+});
+
+export type NewsSyncState = typeof newsSyncState.$inferSelect;

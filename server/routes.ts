@@ -13,6 +13,7 @@ import connectPg from "connect-pg-simple";
 import pg from "pg";
 import { execSync } from "child_process";
 import { createHash, timingSafeEqual } from "node:crypto";
+import { runNewsImportIfDue, startNewsSync } from "./news-sync";
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
@@ -195,6 +196,21 @@ Disallow: /api/
 Sitemap: https://social8.app/sitemap.xml`;
     res.header("Content-Type", "text/plain");
     res.send(txt);
+  });
+
+  app.get("/api/news", async (_req: Request, res: Response) => {
+    await runNewsImportIfDue();
+    const articles = await storage.getNewsArticles();
+    return res.json(articles.map(({ content: _content, ...article }) => article));
+  });
+
+  app.get("/api/news/:slug", async (req: Request, res: Response) => {
+    await runNewsImportIfDue();
+    const article = await storage.getNewsArticleBySlug(req.params.slug as string);
+    if (!article) {
+      return res.status(404).json({ message: "News article not found" });
+    }
+    return res.json(article);
   });
 
   app.post("/api/contacts", async (req: Request, res: Response) => {
@@ -566,5 +582,6 @@ Sitemap: https://social8.app/sitemap.xml`;
     return res.json(contact);
   });
 
+  startNewsSync();
   return httpServer;
 }

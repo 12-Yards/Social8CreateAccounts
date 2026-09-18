@@ -2,7 +2,8 @@ import {
   type User, type InsertUser,
   type Registration, type InsertRegistration,
   type ContactSubmission, type InsertContact,
-  users, registrations, contactSubmissions,
+  type NewsArticle, type InsertNewsArticle, type NewsSyncState,
+  users, registrations, contactSubmissions, newsArticles, newsSyncState,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc, like, or, sql } from "drizzle-orm";
@@ -25,6 +26,12 @@ export interface IStorage {
   deleteContact(id: number): Promise<boolean>;
   markRegistrationRead(id: number): Promise<Registration | undefined>;
   markContactRead(id: number): Promise<ContactSubmission | undefined>;
+  getNewsArticles(): Promise<NewsArticle[]>;
+  getNewsArticleBySlug(slug: string): Promise<NewsArticle | undefined>;
+  getNewsArticleBySourceId(sourceId: string): Promise<NewsArticle | undefined>;
+  createNewsArticle(article: InsertNewsArticle): Promise<NewsArticle>;
+  getNewsSyncState(): Promise<NewsSyncState | undefined>;
+  updateNewsSyncState(lastCheckedDate: string): Promise<NewsSyncState>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -128,6 +135,50 @@ export class DatabaseStorage implements IStorage {
 
   async markContactRead(id: number): Promise<ContactSubmission | undefined> {
     const [result] = await db.update(contactSubmissions).set({ isRead: true }).where(eq(contactSubmissions.id, id)).returning();
+    return result;
+  }
+
+  async getNewsArticles(): Promise<NewsArticle[]> {
+    return db.select().from(newsArticles).orderBy(desc(newsArticles.publishedAt), desc(newsArticles.id));
+  }
+
+  async getNewsArticleBySlug(slug: string): Promise<NewsArticle | undefined> {
+    const [result] = await db.select().from(newsArticles).where(eq(newsArticles.slug, slug));
+    return result;
+  }
+
+  async getNewsArticleBySourceId(sourceId: string): Promise<NewsArticle | undefined> {
+    const [result] = await db.select().from(newsArticles).where(eq(newsArticles.sourceId, sourceId));
+    return result;
+  }
+
+  async createNewsArticle(article: InsertNewsArticle): Promise<NewsArticle> {
+    const [result] = await db.insert(newsArticles).values(article).onConflictDoNothing({ target: newsArticles.sourceId }).returning();
+    if (result) {
+      return result;
+    }
+
+    const existing = await this.getNewsArticleBySourceId(article.sourceId);
+    if (!existing) {
+      throw new Error(`News article ${article.sourceId} was not inserted`);
+    }
+    return existing;
+  }
+
+  async getNewsSyncState(): Promise<NewsSyncState | undefined> {
+    const [result] = await db.select().from(newsSyncState).where(eq(newsSyncState.id, 1));
+    return result;
+  }
+
+  async updateNewsSyncState(lastCheckedDate: string): Promise<NewsSyncState> {
+    const [result] = await db
+      .insert(newsSyncState)
+      .values({ id: 1, lastCheckedDate, lastCheckedAt: new Date() })
+      .onConflictDoUpdate({
+        target: newsSyncState.id,
+        set: { lastCheckedDate, lastCheckedAt: new Date() },
+      })
+      .returning();
     return result;
   }
 }
