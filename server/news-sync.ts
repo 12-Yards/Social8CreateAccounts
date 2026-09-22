@@ -1,4 +1,6 @@
 import { storage } from "./storage";
+import { db } from "./db";
+import { sql } from "drizzle-orm";
 
 const SORO_EMBED_URL =
   "https://app.trysoro.com/api/embed/f374b416-5193-4d7a-9a7b-3665a1fcfe60";
@@ -17,6 +19,37 @@ type SoroArticle = {
 };
 
 let activeImport: Promise<void> | null = null;
+let newsTablesReady: Promise<void> | null = null;
+
+function ensureNewsTables(): Promise<void> {
+  if (!newsTablesReady) {
+    newsTablesReady = db.execute(sql`
+      CREATE TABLE IF NOT EXISTS "news_articles" (
+        "id" serial PRIMARY KEY NOT NULL,
+        "source_id" text NOT NULL UNIQUE,
+        "title" text NOT NULL,
+        "slug" text NOT NULL,
+        "excerpt" text DEFAULT '' NOT NULL,
+        "content" text DEFAULT '' NOT NULL,
+        "image_data" text,
+        "image_mime_type" text,
+        "published_at" timestamp with time zone NOT NULL,
+        "created_at" timestamp with time zone DEFAULT now() NOT NULL
+      );
+
+      CREATE TABLE IF NOT EXISTS "news_sync_state" (
+        "id" integer PRIMARY KEY NOT NULL,
+        "last_checked_date" text,
+        "last_checked_at" timestamp with time zone
+      );
+    `).then(() => undefined).catch((error) => {
+      newsTablesReady = null;
+      throw error;
+    });
+  }
+
+  return newsTablesReady;
+}
 
 function londonDate(date = new Date()): string {
   return new Intl.DateTimeFormat("en-CA", {
@@ -105,6 +138,8 @@ async function fetchArticleImage(imageUrl: string | null | undefined): Promise<{
 }
 
 async function importNewsIfDue(): Promise<void> {
+  await ensureNewsTables();
+
   const today = londonDate();
   if (today > IMPORT_CUTOFF_DATE) {
     return;
