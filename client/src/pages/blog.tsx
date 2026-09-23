@@ -108,6 +108,7 @@ export default function BlogPage() {
             <a href="/#pricing" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate">Pricing</a>
             <a href="/#faq" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate">FAQs</a>
             <Link href="/resources" className="rounded-md px-2 py-1 text-sm font-medium text-foreground">Resources</Link>
+            <Link href="/vendors" className="rounded-md px-2 py-1 text-sm font-medium text-muted-foreground hover-elevate">Vendors</Link>
           </nav>
           <div className="flex items-center gap-2">
             <Link href="/create-account"><Button size="sm">Create Account</Button></Link>
@@ -131,6 +132,7 @@ export default function BlogPage() {
             <a href="/#features" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Features</a>
             <a href="/#pricing" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Pricing</a>
             <Link href="/resources" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-muted">Resources</Link>
+            <Link href="/vendors" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted">Vendors</Link>
           </nav>
         )}
       </header>
